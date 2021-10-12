@@ -5,6 +5,10 @@
  */
 package paint;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Misael Caceres
@@ -16,6 +20,17 @@ public class VentanaPrincipal extends javax.swing.JFrame {
      */
     public VentanaPrincipal() {
         initComponents();
+        menuItemSalir.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                
+                int opcion = JOptionPane.showConfirmDialog(VentanaPrincipal.this,"Desea cerrar la Aplicacion?");
+                
+                if (opcion == JOptionPane.YES_OPTION) {
+                System.exit(0);
+                }
+            }
+       });
     }
 
     /**
@@ -34,7 +49,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jMenuItem7 = new javax.swing.JMenuItem();
         jMenuItem8 = new javax.swing.JMenuItem();
         jSeparator1 = new javax.swing.JPopupMenu.Separator();
-        jMenuItem2 = new javax.swing.JMenuItem();
+        menuItemSalir = new javax.swing.JMenuItem();
         menuEdicion = new javax.swing.JMenu();
         jMenuItem3 = new javax.swing.JMenuItem();
         jMenuItem5 = new javax.swing.JMenuItem();
@@ -60,13 +75,13 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         menuArchivo.add(jMenuItem8);
         menuArchivo.add(jSeparator1);
 
-        jMenuItem2.setText("Salir");
-        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+        menuItemSalir.setText("Salir");
+        menuItemSalir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem2ActionPerformed(evt);
+                menuItemSalirActionPerformed(evt);
             }
         });
-        menuArchivo.add(jMenuItem2);
+        menuArchivo.add(menuItemSalir);
 
         barraDeMenu.add(menuArchivo);
 
@@ -114,9 +129,9 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+    private void menuItemSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItemSalirActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem2ActionPerformed
+    }//GEN-LAST:event_menuItemSalirActionPerformed
 
     private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
         // TODO add your handling code here:
@@ -161,7 +176,6 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenuBar barraDeMenu;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem10;
-    private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JMenuItem jMenuItem5;
@@ -173,5 +187,6 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenu menuArchivo;
     private javax.swing.JMenu menuAyuda;
     private javax.swing.JMenu menuEdicion;
+    private javax.swing.JMenuItem menuItemSalir;
     // End of variables declaration//GEN-END:variables
 }
