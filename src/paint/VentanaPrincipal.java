@@ -27,36 +27,38 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jMenuBar1 = new javax.swing.JMenuBar();
-        jMenu1 = new javax.swing.JMenu();
+        barraDeMenu = new javax.swing.JMenuBar();
+        menuArchivo = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
         jMenuItem6 = new javax.swing.JMenuItem();
         jMenuItem7 = new javax.swing.JMenuItem();
         jMenuItem8 = new javax.swing.JMenuItem();
+        jSeparator1 = new javax.swing.JPopupMenu.Separator();
         jMenuItem2 = new javax.swing.JMenuItem();
-        jMenu2 = new javax.swing.JMenu();
+        menuEdicion = new javax.swing.JMenu();
         jMenuItem3 = new javax.swing.JMenuItem();
         jMenuItem5 = new javax.swing.JMenuItem();
         jMenuItem4 = new javax.swing.JMenuItem();
-        jMenu3 = new javax.swing.JMenu();
+        menuAyuda = new javax.swing.JMenu();
         jMenuItem9 = new javax.swing.JMenuItem();
         jMenuItem10 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jMenu1.setText("Archivos ");
+        menuArchivo.setText("Archivo");
 
         jMenuItem1.setText("Nuevo");
-        jMenu1.add(jMenuItem1);
+        menuArchivo.add(jMenuItem1);
 
         jMenuItem6.setText("Abrir");
-        jMenu1.add(jMenuItem6);
+        menuArchivo.add(jMenuItem6);
 
         jMenuItem7.setText("Guardar");
-        jMenu1.add(jMenuItem7);
+        menuArchivo.add(jMenuItem7);
 
         jMenuItem8.setText("Guardar Como...");
-        jMenu1.add(jMenuItem8);
+        menuArchivo.add(jMenuItem8);
+        menuArchivo.add(jSeparator1);
 
         jMenuItem2.setText("Salir");
         jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
@@ -64,17 +66,17 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                 jMenuItem2ActionPerformed(evt);
             }
         });
-        jMenu1.add(jMenuItem2);
+        menuArchivo.add(jMenuItem2);
 
-        jMenuBar1.add(jMenu1);
+        barraDeMenu.add(menuArchivo);
 
-        jMenu2.setText("Edicion");
+        menuEdicion.setText("Edicion");
 
         jMenuItem3.setText("Copiar");
-        jMenu2.add(jMenuItem3);
+        menuEdicion.add(jMenuItem3);
 
         jMenuItem5.setText("Cortar");
-        jMenu2.add(jMenuItem5);
+        menuEdicion.add(jMenuItem5);
 
         jMenuItem4.setText("Pegar");
         jMenuItem4.addActionListener(new java.awt.event.ActionListener() {
@@ -82,21 +84,21 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                 jMenuItem4ActionPerformed(evt);
             }
         });
-        jMenu2.add(jMenuItem4);
+        menuEdicion.add(jMenuItem4);
 
-        jMenuBar1.add(jMenu2);
+        barraDeMenu.add(menuEdicion);
 
-        jMenu3.setText("Ayuda");
+        menuAyuda.setText("Ayuda");
 
         jMenuItem9.setText("Temas de Ayuda");
-        jMenu3.add(jMenuItem9);
+        menuAyuda.add(jMenuItem9);
 
         jMenuItem10.setText("Acerca de");
-        jMenu3.add(jMenuItem10);
+        menuAyuda.add(jMenuItem10);
 
-        jMenuBar1.add(jMenu3);
+        barraDeMenu.add(menuAyuda);
 
-        setJMenuBar(jMenuBar1);
+        setJMenuBar(barraDeMenu);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -156,10 +158,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu2;
-    private javax.swing.JMenu jMenu3;
-    private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuBar barraDeMenu;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem10;
     private javax.swing.JMenuItem jMenuItem2;
@@ -170,5 +169,9 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem7;
     private javax.swing.JMenuItem jMenuItem8;
     private javax.swing.JMenuItem jMenuItem9;
+    private javax.swing.JPopupMenu.Separator jSeparator1;
+    private javax.swing.JMenu menuArchivo;
+    private javax.swing.JMenu menuAyuda;
+    private javax.swing.JMenu menuEdicion;
     // End of variables declaration//GEN-END:variables
 }
