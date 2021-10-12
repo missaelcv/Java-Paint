@@ -20,17 +20,20 @@ public class VentanaPrincipal extends javax.swing.JFrame {
      */
     public VentanaPrincipal() {
         initComponents();
+         setLocationRelativeTo(null);
         menuItemSalir.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 
-                int opcion = JOptionPane.showConfirmDialog(VentanaPrincipal.this,"Desea cerrar la Aplicacion?");
+                int opcion = JOptionPane.showConfirmDialog(VentanaPrincipal.this,"Desea cerrar la Aplicacion?",
+                        "Confirmacion",JOptionPane.YES_NO_OPTION);
                 
                 if (opcion == JOptionPane.YES_OPTION) {
                 System.exit(0);
                 }
             }
        });
+      
     }
 
     /**
