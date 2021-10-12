@@ -5,6 +5,7 @@
  */
 package paint;
 
+import java.awt.HeadlessException;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
@@ -25,12 +26,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 
-                int opcion = JOptionPane.showConfirmDialog(VentanaPrincipal.this,"Desea cerrar la Aplicacion?",
-                        "Confirmacion",JOptionPane.YES_NO_OPTION);
-                
-                if (opcion == JOptionPane.YES_OPTION) {
-                System.exit(0);
-                }
+               
             }
        });
       
@@ -133,9 +129,21 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void menuItemSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItemSalirActionPerformed
-        // TODO add your handling code here:
+               confirmarCierre();
     }//GEN-LAST:event_menuItemSalirActionPerformed
 
+    private void confirmarCierre() throws HeadlessException {
+        int opcion = JOptionPane.showConfirmDialog(VentanaPrincipal.this,
+                "Desea cerrar la Aplicacion?",
+                "Confirmacion",
+                JOptionPane.YES_NO_OPTION,
+                JOptionPane.WARNING_MESSAGE);
+        
+        if (opcion == JOptionPane.YES_OPTION)
+        {
+            System.exit(0);
+        }
+    }
     private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jMenuItem4ActionPerformed
