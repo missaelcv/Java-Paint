@@ -57,7 +57,12 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jMenuItem9 = new javax.swing.JMenuItem();
         jMenuItem10 = new javax.swing.JMenuItem();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowClosing(java.awt.event.WindowEvent evt) {
+                formWindowClosing(evt);
+            }
+        });
 
         menuArchivo.setText("Archivo");
 
@@ -132,6 +137,8 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                confirmarCierre();
     }//GEN-LAST:event_menuItemSalirActionPerformed
 
+   
+
     private void confirmarCierre() throws HeadlessException {
         int opcion = JOptionPane.showConfirmDialog(VentanaPrincipal.this,
                 "Desea cerrar la Aplicacion?",
@@ -147,6 +154,10 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jMenuItem4ActionPerformed
+
+    private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
+        confirmarCierre();
+    }//GEN-LAST:event_formWindowClosing
 
     /**
      * @param args the command line arguments
