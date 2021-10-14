@@ -6,6 +6,7 @@
 package paint;
 
 import java.awt.Color;
+import java.awt.Graphics;
 import javax.swing.JPanel;
 
 /**
@@ -15,8 +16,14 @@ import javax.swing.JPanel;
 public class PanelDeDibujo extends JPanel {
     
     public PanelDeDibujo () {
-        setBackground (Color.WHITE);
-        
-        
+        setBackground  (Color.WHITE);
+           
     }
+    
+    protected void paintComponet(Graphics g){
+         super.paintComponent(g);
+         
+         g.drawLine(10, 10, 300, 350);
+    }
+    
 }
