@@ -5,6 +5,7 @@
  */
 package paint;
 
+import java.awt.Color;
 import javax.swing.JPanel;
 
 /**
@@ -12,4 +13,10 @@ import javax.swing.JPanel;
  * @author Misael Caceres
  */
 public class PanelDeDibujo extends JPanel {
+    
+    public PanelDeDibujo () {
+        setBackground (Color.WHITE);
+        
+        
+    }
 }
