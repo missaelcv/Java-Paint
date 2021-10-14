@@ -26,6 +26,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         PanelDeDibujo panelDeDibujo = new PanelDeDibujo();
         this.add(panelDeDibujo, BorderLayout.CENTER); 
         
+        setSize(700, 600);
          setLocationRelativeTo(null);
          
          
