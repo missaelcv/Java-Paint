@@ -23,6 +23,30 @@ public class PanelDeDibujo extends JPanel {
     public PanelDeDibujo () {
         setBackground  (Color.WHITE);    
         
+        class Manejador implements MouseListener {
+
+            @Override
+            public void mouseClicked(MouseEvent me) {
+            }
+
+            @Override
+            public void mousePressed(MouseEvent me) {
+            }
+
+            @Override
+            public void mouseReleased(MouseEvent me) {
+            }
+
+            @Override
+            public void mouseEntered(MouseEvent me) {
+            }
+
+            @Override
+            public void mouseExited(MouseEvent me) {
+            }
+        }
+        
+        
         this.addMouseListener(new MouseListener() {
             @Override
             public void mouseClicked(MouseEvent me) {
