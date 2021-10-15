@@ -18,22 +18,25 @@ public class PanelDeDibujo extends JPanel {
     public PanelDeDibujo () {
         setBackground  (Color.WHITE);     
     }
-    
-    
 
+    /**
+     *
+     * @param g
+     */
+    
+    //@override
     protected void paintComponet(Graphics g) {
         super.paintComponent(g);
         
         g.setColor(Color.red);
         
         int distancia = 20;
+        for (int y = distancia; y < getHeight(); y += distancia) {   
+        g.drawLine(10, y, getWidth() -10 ,y);}
         
-        for (int y = distancia; y < getHeight(); y += distancia)
-            
-        g.drawLine(10, y, getWidth() -10 ,y);
         
         g.setColor(Color.red);
-        g.drawLine(WIDTH, WIDTH, WIDTH, WIDTH);
+        g.drawLine(distancia * 2,0, distancia * 2, getHeight());
     }
     
 }
