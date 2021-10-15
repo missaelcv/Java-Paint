@@ -31,7 +31,10 @@ public class PanelDeDibujo extends JPanel {
         g.setColor(Color.red);
         
         int distancia = 20;
-        for (int y = distancia; y < getHeight(); y += distancia) {   
+        int total =0;
+        for (int y = distancia; y < getHeight() && total < 27; y += distancia) {
+            total ++;
+        g.drawString(" "+  total, 0, y);
         g.drawLine(10, y, getWidth() -10 ,y);}
         
         
