@@ -13,10 +13,6 @@ import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Point;
 
-/**
- *
- * @author josearielpereyra
- */
 public class Linea extends Figura{
     Point puntoInicial;
     Point puntoFinal;

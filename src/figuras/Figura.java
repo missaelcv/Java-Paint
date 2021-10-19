@@ -12,10 +12,6 @@ package figuras;
 import java.awt.Graphics;
 import java.awt.Point;
 
-/**
- *
- * @author josearielpereyra
- */
 public abstract class Figura {
 
     public abstract void actualizar(Point puntoFinal);

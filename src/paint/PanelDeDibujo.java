@@ -33,8 +33,7 @@ public class  PanelDeDibujo extends JPanel {
     public PanelDeDibujo() {
 
         figuras = new ArrayList<>();
-       
-
+      
         setBackground(Color.WHITE);
 
         class Manejador extends MouseAdapter {

@@ -38,7 +38,3 @@ public class DibujoLibre extends Figura {
         }
     }
 }
-
-//    BufferedImage papel;
-//    Graphics2D crallon;
-
