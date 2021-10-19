@@ -22,14 +22,8 @@ import javax.swing.SwingUtilities;
  *
  * @author Misael Caceres
  */
-public class PanelDeDibujo extends JPanel {
     
-
-/**
- *
- * @author josearielpereyra
- */
-public class PanelDeDibujo extends JPanel {
+public class  PanelDeDibujo extends JPanel {
 
     Figura figuraActual;
     ArrayList<Figura> figuras;
@@ -109,4 +103,4 @@ public class PanelDeDibujo extends JPanel {
         }
     }
 }
-}
+
