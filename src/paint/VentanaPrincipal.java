@@ -64,6 +64,9 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         menuAyuda = new javax.swing.JMenu();
         jMenuItem9 = new javax.swing.JMenuItem();
         jMenuItem10 = new javax.swing.JMenuItem();
+        jMenu1 = new javax.swing.JMenu();
+        jMenuItem11 = new javax.swing.JMenuItem();
+        jMenuItem2 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
         addWindowListener(new java.awt.event.WindowAdapter() {
@@ -124,6 +127,16 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         menuAyuda.add(jMenuItem10);
 
         barraDeMenu.add(menuAyuda);
+
+        jMenu1.setText("Tipos De Dibujos");
+
+        jMenuItem11.setText("Dibujo Libre");
+        jMenu1.add(jMenuItem11);
+
+        jMenuItem2.setText("Dibujo Linear");
+        jMenu1.add(jMenuItem2);
+
+        barraDeMenu.add(jMenu1);
 
         setJMenuBar(barraDeMenu);
 
@@ -193,8 +206,11 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuBar barraDeMenu;
+    private javax.swing.JMenu jMenu1;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem10;
+    private javax.swing.JMenuItem jMenuItem11;
+    private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JMenuItem jMenuItem5;
