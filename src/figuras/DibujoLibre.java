@@ -26,6 +26,7 @@ public class DibujoLibre extends Figura {
     public void actualizar(Point puntoFinal) {
         puntos.add(puntoFinal);
     }
+    
 
     @Override
     public void dibujar(Graphics g) {
