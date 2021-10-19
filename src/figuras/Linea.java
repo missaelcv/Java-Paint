@@ -7,7 +7,7 @@ package figuras;
 
 /**
  *
- * @author Misael Caceres
+ * @author Misael Caceres Villar 
  */
 import java.awt.Color;
 import java.awt.Graphics;
