@@ -17,9 +17,6 @@ import javax.swing.JOptionPane;
  */
 public class VentanaPrincipal extends javax.swing.JFrame {
 
-    /**
-     * Creates new form VentanaPrincipal
-     */
     public VentanaPrincipal() {
         initComponents();
         
@@ -28,16 +25,13 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         
         setSize(700, 600);
          setLocationRelativeTo(null);
-         
-         
+          
         menuItemSalir.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                
-               
+                  
             }
        });
-      
     }
 
     /**
@@ -194,8 +188,6 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                confirmarCierre();
     }//GEN-LAST:event_menuItemSalirActionPerformed
 
-   
-
     private void confirmarCierre() throws HeadlessException {
         int opcion = JOptionPane.showConfirmDialog(VentanaPrincipal.this,
                 "Desea cerrar la Aplicacion?",
@@ -217,7 +209,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_formWindowClosing
 
     private void jToggleButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton2ActionPerformed
-             
+           
     }//GEN-LAST:event_jToggleButton2ActionPerformed
 
     /**
