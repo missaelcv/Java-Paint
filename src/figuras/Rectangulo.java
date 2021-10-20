@@ -16,15 +16,15 @@ public class Rectangulo extends Figura{
 
     @Override
     public void actualizar(Point puntoFinal) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        throw new UnsupportedOperationException("Not supported yet."); 
     }
 
     @Override
     public void dibujar(Graphics g) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        throw new UnsupportedOperationException("Not supported yet."); 
     }
     
-    //Metodos Distitnos 
+ 
     
     private double longitud;
     private double anchura;
