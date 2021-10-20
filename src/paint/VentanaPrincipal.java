@@ -49,6 +49,12 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jToolBar1 = new javax.swing.JToolBar();
+        jToggleButton1 = new javax.swing.JToggleButton();
+        jToolBar2 = new javax.swing.JToolBar();
+        jToggleButton2 = new javax.swing.JToggleButton();
+        jToolBar3 = new javax.swing.JToolBar();
+        jToggleButton3 = new javax.swing.JToggleButton();
         barraDeMenu = new javax.swing.JMenuBar();
         menuArchivo = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
@@ -77,6 +83,34 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                 formWindowClosing(evt);
             }
         });
+
+        jToolBar1.setRollover(true);
+
+        jToggleButton1.setText("Linea Lapiz");
+        jToggleButton1.setFocusable(false);
+        jToggleButton1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jToggleButton1.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jToolBar1.add(jToggleButton1);
+
+        jToolBar2.setRollover(true);
+        jToolBar1.add(jToolBar2);
+
+        jToggleButton2.setText("Rectangulo");
+        jToggleButton2.setFocusable(false);
+        jToggleButton2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jToggleButton2.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jToolBar1.add(jToggleButton2);
+
+        jToolBar3.setRollover(true);
+        jToolBar1.add(jToolBar3);
+
+        jToggleButton3.setText("Ovalo");
+        jToggleButton3.setFocusable(false);
+        jToggleButton3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jToggleButton3.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jToolBar1.add(jToggleButton3);
+
+        getContentPane().add(jToolBar1, java.awt.BorderLayout.PAGE_START);
 
         menuArchivo.setText("Archivo");
 
@@ -230,6 +264,12 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private javax.swing.JPopupMenu.Separator jSeparator1;
     private javax.swing.JPopupMenu.Separator jSeparator2;
     private javax.swing.JPopupMenu.Separator jSeparator3;
+    private javax.swing.JToggleButton jToggleButton1;
+    private javax.swing.JToggleButton jToggleButton2;
+    private javax.swing.JToggleButton jToggleButton3;
+    private javax.swing.JToolBar jToolBar1;
+    private javax.swing.JToolBar jToolBar2;
+    private javax.swing.JToolBar jToolBar3;
     private javax.swing.JMenu menuArchivo;
     private javax.swing.JMenu menuAyuda;
     private javax.swing.JMenu menuEdicion;
