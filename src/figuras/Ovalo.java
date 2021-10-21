@@ -24,4 +24,21 @@ public class Ovalo extends Figura {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
+    Point puntoInical;
+    Point puntoFinal;
+    
+//    public Ovalo(int x, int y, int anchura, int altura) {
+//        super(x, y, anchura, altura);
+//        
+//    }
+//    
+//    public Ovalo (Point puntoInicial) {
+//        super(puntoInicial);
+//    }
+    
+    public void dibuja(Graphics g){
+        
+        
+        
+    }
 }

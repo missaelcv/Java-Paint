@@ -34,7 +34,7 @@ public class Linea extends Figura{
     public void dibujar(Graphics g) {
         if(puntoInicial != null && puntoFinal != null) {
             g.setColor(Color.black);
-            //g.drawLine( puntoInicial.x, puntoInicial.y, puntoFinal.x, puntoFinal.y );
+           g.drawLine( puntoInicial.x, puntoInicial.y, puntoFinal.x, puntoFinal.y );
            g.drawLine( puntoInicial.x, puntoInicial.y, puntoFinal.x, puntoFinal.y );
            g.drawRect(puntoInicial.x, puntoInicial.y, puntoFinal.x-puntoInicial.x, puntoFinal.y-puntoInicial.y);
            g.drawOval(puntoInicial.x, puntoInicial.y, puntoFinal.x-puntoInicial.x, puntoFinal.y-puntoInicial.y);

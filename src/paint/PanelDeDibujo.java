@@ -8,6 +8,7 @@ package paint;
 import figuras.DibujoLibre;
 import figuras.Figura;
 import figuras.Linea;
+import figuras.Rectangulo;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Point;
@@ -29,6 +30,7 @@ public class  PanelDeDibujo extends JPanel {
     ArrayList<Figura> figuras;
    
     DibujoLibre punto;
+    DibujoLibre Rectangulo;
 
     public PanelDeDibujo() {
 
@@ -83,7 +85,6 @@ public class  PanelDeDibujo extends JPanel {
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
 
-        // g.drawImage(papel, 0, 0, null);
         g.setColor(Color.blue);
 
         int distancia = 20;

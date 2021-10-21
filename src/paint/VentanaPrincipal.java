@@ -46,7 +46,8 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jToolBar1 = new javax.swing.JToolBar();
         jToggleButton1 = new javax.swing.JToggleButton();
         jToolBar2 = new javax.swing.JToolBar();
-        jToggleButton2 = new javax.swing.JToggleButton();
+        rectangulodibujo1 = new javax.swing.JToggleButton();
+        rectangulodibujo = new javax.swing.JToggleButton();
         jToolBar3 = new javax.swing.JToolBar();
         jToggleButton3 = new javax.swing.JToggleButton();
         barraDeMenu = new javax.swing.JMenuBar();
@@ -80,7 +81,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
         jToolBar1.setRollover(true);
 
-        jToggleButton1.setText("Linea Lapiz");
+        jToggleButton1.setText("Linea");
         jToggleButton1.setFocusable(false);
         jToggleButton1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jToggleButton1.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
@@ -89,16 +90,27 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jToolBar2.setRollover(true);
         jToolBar1.add(jToolBar2);
 
-        jToggleButton2.setText("Rectangulo");
-        jToggleButton2.setFocusable(false);
-        jToggleButton2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jToggleButton2.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jToggleButton2.addActionListener(new java.awt.event.ActionListener() {
+        rectangulodibujo1.setText("Lapiz");
+        rectangulodibujo1.setFocusable(false);
+        rectangulodibujo1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        rectangulodibujo1.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        rectangulodibujo1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButton2ActionPerformed(evt);
+                rectangulodibujo1ActionPerformed(evt);
             }
         });
-        jToolBar1.add(jToggleButton2);
+        jToolBar1.add(rectangulodibujo1);
+
+        rectangulodibujo.setText("Rectangulo");
+        rectangulodibujo.setFocusable(false);
+        rectangulodibujo.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        rectangulodibujo.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        rectangulodibujo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rectangulodibujoActionPerformed(evt);
+            }
+        });
+        jToolBar1.add(rectangulodibujo);
 
         jToolBar3.setRollover(true);
         jToolBar1.add(jToolBar3);
@@ -208,9 +220,13 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         confirmarCierre();
     }//GEN-LAST:event_formWindowClosing
 
-    private void jToggleButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton2ActionPerformed
+    private void rectangulodibujoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rectangulodibujoActionPerformed
            
-    }//GEN-LAST:event_jToggleButton2ActionPerformed
+    }//GEN-LAST:event_rectangulodibujoActionPerformed
+
+    private void rectangulodibujo1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rectangulodibujo1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_rectangulodibujo1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -266,7 +282,6 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private javax.swing.JPopupMenu.Separator jSeparator2;
     private javax.swing.JPopupMenu.Separator jSeparator3;
     private javax.swing.JToggleButton jToggleButton1;
-    private javax.swing.JToggleButton jToggleButton2;
     private javax.swing.JToggleButton jToggleButton3;
     private javax.swing.JToolBar jToolBar1;
     private javax.swing.JToolBar jToolBar2;
@@ -275,5 +290,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenu menuAyuda;
     private javax.swing.JMenu menuEdicion;
     private javax.swing.JMenuItem menuItemSalir;
+    private javax.swing.JToggleButton rectangulodibujo;
+    private javax.swing.JToggleButton rectangulodibujo1;
     // End of variables declaration//GEN-END:variables
 }

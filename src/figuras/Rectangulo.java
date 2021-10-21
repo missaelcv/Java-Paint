@@ -5,6 +5,7 @@
  */
 package figuras;
 
+import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Point;
 
@@ -13,21 +14,22 @@ import java.awt.Point;
  * @author Misael Caceres
  */
 public class Rectangulo extends Figura{
-
-    @Override
-    public void actualizar(Point puntoFinal) {
-        throw new UnsupportedOperationException("Not supported yet."); 
-    }
-
-    @Override
-    public void dibujar(Graphics g) {
-        throw new UnsupportedOperationException("Not supported yet."); 
-    }
-    
- 
     
     private double longitud;
     private double anchura;
+    
+//    int altura;
+//    int anchura1;
+//    int x;
+//    int y;
+//
+//    public Rectangulo(int x, int y, int anchura1, int altura) {
+//        this.x = x;
+//        this.y = y;
+//        this.altura = altura;
+//        this.anchura1 = anchura1;
+//    }
+    
  
     public Rectangulo(double longitud, double anchura) {
         this.longitud = longitud;
@@ -37,15 +39,6 @@ public class Rectangulo extends Figura{
     public Rectangulo() {
         this.longitud = 1;
         this.anchura = 1;
-    }
-//Metodos para calcular el perimetro y el Aréa
- 
-    public double getlongitud() {
-        return longitud;
-    }
- 
-    public double getanchura() {
-        return anchura;
     }
  
     public void setlongitud(double longitud) {
@@ -62,28 +55,26 @@ public class Rectangulo extends Figura{
         }
     }
  
-    @Override
-    public String toString() {
-        return "Rectangulo{" + "longitud=" + longitud + ", anchura=" + anchura + '}';
- 
-    }
- 
-    ///////////////////////////
-    public double calcularArea() {
-        return anchura * longitud;
-    }
- 
-    public double calculaPerimetro() {
-        return (2 * anchura) + (2 * longitud);
-    }
-    ///////////////////////////
- 
+//    public void dibuja(Graphics g)
+//    {
+//        g.setColor(Color.BLACK);
+//        g.drawRect(x,y ,anchura1, altura);
+//    }
+    
     public static void main(String[] args) {
         Rectangulo rect = new Rectangulo();
         rect.setanchura(-12.2);
         rect.setlongitud(12.2);
-        System.out.println(rect.calcularArea());
-        System.out.println(rect.calculaPerimetro());
+       
+    }
+    @Override
+    public void actualizar(Point puntoFinal) {
+        throw new UnsupportedOperationException("Not supported yet."); 
+    }
+
+    @Override
+    public void dibujar(Graphics g) {
+        throw new UnsupportedOperationException("Not supported yet."); 
     }
          
 }
