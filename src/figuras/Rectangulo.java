@@ -1,80 +1,46 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package figuras;
 
-import java.awt.Color;
-import java.awt.Graphics;
-import java.awt.Point;
+import java.awt.*;
 
-/**
- *
- * @author Misael Caceres
- */
-public class Rectangulo extends Figura{
-    
-    private double longitud;
-    private double anchura;
-    
-//    int altura;
-//    int anchura1;
-//    int x;
-//    int y;
-//
-//    public Rectangulo(int x, int y, int anchura1, int altura) {
-//        this.x = x;
-//        this.y = y;
-//        this.altura = altura;
-//        this.anchura1 = anchura1;
-//    }
-    
- 
-    public Rectangulo(double longitud, double anchura) {
-        this.longitud = longitud;
+public class Rectangulo extends Figura {
+
+    int x;
+    int y;
+    int anchura;
+    int altura;
+
+    public Rectangulo(int x, int y, int anchura, int altura) {
+        this.x = x;
+        this.y = y;
         this.anchura = anchura;
-    }
- 
-    public Rectangulo() {
-        this.longitud = 1;
-        this.anchura = 1;
-    }
- 
-    public void setlongitud(double longitud) {
-        if (longitud > 0.0 && longitud < 20.0) {
-            this.longitud = longitud;
-        }
-    }
- 
-    public void setanchura(double anchura) {
-        if (anchura > 0.0 && longitud < 20.0) {
-            this.anchura = anchura;
-        } else {
-            throw new RuntimeException("la Anchura debe debe de ser > 0 < 20.0");
-        }
-    }
- 
-//    public void dibuja(Graphics g)
-//    {
-//        g.setColor(Color.BLACK);
-//        g.drawRect(x,y ,anchura1, altura);
-//    }
-    
-    public static void main(String[] args) {
-        Rectangulo rect = new Rectangulo();
-        rect.setanchura(-12.2);
-        rect.setlongitud(12.2);
-       
-    }
-    @Override
-    public void actualizar(Point puntoFinal) {
-        throw new UnsupportedOperationException("Not supported yet."); 
+        this.altura = altura;
     }
 
-    @Override
-    public void dibujar(Graphics g) {
-        throw new UnsupportedOperationException("Not supported yet."); 
+
+
+    public Rectangulo(Point puntoInicial) {
+        this(puntoInicial.x, puntoInicial.y,1,1);
     }
-         
+
+    public void actualizar(Point puntoActual) {
+        this.anchura = puntoActual.x - x;
+        this.altura = puntoActual.y - y;
+    }
+    
+    //Esto es facil (si se sabe). 
+    //Agramonte.
+
+    public void dibujar(Graphics g) {
+        
+        int x = this.anchura < 0 ? this.x + this.anchura : this.x;
+        int y = this.altura < 0 ? this.y + this.altura : this.y;
+        int anchura = Math.abs(this.anchura);
+        int altura = Math.abs(this.altura);
+
+        g.setColor(Color.red);
+        g.fillRect(x, y, anchura, altura);
+
+        g.setColor(Color.black);
+        g.drawRect(x, y, anchura, altura);
+    }
 }
