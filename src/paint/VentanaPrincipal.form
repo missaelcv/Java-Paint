@@ -157,6 +157,9 @@
             <Property name="horizontalTextPosition" type="int" value="0"/>
             <Property name="verticalTextPosition" type="int" value="3"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jToggleButton1ActionPerformed"/>
+          </Events>
         </Component>
         <Container class="javax.swing.JToolBar" name="jToolBar2">
           <Properties>
@@ -176,7 +179,7 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jToggleButton2ActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JToggleButton" name="rectangulodibujo">
+        <Component class="javax.swing.JToggleButton" name="jToggleButton3">
           <Properties>
             <Property name="text" type="java.lang.String" value="Rectangulo"/>
             <Property name="focusable" type="boolean" value="false"/>
@@ -184,7 +187,7 @@
             <Property name="verticalTextPosition" type="int" value="3"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="rectangulodibujoActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jToggleButton3ActionPerformed"/>
           </Events>
         </Component>
         <Container class="javax.swing.JToolBar" name="jToolBar3">
