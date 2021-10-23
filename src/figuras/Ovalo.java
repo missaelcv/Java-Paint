@@ -1,44 +1,30 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package figuras;
 
-import java.awt.Graphics;
-import java.awt.Point;
+import java.awt.*;
 
-/**
- *
- * @author Misael Caceres
- */
-public class Ovalo extends Figura {
+public class Ovalo extends Rectangulo {
 
-    @Override
-    public void actualizar(Point puntoFinal) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public void dibujar(Graphics g) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-    
-    Point puntoInical;
+    Point puntoInicial;
     Point puntoFinal;
-    
-//    public Ovalo(int x, int y, int anchura, int altura) {
-//        super(x, y, anchura, altura);
-//        
-//    }
-//    
-//    public Ovalo (Point puntoInicial) {
-//        super(puntoInicial);
-//    }
-    
-    public void dibuja(Graphics g){
-        
-        
-        
+
+    public Ovalo(int x, int y, int anchura, int altura) {
+        super(x, y, anchura, altura);
+    }
+
+    public Ovalo(Point puntoInicial) {
+        super(puntoInicial);
+    }
+
+    public void dibujar(Graphics g) {
+        int x = this.anchura < 0 ? this.x + this.anchura : this.x;
+        int y = this.altura < 0 ? this.y + this.altura : this.y;
+        int anchura = Math.abs(this.anchura);
+        int altura = Math.abs(this.altura);
+
+        g.setColor(Color.red);
+        g.fillOval(x, y, anchura, altura);
+
+        g.setColor(Color.black);
+        g.drawOval(x, y, anchura, altura);
     }
 }
