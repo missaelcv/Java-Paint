@@ -5,6 +5,7 @@
  */
 package figuras;
 
+import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Point;
 import java.util.ArrayList;
@@ -26,14 +27,14 @@ public class DibujoLibre extends Figura {
     public void actualizar(Point puntoFinal) {
         puntos.add(puntoFinal);
     }
-    
 
     @Override
     public void dibujar(Graphics g) {
-        if (puntos.size()==1) {
+        g.setColor(Color.black);
+        if (puntos.size() == 1) {
             g.drawLine(puntos.get(0).x, puntos.get(0).y, puntos.get(0).x, puntos.get(0).y);
         }
-        
+
         for (int i = 1; i < puntos.size(); i++) {
             g.drawLine(puntos.get(i - 1).x, puntos.get(i - 1).y, puntos.get(i).x, puntos.get(i).y);
         }

@@ -17,21 +17,16 @@ import javax.swing.JOptionPane;
  */
 public class VentanaPrincipal extends javax.swing.JFrame {
 
+    PanelDeDibujo panelDeDibujo = new PanelDeDibujo();
+
     public VentanaPrincipal() {
         initComponents();
-        
-        PanelDeDibujo panelDeDibujo = new PanelDeDibujo();
-        this.add(panelDeDibujo, BorderLayout.CENTER); 
-        
-        setSize(700, 600);
-         setLocationRelativeTo(null);
-          
-        menuItemSalir.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                  
-            }
-       });
+
+        this.add(panelDeDibujo, BorderLayout.CENTER);
+        //panelDeDibujo.setAlmacenaNumerito(4);
+
+        setSize(600, 500);
+        setLocationRelativeTo(null);
     }
 
     /**
@@ -46,10 +41,10 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jToolBar1 = new javax.swing.JToolBar();
         jToggleButton1 = new javax.swing.JToggleButton();
         jToolBar2 = new javax.swing.JToolBar();
-        rectangulodibujo1 = new javax.swing.JToggleButton();
+        jToggleButton2 = new javax.swing.JToggleButton();
         rectangulodibujo = new javax.swing.JToggleButton();
         jToolBar3 = new javax.swing.JToolBar();
-        jToggleButton3 = new javax.swing.JToggleButton();
+        jToggleButton4 = new javax.swing.JToggleButton();
         barraDeMenu = new javax.swing.JMenuBar();
         menuArchivo = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
@@ -90,16 +85,16 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jToolBar2.setRollover(true);
         jToolBar1.add(jToolBar2);
 
-        rectangulodibujo1.setText("Lapiz");
-        rectangulodibujo1.setFocusable(false);
-        rectangulodibujo1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        rectangulodibujo1.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        rectangulodibujo1.addActionListener(new java.awt.event.ActionListener() {
+        jToggleButton2.setText("Lapiz");
+        jToggleButton2.setFocusable(false);
+        jToggleButton2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jToggleButton2.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jToggleButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                rectangulodibujo1ActionPerformed(evt);
+                jToggleButton2ActionPerformed(evt);
             }
         });
-        jToolBar1.add(rectangulodibujo1);
+        jToolBar1.add(jToggleButton2);
 
         rectangulodibujo.setText("Rectangulo");
         rectangulodibujo.setFocusable(false);
@@ -115,11 +110,16 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jToolBar3.setRollover(true);
         jToolBar1.add(jToolBar3);
 
-        jToggleButton3.setText("Ovalo");
-        jToggleButton3.setFocusable(false);
-        jToggleButton3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jToggleButton3.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jToolBar1.add(jToggleButton3);
+        jToggleButton4.setText("Ovalo");
+        jToggleButton4.setFocusable(false);
+        jToggleButton4.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jToggleButton4.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jToggleButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jToggleButton4ActionPerformed(evt);
+            }
+        });
+        jToolBar1.add(jToggleButton4);
 
         getContentPane().add(jToolBar1, java.awt.BorderLayout.PAGE_START);
 
@@ -224,9 +224,16 @@ public class VentanaPrincipal extends javax.swing.JFrame {
            
     }//GEN-LAST:event_rectangulodibujoActionPerformed
 
-    private void rectangulodibujo1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rectangulodibujo1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_rectangulodibujo1ActionPerformed
+    private void jToggleButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton2ActionPerformed
+          if (jToggleButton2.isSelected()) {
+            //Toolkit.getDefaultToolkit().beep();
+            panelDeDibujo.setAlmacenaNumerito(4);
+        }
+    }//GEN-LAST:event_jToggleButton2ActionPerformed
+
+    private void jToggleButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton4ActionPerformed
+        
+    }//GEN-LAST:event_jToggleButton4ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -282,7 +289,8 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private javax.swing.JPopupMenu.Separator jSeparator2;
     private javax.swing.JPopupMenu.Separator jSeparator3;
     private javax.swing.JToggleButton jToggleButton1;
-    private javax.swing.JToggleButton jToggleButton3;
+    private javax.swing.JToggleButton jToggleButton2;
+    private javax.swing.JToggleButton jToggleButton4;
     private javax.swing.JToolBar jToolBar1;
     private javax.swing.JToolBar jToolBar2;
     private javax.swing.JToolBar jToolBar3;
@@ -291,6 +299,5 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenu menuEdicion;
     private javax.swing.JMenuItem menuItemSalir;
     private javax.swing.JToggleButton rectangulodibujo;
-    private javax.swing.JToggleButton rectangulodibujo1;
     // End of variables declaration//GEN-END:variables
 }

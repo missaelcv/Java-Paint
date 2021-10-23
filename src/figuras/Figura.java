@@ -15,5 +15,6 @@ import java.awt.Point;
 public abstract class Figura {
 
     public abstract void actualizar(Point puntoFinal);
+
     public abstract void dibujar(Graphics g);
 }

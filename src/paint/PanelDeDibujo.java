@@ -5,71 +5,92 @@
  */
 package paint;
 
-import figuras.DibujoLibre;
-import figuras.Figura;
-import figuras.Linea;
-import figuras.Rectangulo;
-import java.awt.Color;
-import java.awt.Graphics;
-import java.awt.Point;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
+import java.awt.*;
+import java.awt.event.*;
 import java.util.ArrayList;
 import javax.swing.JPanel;
+import figuras.*;
+import figuras.DibujoLibre;
 import javax.swing.SwingUtilities;
 
-/**
- *
- * @author Misael Caceres
- */
-    
-public class  PanelDeDibujo extends JPanel {
+public class PanelDeDibujo extends JPanel {
 
+    int almacenaNumerito;
     Figura figuraActual;
     ArrayList<Figura> figuras;
-   
+
     DibujoLibre punto;
-    DibujoLibre Rectangulo;
+
+    public int getAlmacenaNumerito() {
+        return almacenaNumerito;
+    }
+
+    public void setAlmacenaNumerito(int almacenaNumerito) {
+        this.almacenaNumerito = almacenaNumerito;
+    }
 
     public PanelDeDibujo() {
 
         figuras = new ArrayList<>();
-      
+
         setBackground(Color.WHITE);
 
         class Manejador extends MouseAdapter {
 
-            private Point punto = new Point();
-
-            //
             @Override
             public void mousePressed(MouseEvent evento) {
-                if (evento.getButton() == MouseEvent.BUTTON1) {
-                    System.out.println("Se presiono el boton 1");
 
-                    figuraActual = new Linea(evento.getPoint());
+                if (evento.getButton() == MouseEvent.BUTTON1) {
+
+//                    if (getAlmacenaNumerito() == 1) {
+//                        figuraActual = new Rectangulo(evento.getPoint());
+//                    } else if (getAlmacenaNumerito() == 2) {
+//                        figuraActual = new Linea(evento.getPoint());
+//                    } else if (getAlmacenaNumerito() == 3) {
+//                        figuraActual = new Ovalo(evento.getPoint());
+//                    } else if (getAlmacenaNumerito() == 4) {
+//                        figuraActual = new DibujoLibre(evento.getPoint());
+//                    } 
+
+                    switch (getAlmacenaNumerito()) {
+                        case 1:
+                            figuraActual = new Rectangulo(evento.getPoint());
+                            break;
+                        case 2:
+                            figuraActual = new Linea(evento.getPoint());
+                            break;
+                        case 3:
+                            figuraActual = new Triangulo(evento.getPoint());
+                            break;
+                        case 4:
+                            figuraActual = new DibujoLibre(evento.getPoint());
+                            break;
+                        default:
+                            figuraActual = new DibujoLibre(evento.getPoint());
+                            break;
+                    }
+
                     figuras.add(figuraActual);
                     repaint();
-                } 
-                
+                }
+
                 if (evento.getButton() == MouseEvent.BUTTON3) {
-                    System.out.println("Se presiono el boton 3");
+
                     figuraActual = new DibujoLibre(evento.getPoint());
                     figuras.add(figuraActual);
-                } 
+                }
             }
 
             @Override
             public void mouseDragged(MouseEvent evento) {
 
                 if (SwingUtilities.isLeftMouseButton(evento)) {
-                    System.out.println("Se arrastro el boton 1");
+
                     figuraActual.actualizar(evento.getPoint());
-                }  
-                
+                }
+
                 if (SwingUtilities.isRightMouseButton(evento)) {
-                    System.out.println("Se arrastro el boton 3");
+
                     figuraActual.actualizar(evento.getPoint());
                 }
                 repaint();
@@ -103,4 +124,3 @@ public class  PanelDeDibujo extends JPanel {
         }
     }
 }
-
