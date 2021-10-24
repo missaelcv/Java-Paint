@@ -45,6 +45,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jToggleButton3 = new javax.swing.JToggleButton();
         jToolBar3 = new javax.swing.JToolBar();
         jToggleButton4 = new javax.swing.JToggleButton();
+        jToggleButton5 = new javax.swing.JToggleButton();
         barraDeMenu = new javax.swing.JMenuBar();
         menuArchivo = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
@@ -125,6 +126,17 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             }
         });
         jToolBar1.add(jToggleButton4);
+
+        jToggleButton5.setText("Triangulo");
+        jToggleButton5.setFocusable(false);
+        jToggleButton5.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jToggleButton5.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jToggleButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jToggleButton5ActionPerformed(evt);
+            }
+        });
+        jToolBar1.add(jToggleButton5);
 
         getContentPane().add(jToolBar1, java.awt.BorderLayout.PAGE_START);
 
@@ -253,6 +265,13 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jToggleButton1ActionPerformed
 
+    private void jToggleButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton5ActionPerformed
+        if (jToggleButton5.isSelected()) {
+            //Toolkit.getDefaultToolkit().beep();
+            panelDeDibujo.setAlmacenaNumerito(5);
+        }
+    }//GEN-LAST:event_jToggleButton5ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -310,6 +329,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private javax.swing.JToggleButton jToggleButton2;
     private javax.swing.JToggleButton jToggleButton3;
     private javax.swing.JToggleButton jToggleButton4;
+    private javax.swing.JToggleButton jToggleButton5;
     private javax.swing.JToolBar jToolBar1;
     private javax.swing.JToolBar jToolBar2;
     private javax.swing.JToolBar jToolBar3;
