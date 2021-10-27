@@ -42,16 +42,6 @@ public class PanelDeDibujo extends JPanel {
 
                 if (evento.getButton() == MouseEvent.BUTTON1) {
 
-//                    if (getAlmacenaNumerito() == 1) {
-//                        figuraActual = new Rectangulo(evento.getPoint());
-//                    } else if (getAlmacenaNumerito() == 2) {
-//                        figuraActual = new Linea(evento.getPoint());
-//                    } else if (getAlmacenaNumerito() == 3) {
-//                        figuraActual = new Ovalo(evento.getPoint());
-//                    } else if (getAlmacenaNumerito() == 4) {
-//                        figuraActual = new DibujoLibre(evento.getPoint());
-//                    } 
-
                     switch (getAlmacenaNumerito()) {
                         case 1:
                             figuraActual = new Rectangulo(evento.getPoint());
@@ -63,7 +53,7 @@ public class PanelDeDibujo extends JPanel {
                             figuraActual = new Triangulo(evento.getPoint());
                             break;
                         case 4:
-                            figuraActual = new DibujoLibre(evento.getPoint());
+                            figuraActual = new Ovalo(evento.getPoint());
                             break;
                          case 5:
                             figuraActual = new Rombo(evento.getPoint());
