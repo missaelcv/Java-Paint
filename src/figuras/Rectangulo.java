@@ -16,8 +16,6 @@ public class Rectangulo extends Figura {
         this.altura = altura;
     }
 
-
-
     public Rectangulo(Point puntoInicial) {
         this(puntoInicial.x, puntoInicial.y,1,1);
     }

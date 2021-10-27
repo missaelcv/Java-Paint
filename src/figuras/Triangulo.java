@@ -43,13 +43,13 @@ public class Triangulo extends Rectangulo {
         g.drawPolygon( new int []{ punto1.x, punto2.x, punto3.x}, new int []{ punto1.y, punto2.y, punto3.y}, 3 );
         
         //rombo 
-        punto1 = new Point(x, y + altura / 2); 
+         punto1 = new Point(x, y + altura / 2); 
          punto2 = new Point(x + anchura/2, y);
          punto3 = new Point(x + anchura, y + altura / 2);
          Point punto4 = new Point(x + anchura / 2, y + altura);
          
-         g.setColor(Color.black);
-        g.drawPolygon( new int []{ punto1.x, punto2.x, punto3.x, punto4.x}, new int []{ punto1.y, punto2.y, punto3.y, punto4.y}, 4 );
+      g.setColor(Color.black);
+      g.drawPolygon( new int []{ punto1.x, punto2.x, punto3.x, punto4.x}, new int []{ punto1.y, punto2.y, punto3.y, punto4.y}, 4 );
         
         
         //pentagono
