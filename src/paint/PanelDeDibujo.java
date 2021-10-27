@@ -65,6 +65,9 @@ public class PanelDeDibujo extends JPanel {
                         case 4:
                             figuraActual = new DibujoLibre(evento.getPoint());
                             break;
+                         case 5:
+                            figuraActual = new Rombo(evento.getPoint());
+                            break;
                         default:
                             figuraActual = new DibujoLibre(evento.getPoint());
                             break;
