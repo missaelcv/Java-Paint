@@ -13,28 +13,28 @@ import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Point;
 
-public class Linea extends Figura {
-
+public class Linea extends Figura{
     Point puntoInicial;
     Point puntoFinal;
 
-    public Linea(Point puntoInicial, Point puntoFinal) {
+    public Linea(Color color, Point puntoInicial, Point puntoFinal) {
+        super(color);
         this.puntoInicial = puntoInicial;
         this.puntoFinal = puntoFinal;
     }
 
-    public Linea(Point puntoInicial) {
-        this(puntoInicial, puntoInicial);
+    public Linea(Color color, Point puntoInicial) {
+        this(color, puntoInicial, puntoInicial);
     }
 
-    public void actualizar(Point puntoFinal) {
+    public void actualizar( Point puntoFinal ) {
         this.puntoFinal = puntoFinal;
     }
 
     public void dibujar(Graphics g) {
-        if (puntoInicial != null && puntoFinal != null) {
-            g.setColor(Color.black);
-            g.drawLine(puntoInicial.x, puntoInicial.y, puntoFinal.x, puntoFinal.y);
+        if(puntoInicial != null && puntoFinal != null) {
+            g.setColor( getColorDePrimerPlano() );
+            g.drawLine( puntoInicial.x, puntoInicial.y, puntoFinal.x, puntoFinal.y );
         }
     }
 }
