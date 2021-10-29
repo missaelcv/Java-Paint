@@ -14,29 +14,31 @@ import java.util.ArrayList;
  *
  * @author Misael Caceres
  */
-public class DibujoLibre extends Figura {
-
+public class DibujoLibre extends Figura{
     ArrayList<Point> puntos;
 
-    public DibujoLibre(Point puntoInicial) {
+    public DibujoLibre(Color color, Point puntoActual) {
+        super(color);
         puntos = new ArrayList<>();
-        actualizar(puntoInicial);
+        puntos.add( puntoActual );
     }
 
-    @Override
-    public void actualizar(Point puntoFinal) {
-        puntos.add(puntoFinal);
+    public void actualizar( Point puntoActual ) {
+        puntos.add( puntoActual );
     }
 
-    @Override
     public void dibujar(Graphics g) {
-        g.setColor(Color.black);
-        if (puntos.size() == 1) {
-            g.drawLine(puntos.get(0).x, puntos.get(0).y, puntos.get(0).x, puntos.get(0).y);
-        }
-
-        for (int i = 1; i < puntos.size(); i++) {
-            g.drawLine(puntos.get(i - 1).x, puntos.get(i - 1).y, puntos.get(i).x, puntos.get(i).y);
+        g.setColor( getColorDePrimerPlano() );
+        
+        if( !puntos.isEmpty() ) {
+            if(puntos.size() == 1) {
+               g.drawLine( puntos.get(0).x, puntos.get(0).y, puntos.get(0).x, puntos.get(0).y ); 
+            }
+            else {
+                for (int i = 1; i < puntos.size(); i++) {
+                    g.drawLine( puntos.get(i - 1).x, puntos.get(i - 1).y, puntos.get(i).x, puntos.get(i).y );
+                }
+            }
         }
     }
 }
