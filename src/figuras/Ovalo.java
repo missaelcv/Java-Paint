@@ -13,29 +13,18 @@ import java.awt.Point;
  *
  * @author Misael Caceres
  */
-public class Ovalo extends Rectangulo {
-
-    Point puntoInicial;
-    Point puntoFinal;
-
-    public Ovalo(int x, int y, int anchura, int altura) {
-        super(x, y, anchura, altura);
-    }
-
-    public Ovalo(Point puntoInicial) {
-        super(puntoInicial);
+public class Ovalo extends Rectangulo{
+   
+    public Ovalo( Color color, Point puntoInicial ) {
+        super(color, puntoInicial);
     }
 
     public void dibujar(Graphics g) {
-        int x = this.anchura < 0 ? this.x + this.anchura : this.x;
-        int y = this.altura < 0 ? this.y + this.altura : this.y;
-        int anchura = Math.abs(this.anchura);
-        int altura = Math.abs(this.altura);
-
-        g.setColor(Color.red);
-        g.fillOval(x, y, anchura, altura);
-
-        g.setColor(Color.black);
-        g.drawOval(x, y, anchura, altura);
+        g.setColor( getColorDePrimerPlano() );
+        
+        int x = (this.anchura < 0) ? this.x + anchura : this.x;
+        int y = (this.altura < 0) ? this.y + altura : this.y;
+        
+        g.drawOval( x, y, Math.abs( anchura ), Math.abs( altura ) );
     }
 }
