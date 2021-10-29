@@ -19,7 +19,6 @@ public class PanelDeDibujo extends javax.swing.JPanel {
     Color colorDePrimerPlano;
 
     public JPanel getPanelDeHerramientas() {
-        JPanel panelDeHerramientas = null;
         return panelDeHerramientas;
     }
     Color colorDeSegundoPlano;
@@ -118,3 +117,4 @@ public class PanelDeDibujo extends javax.swing.JPanel {
             figura.dibujar(g);
         }   
     }
+}
