@@ -9,12 +9,25 @@ package figuras;
  *
  * @author Misael Caceres
  */
+import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Point;
 
 public abstract class Figura {
+    private Color colorDePrimerPlano;
+    
+    Figura(Color colorDePrimerPlano) {
+        this.colorDePrimerPlano = colorDePrimerPlano;
+    }
+    
+    public abstract void actualizar( Point puntoFinal );
+    public abstract void dibujar( Graphics g );
 
-    public abstract void actualizar(Point puntoFinal);
+    public Color getColorDePrimerPlano() {
+        return colorDePrimerPlano;
+    }
 
-    public abstract void dibujar(Graphics g);
+    public void setColorDePrimerPlano(Color colorDePrimerPlano) {
+        this.colorDePrimerPlano = colorDePrimerPlano;
+    }
 }
