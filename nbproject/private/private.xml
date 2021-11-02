@@ -5,7 +5,7 @@
             <url>src/paint/VentanaPrincipal.java</url>
             <bookmark id="1">
                 <name/>
-                <line>287</line>
+                <line>300</line>
                 <key/>
             </bookmark>
         </file>
@@ -13,9 +13,7 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/C:/Users/Misael%20Caceres/Desktop/Paint/src/paint/VentanaPrincipal.java</file>
-            <file>file:/C:/Users/Misael%20Caceres/Desktop/Paint/src/figuras/DibujoLibre.java</file>
             <file>file:/C:/Users/Misael%20Caceres/Desktop/Paint/src/paint/PanelDeDibujo.java</file>
-            <file>file:/C:/Users/Misael%20Caceres/Desktop/Paint/src/figuras/Linea.java</file>
         </group>
     </open-files>
 </project-private>

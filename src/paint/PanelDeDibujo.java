@@ -12,13 +12,14 @@ import javax.swing.JPanel;
 import figuras.*;
 import figuras.DibujoLibre;
 import java.util.Stack;
+import javax.swing.ImageIcon;
 import javax.swing.SwingUtilities;
 
 public class PanelDeDibujo extends javax.swing.JPanel {
 
     Color colorDePrimerPlano;
 
-    public JPanel getPanelDeHerramientas() {
+    public JPanel getPanelDeHerramientas(JPanel panelDeHerramientas) {
         return panelDeHerramientas;
     }
     Color colorDeSegundoPlano;
@@ -52,7 +53,6 @@ public class PanelDeDibujo extends javax.swing.JPanel {
         figurasDeshechas = new Stack<>();
         
         setBackground( Color.WHITE );
-        
         
         class Manejador extends MouseAdapter{
 
@@ -116,5 +116,43 @@ public class PanelDeDibujo extends javax.swing.JPanel {
         for (Figura figura : figuras) {
             figura.dibujar(g);
         }   
+    }
+
+    private void initComponents() {
+       // throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    void setAlmacenaNumerito(int i) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    private static class btnLinea {
+
+        private static boolean isSelected() {
+            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        }
+
+        public btnLinea() {
+        }
+    }
+
+    private static class btnRectangulo {
+
+        private static boolean isSelected() {
+            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        }
+
+        public btnRectangulo() {
+        }
+    }
+
+    private static class btnOvalo {
+
+        private static boolean isSelected() {
+            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        }
+
+        public btnOvalo() {
+        }
     }
 }
