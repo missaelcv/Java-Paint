@@ -1,7 +1,6 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package paint;
 
@@ -13,18 +12,21 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author Misael Caceres
+ * @author josearielpereyra
  */
 public class VentanaPrincipal extends javax.swing.JFrame {
 
-    PanelDeDibujo panelDeDibujo = new PanelDeDibujo();
+    private final PanelDeDibujo panelDeDibujo;
 
+    /**
+     * Creates new form VentanaPrincipal
+     */
     public VentanaPrincipal() {
         initComponents();
-
+        panelDeDibujo = new PanelDeDibujo();
         this.add(panelDeDibujo, BorderLayout.CENTER);
-        //panelDeDibujo.setAlmacenaNumerito(4);
-
+        this.add(panelDeDibujo.getPanelDeHerramientas(), BorderLayout.NORTH);
+        
         setSize(600, 500);
         setLocationRelativeTo(null);
     }
@@ -38,38 +40,28 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jToolBar1 = new javax.swing.JToolBar();
-        jToggleButton1 = new javax.swing.JToggleButton();
-        jToolBar2 = new javax.swing.JToolBar();
-        jToggleButton2 = new javax.swing.JToggleButton();
-        jToggleButton3 = new javax.swing.JToggleButton();
-        jToolBar3 = new javax.swing.JToolBar();
-        jToggleButton4 = new javax.swing.JToggleButton();
-        jToggleButton5 = new javax.swing.JToggleButton();
-        jToggleButton6 = new javax.swing.JToggleButton();
+        jMenuItem4 = new javax.swing.JMenuItem();
+        buttonGroup1 = new javax.swing.ButtonGroup();
+        buttonGroup2 = new javax.swing.ButtonGroup();
         barraDeMenu = new javax.swing.JMenuBar();
         menuArchivo = new javax.swing.JMenu();
-        jMenuItem1 = new javax.swing.JMenuItem();
         jMenuItem6 = new javax.swing.JMenuItem();
         jMenuItem7 = new javax.swing.JMenuItem();
         jMenuItem8 = new javax.swing.JMenuItem();
+        jMenuItem9 = new javax.swing.JMenuItem();
         jSeparator1 = new javax.swing.JPopupMenu.Separator();
         menuItemSalir = new javax.swing.JMenuItem();
         menuEdicion = new javax.swing.JMenu();
+        jMenuItem2 = new javax.swing.JMenuItem();
         jMenuItem3 = new javax.swing.JMenuItem();
         jMenuItem5 = new javax.swing.JMenuItem();
-        jMenuItem4 = new javax.swing.JMenuItem();
-        jSeparator3 = new javax.swing.JPopupMenu.Separator();
+        jMenuItem1 = new javax.swing.JMenuItem();
         jMenuItem12 = new javax.swing.JMenuItem();
-        jMenuItem13 = new javax.swing.JMenuItem();
-        jMenuItem14 = new javax.swing.JMenuItem();
         menuAyuda = new javax.swing.JMenu();
-        jMenuItem9 = new javax.swing.JMenuItem();
         jMenuItem10 = new javax.swing.JMenuItem();
-        jMenu1 = new javax.swing.JMenu();
         jMenuItem11 = new javax.swing.JMenuItem();
-        jSeparator2 = new javax.swing.JPopupMenu.Separator();
-        jMenuItem2 = new javax.swing.JMenuItem();
+
+        jMenuItem4.setText("jMenuItem4");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
         addWindowListener(new java.awt.event.WindowAdapter() {
@@ -77,96 +69,21 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                 formWindowClosing(evt);
             }
         });
-
-        jToolBar1.setRollover(true);
-
-        jToggleButton1.setText("Linea");
-        jToggleButton1.setFocusable(false);
-        jToggleButton1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jToggleButton1.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jToggleButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButton1ActionPerformed(evt);
-            }
-        });
-        jToolBar1.add(jToggleButton1);
-
-        jToolBar2.setRollover(true);
-        jToolBar1.add(jToolBar2);
-
-        jToggleButton2.setText("Lapiz");
-        jToggleButton2.setFocusable(false);
-        jToggleButton2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jToggleButton2.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jToggleButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButton2ActionPerformed(evt);
-            }
-        });
-        jToolBar1.add(jToggleButton2);
-
-        jToggleButton3.setText("Rectangulo");
-        jToggleButton3.setFocusable(false);
-        jToggleButton3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jToggleButton3.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jToggleButton3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButton3ActionPerformed(evt);
-            }
-        });
-        jToolBar1.add(jToggleButton3);
-
-        jToolBar3.setRollover(true);
-        jToolBar1.add(jToolBar3);
-
-        jToggleButton4.setText("Ovalo");
-        jToggleButton4.setFocusable(false);
-        jToggleButton4.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jToggleButton4.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jToggleButton4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButton4ActionPerformed(evt);
-            }
-        });
-        jToolBar1.add(jToggleButton4);
-
-        jToggleButton5.setText("Triangulo");
-        jToggleButton5.setFocusable(false);
-        jToggleButton5.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jToggleButton5.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jToggleButton5.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButton5ActionPerformed(evt);
-            }
-        });
-        jToolBar1.add(jToggleButton5);
-
-        jToggleButton6.setText("Rombo");
-        jToggleButton6.setFocusable(false);
-        jToggleButton6.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jToggleButton6.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jToggleButton6.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButton6ActionPerformed(evt);
-            }
-        });
-        jToolBar1.add(jToggleButton6);
-
-        getContentPane().add(jToolBar1, java.awt.BorderLayout.PAGE_START);
+        getContentPane().setLayout(new java.awt.BorderLayout());
 
         menuArchivo.setText("Archivo");
 
-        jMenuItem1.setText("Nuevo");
-        menuArchivo.add(jMenuItem1);
-
-        jMenuItem6.setText("Abrir");
+        jMenuItem6.setText("Nuevo");
         menuArchivo.add(jMenuItem6);
 
-        jMenuItem7.setText("Guardar");
+        jMenuItem7.setText("Abrir");
         menuArchivo.add(jMenuItem7);
 
-        jMenuItem8.setText("Guardar Como...");
+        jMenuItem8.setText("Guardar");
         menuArchivo.add(jMenuItem8);
+
+        jMenuItem9.setText("Guardar Como");
+        menuArchivo.add(jMenuItem9);
         menuArchivo.add(jSeparator1);
 
         menuItemSalir.setText("Salir");
@@ -179,134 +96,81 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
         barraDeMenu.add(menuArchivo);
 
-        menuEdicion.setText("Edicion");
+        menuEdicion.setText("Edición");
 
-        jMenuItem3.setText("Copiar");
+        jMenuItem2.setText("Copiar");
+        menuEdicion.add(jMenuItem2);
+
+        jMenuItem3.setText("Cortar");
         menuEdicion.add(jMenuItem3);
 
-        jMenuItem5.setText("Cortar");
+        jMenuItem5.setText("Pegar");
         menuEdicion.add(jMenuItem5);
 
-        jMenuItem4.setText("Pegar");
-        jMenuItem4.addActionListener(new java.awt.event.ActionListener() {
+        jMenuItem1.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_Z, java.awt.event.InputEvent.CTRL_DOWN_MASK));
+        jMenuItem1.setText("Deshacer");
+        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem4ActionPerformed(evt);
+                jMenuItem1ActionPerformed(evt);
             }
         });
-        menuEdicion.add(jMenuItem4);
-        menuEdicion.add(jSeparator3);
+        menuEdicion.add(jMenuItem1);
 
-        jMenuItem12.setText("Borrar");
+        jMenuItem12.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_Y, java.awt.event.InputEvent.CTRL_DOWN_MASK));
+        jMenuItem12.setText("Rehacer");
+        jMenuItem12.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem12ActionPerformed(evt);
+            }
+        });
         menuEdicion.add(jMenuItem12);
-
-        jMenuItem13.setText("Deshacer");
-        menuEdicion.add(jMenuItem13);
-
-        jMenuItem14.setText("Rehacer");
-        jMenuItem14.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem14ActionPerformed(evt);
-            }
-        });
-        menuEdicion.add(jMenuItem14);
 
         barraDeMenu.add(menuEdicion);
 
         menuAyuda.setText("Ayuda");
 
-        jMenuItem9.setText("Temas de Ayuda");
-        menuAyuda.add(jMenuItem9);
-
-        jMenuItem10.setText("Acerca de");
+        jMenuItem10.setText("Temas de Ayuda");
         menuAyuda.add(jMenuItem10);
 
+        jMenuItem11.setText("Acerca de");
+        menuAyuda.add(jMenuItem11);
+
         barraDeMenu.add(menuAyuda);
-
-        jMenu1.setText("Tipos De Dibujos");
-
-        jMenuItem11.setText("Dibujo Libre");
-        jMenu1.add(jMenuItem11);
-        jMenu1.add(jSeparator2);
-
-        jMenuItem2.setText("Dibujo Linear");
-        jMenu1.add(jMenuItem2);
-
-        barraDeMenu.add(jMenu1);
 
         setJMenuBar(barraDeMenu);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void menuItemSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItemSalirActionPerformed
-               confirmarCierre();
-    }//GEN-LAST:event_menuItemSalirActionPerformed
-
-    private void confirmarCierre() throws HeadlessException {
-        int opcion = JOptionPane.showConfirmDialog(VentanaPrincipal.this,
-                "Desea cerrar la Aplicacion?",
-                "Confirmacion",
-                JOptionPane.YES_NO_OPTION,
-                JOptionPane.WARNING_MESSAGE);
-        
-        if (opcion == JOptionPane.YES_OPTION)
-        {
-            System.exit(0);
-        }
-    }
-    private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem4ActionPerformed
-
     private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
         confirmarCierre();
     }//GEN-LAST:event_formWindowClosing
 
-    private void jToggleButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton3ActionPerformed
-            if (jToggleButton3.isSelected()) {
-            //Toolkit.getDefaultToolkit().beep();
-            panelDeDibujo.setAlmacenaNumerito(1);
-        }        
-    }//GEN-LAST:event_jToggleButton3ActionPerformed
+    private void menuItemSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItemSalirActionPerformed
+        confirmarCierre();
+    }//GEN-LAST:event_menuItemSalirActionPerformed
 
-    private void jToggleButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton2ActionPerformed
-          if (jToggleButton2.isSelected()) {
-            //Toolkit.getDefaultToolkit().beep();
-            panelDeDibujo.setAlmacenaNumerito(4);
+    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+        panelDeDibujo.deshacer();
+    }//GEN-LAST:event_jMenuItem1ActionPerformed
+
+    private void jMenuItem12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem12ActionPerformed
+        panelDeDibujo.rehacer();
+    }//GEN-LAST:event_jMenuItem12ActionPerformed
+
+    private void confirmarCierre() throws HeadlessException {
+        int opcion = JOptionPane.showConfirmDialog(
+                VentanaPrincipal.this,
+                "Desea cerrar la aplicación?",
+                "Confirmación",
+                JOptionPane.YES_NO_OPTION,
+                JOptionPane.QUESTION_MESSAGE
+        );
+        
+        if( opcion == JOptionPane.YES_OPTION ) {
+            System.exit(0);
         }
-    }//GEN-LAST:event_jToggleButton2ActionPerformed
-
-    private void jToggleButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton4ActionPerformed
-         if (jToggleButton4.isSelected()) {
-            //Toolkit.getDefaultToolkit().beep();
-            panelDeDibujo.setAlmacenaNumerito(3);
-        }
-    }//GEN-LAST:event_jToggleButton4ActionPerformed
-
-    private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
-        if (jToggleButton1.isSelected()) {
-            //Toolkit.getDefaultToolkit().beep();
-            panelDeDibujo.setAlmacenaNumerito(2);
-        }
-    }//GEN-LAST:event_jToggleButton1ActionPerformed
-
-    private void jToggleButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton5ActionPerformed
-        if (jToggleButton5.isSelected()) {
-            //Toolkit.getDefaultToolkit().beep();
-            panelDeDibujo.setAlmacenaNumerito(5);
-        }
-    }//GEN-LAST:event_jToggleButton5ActionPerformed
-
-    private void jToggleButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton6ActionPerformed
-         if (jToggleButton6.isSelected()) {
-            //Toolkit.getDefaultToolkit().beep();
-            panelDeDibujo.setAlmacenaNumerito(5);
-        }
-    }//GEN-LAST:event_jToggleButton6ActionPerformed
-
-    private void jMenuItem14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem14ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem14ActionPerformed
+    }
 
     /**
      * @param args the command line arguments
@@ -319,7 +183,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Windows".equals(info.getName())) {
+                if ("Metal".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
                 }
@@ -336,7 +200,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-       java.awt.EventQueue.invokeLater(new Runnable() {
+        java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new VentanaPrincipal().setVisible(true);
             }
@@ -345,13 +209,12 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuBar barraDeMenu;
-    private javax.swing.JMenu jMenu1;
+    private javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.ButtonGroup buttonGroup2;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem10;
     private javax.swing.JMenuItem jMenuItem11;
     private javax.swing.JMenuItem jMenuItem12;
-    private javax.swing.JMenuItem jMenuItem13;
-    private javax.swing.JMenuItem jMenuItem14;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;
@@ -361,17 +224,6 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem8;
     private javax.swing.JMenuItem jMenuItem9;
     private javax.swing.JPopupMenu.Separator jSeparator1;
-    private javax.swing.JPopupMenu.Separator jSeparator2;
-    private javax.swing.JPopupMenu.Separator jSeparator3;
-    private javax.swing.JToggleButton jToggleButton1;
-    private javax.swing.JToggleButton jToggleButton2;
-    private javax.swing.JToggleButton jToggleButton3;
-    private javax.swing.JToggleButton jToggleButton4;
-    private javax.swing.JToggleButton jToggleButton5;
-    private javax.swing.JToggleButton jToggleButton6;
-    private javax.swing.JToolBar jToolBar1;
-    private javax.swing.JToolBar jToolBar2;
-    private javax.swing.JToolBar jToolBar3;
     private javax.swing.JMenu menuArchivo;
     private javax.swing.JMenu menuAyuda;
     private javax.swing.JMenu menuEdicion;
