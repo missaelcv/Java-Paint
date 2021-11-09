@@ -10,7 +10,6 @@ package paint;
  * @author Misael Caceres
  */
 public class Paint {
-    
     /**
      * @param args the command line arguments
      */
