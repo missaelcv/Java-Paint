@@ -6,6 +6,7 @@ package paint;
 
 import figuras.DibujoLibre;
 import figuras.Figura;
+import figuras.Hexagono;
 import figuras.Linea;
 import figuras.Ovalo;
 import figuras.Pentagono;
@@ -93,6 +94,9 @@ public class PanelDeDibujo extends javax.swing.JPanel {
                 else if( btnPentagono.isSelected() ) {
                     figuraActual = new Pentagono( colorDePrimerPlano, evento.getPoint() );
                 }
+                else if( btnHexagono.isSelected() ) {
+                    figuraActual = new Hexagono( colorDePrimerPlano, evento.getPoint() );
+                }
                  
                 else {
                     figuraActual = new DibujoLibre( colorDePrimerPlano, evento.getPoint() );  
@@ -163,6 +167,7 @@ public class PanelDeDibujo extends javax.swing.JPanel {
         btnRombo = new javax.swing.JToggleButton();
         btnTriangulo = new javax.swing.JToggleButton();
         btnPentagono = new javax.swing.JToggleButton();
+        btnHexagono = new javax.swing.JToggleButton();
         panelColor = new javax.swing.JPanel();
         botonDePrimerPlano = new javax.swing.JToggleButton();
         botonDeSegundoPlano = new javax.swing.JToggleButton();
@@ -222,6 +227,13 @@ public class PanelDeDibujo extends javax.swing.JPanel {
         btnPentagono.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         barraDeHerramientas.add(btnPentagono);
 
+        buttonGroup1.add(btnHexagono);
+        btnHexagono.setText("Hexagono");
+        btnHexagono.setFocusable(false);
+        btnHexagono.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnHexagono.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        barraDeHerramientas.add(btnHexagono);
+
         panelDeHerramientas.add(barraDeHerramientas);
 
         panelColor.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -246,7 +258,7 @@ public class PanelDeDibujo extends javax.swing.JPanel {
 
         panelDeHerramientas.add(panelColor);
 
-        add(panelDeHerramientas, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 405, -1));
+        add(panelDeHerramientas, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 490, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void botonDePrimerPlanoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonDePrimerPlanoActionPerformed
@@ -269,6 +281,7 @@ public class PanelDeDibujo extends javax.swing.JPanel {
     private javax.swing.JToolBar barraDeHerramientas;
     private javax.swing.JToggleButton botonDePrimerPlano;
     private javax.swing.JToggleButton botonDeSegundoPlano;
+    private javax.swing.JToggleButton btnHexagono;
     private javax.swing.JToggleButton btnLapiz;
     private javax.swing.JToggleButton btnLinea;
     private javax.swing.JToggleButton btnOvalo;
