@@ -5,6 +5,8 @@
  */
 package paint;
 
+import java.security.Principal;
+
 /**
  *
  * @author Misael Caceres
@@ -14,6 +16,9 @@ public class Paint {
      * @param args the command line arguments
      */
     public static void main(String args[]) {
+        VentanaPrincipal P = new VentanaPrincipal();
+        P.setVisible(true);
+        
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -43,5 +48,7 @@ public class Paint {
                 new VentanaPrincipal().setVisible(true);
             }
         });
+        
+        
     }
 }
