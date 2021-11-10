@@ -9,6 +9,7 @@ import figuras.Figura;
 import figuras.Linea;
 import figuras.Ovalo;
 import figuras.Rectangulo;
+import figuras.Rombo;
 import figuras.Triangulo;
 import java.awt.Color;
 import java.awt.Cursor;
@@ -82,8 +83,12 @@ public class PanelDeDibujo extends javax.swing.JPanel {
                 else if( btnOvalo.isSelected() )      {
                     figuraActual = new Ovalo( colorDePrimerPlano, evento.getPoint() );
                 }
+//               
                 else if( btnTriangulo.isSelected() ) {
                     figuraActual = new Triangulo( colorDePrimerPlano, evento.getPoint() );
+                }
+                else if( btnRombo.isSelected() ) {
+                    figuraActual = new Rombo( colorDePrimerPlano, evento.getPoint() );
                 }
                 else {
                     figuraActual = new DibujoLibre( colorDePrimerPlano, evento.getPoint() );  
@@ -151,7 +156,7 @@ public class PanelDeDibujo extends javax.swing.JPanel {
         btnLinea = new javax.swing.JToggleButton();
         btnRectangulo = new javax.swing.JToggleButton();
         btnOvalo = new javax.swing.JToggleButton();
-        btnEstrella = new javax.swing.JToggleButton();
+        btnRombo = new javax.swing.JToggleButton();
         btnTriangulo = new javax.swing.JToggleButton();
         panelColor = new javax.swing.JPanel();
         botonDePrimerPlano = new javax.swing.JToggleButton();
@@ -191,12 +196,12 @@ public class PanelDeDibujo extends javax.swing.JPanel {
         btnOvalo.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         barraDeHerramientas.add(btnOvalo);
 
-        buttonGroup1.add(btnEstrella);
-        btnEstrella.setText("Estrella");
-        btnEstrella.setFocusable(false);
-        btnEstrella.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        btnEstrella.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        barraDeHerramientas.add(btnEstrella);
+        buttonGroup1.add(btnRombo);
+        btnRombo.setText("Rombo");
+        btnRombo.setFocusable(false);
+        btnRombo.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnRombo.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        barraDeHerramientas.add(btnRombo);
 
         buttonGroup1.add(btnTriangulo);
         btnTriangulo.setText("Triangulo");
@@ -252,11 +257,11 @@ public class PanelDeDibujo extends javax.swing.JPanel {
     private javax.swing.JToolBar barraDeHerramientas;
     private javax.swing.JToggleButton botonDePrimerPlano;
     private javax.swing.JToggleButton botonDeSegundoPlano;
-    private javax.swing.JToggleButton btnEstrella;
     private javax.swing.JToggleButton btnLapiz;
     private javax.swing.JToggleButton btnLinea;
     private javax.swing.JToggleButton btnOvalo;
     private javax.swing.JToggleButton btnRectangulo;
+    private javax.swing.JToggleButton btnRombo;
     private javax.swing.JToggleButton btnTriangulo;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JPanel panelColor;
