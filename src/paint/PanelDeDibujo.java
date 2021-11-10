@@ -9,6 +9,7 @@ import figuras.Figura;
 import figuras.Linea;
 import figuras.Ovalo;
 import figuras.Rectangulo;
+import figuras.Triangulo;
 import java.awt.Color;
 import java.awt.Cursor;
 import java.awt.Graphics;
@@ -78,8 +79,11 @@ public class PanelDeDibujo extends javax.swing.JPanel {
                 else if( btnRectangulo.isSelected() ) {
                     figuraActual = new Rectangulo( colorDePrimerPlano, evento.getPoint() );
                 }
-                else if( btnOvalo.isSelected() ) {
+                else if( btnOvalo.isSelected() )      {
                     figuraActual = new Ovalo( colorDePrimerPlano, evento.getPoint() );
+                }
+                else if( btnTriangulo.isSelected() ) {
+                    figuraActual = new Triangulo( colorDePrimerPlano, evento.getPoint() );
                 }
                 else {
                     figuraActual = new DibujoLibre( colorDePrimerPlano, evento.getPoint() );  
@@ -153,7 +157,7 @@ public class PanelDeDibujo extends javax.swing.JPanel {
         botonDePrimerPlano = new javax.swing.JToggleButton();
         botonDeSegundoPlano = new javax.swing.JToggleButton();
 
-        setLayout(new java.awt.BorderLayout());
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         barraDeHerramientas.setFloatable(false);
         barraDeHerramientas.setRollover(true);
@@ -225,7 +229,7 @@ public class PanelDeDibujo extends javax.swing.JPanel {
 
         panelDeHerramientas.add(panelColor);
 
-        add(panelDeHerramientas, java.awt.BorderLayout.PAGE_START);
+        add(panelDeHerramientas, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 405, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void botonDePrimerPlanoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonDePrimerPlanoActionPerformed
