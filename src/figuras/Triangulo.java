@@ -22,14 +22,11 @@ public class Triangulo extends Rectangulo {
         super(color, puntoInicial);
     }
 
-    
-
     public void dibujar(Graphics g) {
         int x = this.anchura < 0 ? this.x + this.anchura : this.x;
         int y = this.altura < 0 ? this.y + this.altura : this.y;
         int anchura = Math.abs(this.anchura);
         int altura = Math.abs(this.altura);
-
         
         Point punto1 = new Point(x, y + altura); 
         Point punto2 = new Point(x + anchura/2, y);
@@ -40,16 +37,9 @@ public class Triangulo extends Rectangulo {
         g.setColor(Color.black);
         g.drawPolygon( new int []{ punto1.x, punto2.x, punto3.x}, new int []{ punto1.y, punto2.y, punto3.y}, 3 );
         
-        //rombo 
          punto1 = new Point(x, y + altura / 2); 
          punto2 = new Point(x + anchura/2, y);
          punto3 = new Point(x + anchura, y + altura / 2);
-         Point punto4 = new Point(x + anchura / 2, y + altura);
-         
-       
-        
-        
-      
-        
+         Point punto4 = new Point(x + anchura / 2, y + altura);   
     }
 }

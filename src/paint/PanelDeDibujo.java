@@ -94,14 +94,14 @@ public class PanelDeDibujo extends javax.swing.JPanel {
                     figuraActual = new DibujoLibre( colorDePrimerPlano, evento.getPoint() );  
                 }
                 
-                try {
-                    Image imagen = new ImageIcon(getClass().getResource("/imagenes/lapiz.png")).getImage();
-                    setCursor(Toolkit.getDefaultToolkit().createCustomCursor(imagen, new Point(0, 63), "custom cursor"));
-                } catch (Exception excepcion) {
-                    System.out.println("Ocurrio un error y no se pudo cargar la imagen");
-                    excepcion.printStackTrace();
-                }
-                
+//                try {
+//                    Image imagen = new ImageIcon(getClass().getResource("/imagenes/lapiz.png")).getImage();
+//                    setCursor(Toolkit.getDefaultToolkit().createCustomCursor(imagen, new Point(0, 63), "custom cursor"));
+//                } catch (Exception excepcion) {
+//                    System.out.println("Ocurrio un error y no se pudo cargar la imagen");
+//                    excepcion.printStackTrace();
+//                }
+//                
                 figuras.add(figuraActual );
                 repaint();
             }
