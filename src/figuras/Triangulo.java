@@ -35,7 +35,7 @@ public class Triangulo extends Rectangulo {
         Point punto2 = new Point(x + anchura/2, y);
         Point punto3 = new Point(x + anchura, y + altura);
         
-        g.setColor(Color.red);
+        g.setColor(Color.BLUE);
         g.fillPolygon( new int []{ punto1.x, punto2.x, punto3.x}, new int []{ punto1.y, punto2.y, punto3.y}, 3 );
         g.setColor(Color.black);
         g.drawPolygon( new int []{ punto1.x, punto2.x, punto3.x}, new int []{ punto1.y, punto2.y, punto3.y}, 3 );
@@ -46,16 +46,10 @@ public class Triangulo extends Rectangulo {
          punto3 = new Point(x + anchura, y + altura / 2);
          Point punto4 = new Point(x + anchura / 2, y + altura);
          
-        g.setColor(Color.black);
-        g.drawPolygon( new int []{ punto1.x, punto2.x, punto3.x, punto4.x}, new int []{ punto1.y, punto2.y, punto3.y, punto4.y}, 4 );
+       
         
         
-        //pentagono
-        punto4 = new Point( (int)(x + anchura * 0.8), y+ altura);
-        Point punto5 = new Point( (int)(x + anchura * 0.2), y+ altura);
-        
-        g.setColor(Color.black);
-        g.drawPolygon( new int []{ punto1.x, punto2.x, punto3.x, punto4.x, punto5.x}, new int []{ punto1.y, punto2.y, punto3.y, punto4.y, punto5.y}, 5 );
+      
         
     }
 }
