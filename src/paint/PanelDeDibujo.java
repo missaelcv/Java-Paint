@@ -8,6 +8,7 @@ import figuras.DibujoLibre;
 import figuras.Figura;
 import figuras.Linea;
 import figuras.Ovalo;
+import figuras.Pentagono;
 import figuras.Rectangulo;
 import figuras.Rombo;
 import figuras.Triangulo;
@@ -83,13 +84,16 @@ public class PanelDeDibujo extends javax.swing.JPanel {
                 else if( btnOvalo.isSelected() )      {
                     figuraActual = new Ovalo( colorDePrimerPlano, evento.getPoint() );
                 }
-//               
                 else if( btnTriangulo.isSelected() ) {
                     figuraActual = new Triangulo( colorDePrimerPlano, evento.getPoint() );
                 }
                 else if( btnRombo.isSelected() ) {
                     figuraActual = new Rombo( colorDePrimerPlano, evento.getPoint() );
                 }
+                else if( btnPentagono.isSelected() ) {
+                    figuraActual = new Pentagono( colorDePrimerPlano, evento.getPoint() );
+                }
+                 
                 else {
                     figuraActual = new DibujoLibre( colorDePrimerPlano, evento.getPoint() );  
                 }
@@ -158,6 +162,7 @@ public class PanelDeDibujo extends javax.swing.JPanel {
         btnOvalo = new javax.swing.JToggleButton();
         btnRombo = new javax.swing.JToggleButton();
         btnTriangulo = new javax.swing.JToggleButton();
+        btnPentagono = new javax.swing.JToggleButton();
         panelColor = new javax.swing.JPanel();
         botonDePrimerPlano = new javax.swing.JToggleButton();
         botonDeSegundoPlano = new javax.swing.JToggleButton();
@@ -210,6 +215,13 @@ public class PanelDeDibujo extends javax.swing.JPanel {
         btnTriangulo.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         barraDeHerramientas.add(btnTriangulo);
 
+        buttonGroup1.add(btnPentagono);
+        btnPentagono.setText("Pentagono");
+        btnPentagono.setFocusable(false);
+        btnPentagono.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnPentagono.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        barraDeHerramientas.add(btnPentagono);
+
         panelDeHerramientas.add(barraDeHerramientas);
 
         panelColor.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -260,6 +272,7 @@ public class PanelDeDibujo extends javax.swing.JPanel {
     private javax.swing.JToggleButton btnLapiz;
     private javax.swing.JToggleButton btnLinea;
     private javax.swing.JToggleButton btnOvalo;
+    private javax.swing.JToggleButton btnPentagono;
     private javax.swing.JToggleButton btnRectangulo;
     private javax.swing.JToggleButton btnRombo;
     private javax.swing.JToggleButton btnTriangulo;
