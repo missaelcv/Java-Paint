@@ -39,7 +39,7 @@ public class Pentagono extends Rectangulo {
          Point punto4 = new Point(x + anchura / 2, y + altura);
          
         g.setColor(Color.BLUE);
-        punto4 = new Point( (int)(x + anchura * 0.8), y+ altura);
+        punto4 = new Point( (int)(x + anchura * 0.7), y+ altura);
         Point punto5 = new Point( (int)(x + anchura * 0.3), y + altura);
         
         g.setColor(Color.BLUE);
