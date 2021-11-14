@@ -27,13 +27,24 @@ public class Octagono extends Rectangulo {
          
         Point punto1 = new Point( (int)(x + anchura * 0.3), y);
         Point punto2 = new Point( (int)(x + anchura * 0.7), y);
+        
         Point punto3 = new Point(x + anchura, y + altura / 2);
-        Point punto4 = new Point( (int)(x + anchura * 0.7), y+ altura); //
+        Point punto4 = new Point( (int)(x + anchura * 0.7), y+ altura); 
+        
         Point punto5 = new Point( (int)(x + anchura * 0.3), y+ altura);
         Point punto6 = new Point(x , y + altura / 2);
-         
+        Point punto7 = new Point( (int)(x + anchura * 0.3), y+ altura);
+        Point punto8 = new Point(x , y + altura / 2);
+        
+        
+//        Point punto7 = new Point(x + anchura, y + altura / 2);
+//        Point punto8 = new Point(x , y + altura / 2);
+        
+       // float area = (float) (2 * (1 + Math.sqrt(2)) * side * side);
+        
         g.setColor(Color.BLUE);
-        g.drawPolygon( new int []{ punto1.x, punto2.x, punto3.x, punto4.x, punto5.x, punto6.x}, new int []{ punto1.y, punto2.y, punto3.y, punto4.y, punto5.y, punto6.y}, 6 );
+        g.drawPolygon( new int []{ punto1.x, punto2.x, punto3.x, punto4.x, punto5.x, punto6.x, punto7.x, punto8.x},
+                       new int []{ punto1.y, punto2.y, punto3.y, punto4.y, punto5.y, punto6.y, punto7.y, punto8.y}, 8 );
     }
 }
 
