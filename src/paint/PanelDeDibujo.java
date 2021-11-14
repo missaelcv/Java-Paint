@@ -97,6 +97,9 @@ public class PanelDeDibujo extends javax.swing.JPanel {
                 else if( btnHexagono.isSelected() ) {
                     figuraActual = new Hexagono( colorDePrimerPlano, evento.getPoint() );
                 }
+                else if( btnOctagono.isSelected() ) {
+                    figuraActual = new Octagono( colorDePrimerPlano, evento.getPoint() );
+                }
                  
                 else {
                     figuraActual = new DibujoLibre( colorDePrimerPlano, evento.getPoint() );  
@@ -168,6 +171,7 @@ public class PanelDeDibujo extends javax.swing.JPanel {
         btnTriangulo = new javax.swing.JToggleButton();
         btnPentagono = new javax.swing.JToggleButton();
         btnHexagono = new javax.swing.JToggleButton();
+        btnOctagono = new javax.swing.JToggleButton();
         panelColor = new javax.swing.JPanel();
         botonDePrimerPlano = new javax.swing.JToggleButton();
         botonDeSegundoPlano = new javax.swing.JToggleButton();
@@ -234,6 +238,13 @@ public class PanelDeDibujo extends javax.swing.JPanel {
         btnHexagono.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         barraDeHerramientas.add(btnHexagono);
 
+        buttonGroup1.add(btnOctagono);
+        btnOctagono.setText("Octagono");
+        btnOctagono.setFocusable(false);
+        btnOctagono.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnOctagono.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        barraDeHerramientas.add(btnOctagono);
+
         panelDeHerramientas.add(barraDeHerramientas);
 
         panelColor.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -284,6 +295,7 @@ public class PanelDeDibujo extends javax.swing.JPanel {
     private javax.swing.JToggleButton btnHexagono;
     private javax.swing.JToggleButton btnLapiz;
     private javax.swing.JToggleButton btnLinea;
+    private javax.swing.JToggleButton btnOctagono;
     private javax.swing.JToggleButton btnOvalo;
     private javax.swing.JToggleButton btnPentagono;
     private javax.swing.JToggleButton btnRectangulo;
