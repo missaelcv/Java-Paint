@@ -5,10 +5,15 @@
  */
 package figuras;
 
+import java.awt.Color;
+import java.awt.Point;
+
 /**
  *
  * @author Misael Caceres
  */
 public class Octagono {
+
+    
     
 }

@@ -8,6 +8,7 @@ import figuras.DibujoLibre;
 import figuras.Figura;
 import figuras.Hexagono;
 import figuras.Linea;
+import figuras.Octagono;
 import figuras.Ovalo;
 import figuras.Pentagono;
 import figuras.Rectangulo;
