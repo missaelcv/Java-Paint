@@ -12,7 +12,11 @@ import java.awt.Point;
  *
  * @author Misael Caceres
  */
-public class Octagono {
+public class Octagono extends Rectangulo {
+
+    public Octagono(Color color, Point puntoInicial) {
+        super(color, puntoInicial);
+    }
 
     
     
