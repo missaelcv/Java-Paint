@@ -33,8 +33,8 @@ public class Octagono extends Rectangulo {
         
         Point punto5 = new Point( (int)(x + anchura * 0.3), y+ altura);
         Point punto6 = new Point(x , y + altura / 2);
-        Point punto7 = new Point( (int)(x + anchura * 0.3), y+ altura);
-        Point punto8 = new Point(x , y + altura / 2);
+        Point punto7 = new Point( (int)(x + anchura), y);
+        Point punto8 = new Point( (int)(y + anchura), x);
         
         
 //        Point punto7 = new Point(x + anchura, y + altura / 2);
