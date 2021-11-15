@@ -8,7 +8,7 @@ import figuras.DibujoLibre;
 import figuras.Figura;
 import figuras.Hexagono;
 import figuras.Linea;
-import figuras.Octagono;
+import figuras.Trapecio;
 import figuras.Ovalo;
 import figuras.Pentagono;
 import figuras.Rectangulo;
@@ -98,8 +98,8 @@ public class PanelDeDibujo extends javax.swing.JPanel {
                 else if( btnHexagono.isSelected() ) {
                     figuraActual = new Hexagono( colorDePrimerPlano, evento.getPoint() );
                 }
-                else if( btnOctagono.isSelected() ) {
-                    figuraActual = new Octagono( colorDePrimerPlano, evento.getPoint() );
+                else if( btnTrapecio.isSelected() ) {
+                    figuraActual = new Trapecio( colorDePrimerPlano, evento.getPoint() );
                 }
                  
                 else {
@@ -172,7 +172,7 @@ public class PanelDeDibujo extends javax.swing.JPanel {
         btnTriangulo = new javax.swing.JToggleButton();
         btnPentagono = new javax.swing.JToggleButton();
         btnHexagono = new javax.swing.JToggleButton();
-        btnOctagono = new javax.swing.JToggleButton();
+        btnTrapecio = new javax.swing.JToggleButton();
         panelColor = new javax.swing.JPanel();
         botonDePrimerPlano = new javax.swing.JToggleButton();
         botonDeSegundoPlano = new javax.swing.JToggleButton();
@@ -239,12 +239,12 @@ public class PanelDeDibujo extends javax.swing.JPanel {
         btnHexagono.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         barraDeHerramientas.add(btnHexagono);
 
-        buttonGroup1.add(btnOctagono);
-        btnOctagono.setText("Octagono");
-        btnOctagono.setFocusable(false);
-        btnOctagono.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        btnOctagono.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        barraDeHerramientas.add(btnOctagono);
+        buttonGroup1.add(btnTrapecio);
+        btnTrapecio.setText("Trapecio");
+        btnTrapecio.setFocusable(false);
+        btnTrapecio.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnTrapecio.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        barraDeHerramientas.add(btnTrapecio);
 
         panelDeHerramientas.add(barraDeHerramientas);
 
@@ -296,11 +296,11 @@ public class PanelDeDibujo extends javax.swing.JPanel {
     private javax.swing.JToggleButton btnHexagono;
     private javax.swing.JToggleButton btnLapiz;
     private javax.swing.JToggleButton btnLinea;
-    private javax.swing.JToggleButton btnOctagono;
     private javax.swing.JToggleButton btnOvalo;
     private javax.swing.JToggleButton btnPentagono;
     private javax.swing.JToggleButton btnRectangulo;
     private javax.swing.JToggleButton btnRombo;
+    private javax.swing.JToggleButton btnTrapecio;
     private javax.swing.JToggleButton btnTriangulo;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JPanel panelColor;
