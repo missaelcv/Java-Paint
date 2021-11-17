@@ -29,6 +29,7 @@ public class Trapezoide extends Rectangulo{
        Point punto2 = new Point(x + anchura/2, y);
        Point punto1 = new Point(x, y + altura / 2); 
        
+       
         g.setColor(Color.BLUE);
         g.drawPolygon( new int []{ punto1.x, punto2.x, punto3.x, punto4.x},
                        new int []{ punto1.y, punto2.y, punto3.y, punto4.y}, 4 );
