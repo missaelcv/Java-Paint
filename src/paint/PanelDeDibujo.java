@@ -187,6 +187,11 @@ public class PanelDeDibujo extends javax.swing.JPanel {
         botonDePrimerPlano = new javax.swing.JToggleButton();
         botonDeSegundoPlano = new javax.swing.JToggleButton();
 
+        setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        setFocusable(false);
+        setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        setMinimumSize(new java.awt.Dimension(580, 100));
+        setPreferredSize(new java.awt.Dimension(650, 200));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         barraDeHerramientas.setFloatable(false);
