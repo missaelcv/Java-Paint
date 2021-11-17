@@ -5,10 +5,17 @@
  */
 package figuras;
 
+import java.awt.Color;
+import java.awt.Point;
+
 /**
  *
  * @author Misael Caceres
  */
-public class Deltoide {
+public class Deltoide extends Rectangulo {
+    
+    public Deltoide(Color color, Point puntoInicial) {
+        super(color, puntoInicial);
+    }
     
 }
