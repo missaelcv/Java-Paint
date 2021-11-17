@@ -27,22 +27,8 @@ public class Trapecio extends Rectangulo {
          
         Point punto3 = new Point( (int)(x + anchura * 0.3), y);
         Point punto2 = new Point( (int)(x + anchura * 0.7), y);
-        
         Point punto1 = new Point(x + anchura, y + altura / 2);
         Point punto4 = new Point(x , y + altura / 2); 
-        
-       
-//         Point punto1 = new Point( (int)(x + anchura * 0.3), y);
-//        Point punto2 = new Point( (int)(x + anchura * 0.7), y);
-//        
-//        Point punto3 = new Point(x + anchura, y + altura / 2);
-//        Point punto4 = new Point( (int)(x + anchura * 0.7), y+ altura); 
-//        
-//        
-//        Point punto7 = new Point(x + anchura, y + altura / 2);
-//        Point punto8 = new Point(x , y + altura / 2);
-        
-       // float area = (float) (2 * (1 + Math.sqrt(2)) * side * side);
         
         g.setColor(Color.BLUE);
         g.drawPolygon( new int []{ punto1.x, punto2.x, punto3.x, punto4.x},

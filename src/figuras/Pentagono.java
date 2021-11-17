@@ -28,22 +28,19 @@ public class Pentagono extends Rectangulo {
         int y = this.altura < 0 ? this.y + this.altura : this.y;
         int anchura = Math.abs(this.anchura);
         int altura = Math.abs(this.altura);
-
-        Point punto1 = new Point(x, y + altura); 
-        Point punto2 = new Point(x + anchura/2, y);
-        Point punto3 = new Point(x + anchura, y + altura);
          
-         punto1 = new Point(x, y + altura / 2); 
-         punto2 = new Point(x + anchura/2, y);
-         punto3 = new Point(x + anchura, y + altura / 2);
-         Point punto4 = new Point(x + anchura / 2, y + altura);
+        Point punto1 = new Point(x, y + altura / 2); 
+        Point punto2 = new Point(x + anchura/2, y);
+        Point punto3 = new Point(x + anchura, y + altura / 2);
+        Point punto4 = new Point(x + anchura / 2, y + altura);
          
         g.setColor(Color.BLUE);
         punto4 = new Point( (int)(x + anchura * 0.7), y+ altura);
         Point punto5 = new Point( (int)(x + anchura * 0.3), y + altura);
         
         g.setColor(Color.BLUE);
-        g.drawPolygon( new int []{ punto1.x, punto2.x, punto3.x, punto4.x, punto5.x}, new int []{ punto1.y, punto2.y, punto3.y, punto4.y, punto5.y}, 5 );
+        g.drawPolygon( new int []{ punto1.x, punto2.x, punto3.x, punto4.x, punto5.x}, 
+                new int []{ punto1.y, punto2.y, punto3.y, punto4.y, punto5.y}, 5 );
     }
 }
 
