@@ -14,6 +14,7 @@ import figuras.Ovalo;
 import figuras.Pentagono;
 import figuras.Rectangulo;
 import figuras.Rombo;
+import figuras.Trapezoide;
 import figuras.Triangulo;
 import java.awt.Color;
 import java.awt.Cursor;
@@ -105,6 +106,9 @@ public class PanelDeDibujo extends javax.swing.JPanel {
                  else if( btnDeltoide.isSelected() ) {
                     figuraActual = new Deltoide( colorDePrimerPlano, evento.getPoint() );
                 }
+                  else if( btnTrapezoide.isSelected() ) {
+                    figuraActual = new Trapezoide( colorDePrimerPlano, evento.getPoint() );
+                }
                  
                 else {
                     figuraActual = new DibujoLibre( colorDePrimerPlano, evento.getPoint() );  
@@ -178,6 +182,7 @@ public class PanelDeDibujo extends javax.swing.JPanel {
         btnHexagono = new javax.swing.JToggleButton();
         btnTrapecio = new javax.swing.JToggleButton();
         btnDeltoide = new javax.swing.JToggleButton();
+        btnTrapezoide = new javax.swing.JToggleButton();
         panelColor = new javax.swing.JPanel();
         botonDePrimerPlano = new javax.swing.JToggleButton();
         botonDeSegundoPlano = new javax.swing.JToggleButton();
@@ -263,6 +268,18 @@ public class PanelDeDibujo extends javax.swing.JPanel {
         });
         barraDeHerramientas.add(btnDeltoide);
 
+        buttonGroup1.add(btnTrapezoide);
+        btnTrapezoide.setText("Trapezoide");
+        btnTrapezoide.setFocusable(false);
+        btnTrapezoide.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnTrapezoide.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        btnTrapezoide.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnTrapezoideActionPerformed(evt);
+            }
+        });
+        barraDeHerramientas.add(btnTrapezoide);
+
         panelDeHerramientas.add(barraDeHerramientas);
 
         panelColor.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -287,7 +304,7 @@ public class PanelDeDibujo extends javax.swing.JPanel {
 
         panelDeHerramientas.add(panelColor);
 
-        add(panelDeHerramientas, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 520, 90));
+        add(panelDeHerramientas, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 560, 90));
     }// </editor-fold>//GEN-END:initComponents
 
     private void botonDePrimerPlanoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonDePrimerPlanoActionPerformed
@@ -310,6 +327,10 @@ public class PanelDeDibujo extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnDeltoideActionPerformed
 
+    private void btnTrapezoideActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTrapezoideActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnTrapezoideActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JToolBar barraDeHerramientas;
     private javax.swing.JToggleButton botonDePrimerPlano;
@@ -323,6 +344,7 @@ public class PanelDeDibujo extends javax.swing.JPanel {
     private javax.swing.JToggleButton btnRectangulo;
     private javax.swing.JToggleButton btnRombo;
     private javax.swing.JToggleButton btnTrapecio;
+    private javax.swing.JToggleButton btnTrapezoide;
     private javax.swing.JToggleButton btnTriangulo;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JPanel panelColor;
