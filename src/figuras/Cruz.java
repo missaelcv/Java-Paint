@@ -20,12 +20,16 @@ public class Cruz extends Figura{
     int anchura;
     int altura;
 
-    public Cruz(Color color, Color color2, Boolean R, Point puntoInicial) {
+     public Cruz(Color color, Color color2, Boolean R, Point puntoInicial) {
         super(color, color2, R);
         this.x = puntoInicial.x;
         this.y = puntoInicial.y;
         this.anchura = 1;
         this.altura = 1;
+    }
+
+    public Cruz(Color colorDePrimerPlano, Point point) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     public void actualizar(Point puntoActual) {
