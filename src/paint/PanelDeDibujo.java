@@ -183,6 +183,7 @@ public class PanelDeDibujo extends javax.swing.JPanel {
         btnTrapecio = new javax.swing.JToggleButton();
         btnDeltoide = new javax.swing.JToggleButton();
         btnTrapezoide = new javax.swing.JToggleButton();
+        btnCruz = new javax.swing.JToggleButton();
         panelColor = new javax.swing.JPanel();
         botonDePrimerPlano = new javax.swing.JToggleButton();
         botonDeSegundoPlano = new javax.swing.JToggleButton();
@@ -285,6 +286,18 @@ public class PanelDeDibujo extends javax.swing.JPanel {
         });
         barraDeHerramientas.add(btnTrapezoide);
 
+        buttonGroup1.add(btnCruz);
+        btnCruz.setText("Cruz");
+        btnCruz.setFocusable(false);
+        btnCruz.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnCruz.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        btnCruz.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCruzActionPerformed(evt);
+            }
+        });
+        barraDeHerramientas.add(btnCruz);
+
         panelDeHerramientas.add(barraDeHerramientas);
 
         panelColor.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -309,7 +322,7 @@ public class PanelDeDibujo extends javax.swing.JPanel {
 
         panelDeHerramientas.add(panelColor);
 
-        add(panelDeHerramientas, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 560, 90));
+        add(panelDeHerramientas, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 600, 90));
     }// </editor-fold>//GEN-END:initComponents
 
     private void botonDePrimerPlanoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonDePrimerPlanoActionPerformed
@@ -336,10 +349,15 @@ public class PanelDeDibujo extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnTrapezoideActionPerformed
 
+    private void btnCruzActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCruzActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnCruzActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JToolBar barraDeHerramientas;
     private javax.swing.JToggleButton botonDePrimerPlano;
     private javax.swing.JToggleButton botonDeSegundoPlano;
+    private javax.swing.JToggleButton btnCruz;
     private javax.swing.JToggleButton btnDeltoide;
     private javax.swing.JToggleButton btnHexagono;
     private javax.swing.JToggleButton btnLapiz;
