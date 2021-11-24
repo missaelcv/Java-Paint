@@ -42,6 +42,5 @@ public class Rectangulo extends Figura{
         }
         g.setColor(getColorDePrimerPlano());
         g.drawRect(x, y, Math.abs(anchura), Math.abs(altura));
-
     }
 }

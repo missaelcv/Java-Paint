@@ -4,6 +4,7 @@
  */
 package paint;
 
+import figuras.Cruz;
 import figuras.Deltoide;
 import figuras.DibujoLibre;
 import figuras.Figura;
@@ -108,6 +109,9 @@ public class PanelDeDibujo extends javax.swing.JPanel {
                 }
                   else if( btnTrapezoide.isSelected() ) {
                     figuraActual = new Trapezoide( colorDePrimerPlano, evento.getPoint() );
+                }
+                    else if( btnCruz.isSelected() ) {
+                    figuraActual = new Cruz( colorDePrimerPlano, evento.getPoint() );
                 }
                  
                 else {
