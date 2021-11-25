@@ -1,35 +1,23 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package figuras;
 
-import java.awt.Color;
-import java.awt.Graphics;
-import java.awt.Point;
+import java.awt.*;
+import java.awt.image.BufferedImage;
+import java.io.*;
+import javax.imageio.ImageIO;
 
-/**
- *
- * @author Misael Caceres
- */
-public class Cruz extends Figura{
-    
-     int x;
+public class Cruz extends Figura {
+
+    int x;
     int y;
     int anchura;
     int altura;
 
-     public Cruz(Color color, Color color2, Boolean R, Point puntoInicial) {
+    public Cruz(Color color, Color color2, Boolean R, Point puntoInicial) {
         super(color, color2, R);
         this.x = puntoInicial.x;
         this.y = puntoInicial.y;
         this.anchura = 1;
         this.altura = 1;
-    }
-
-    public Cruz(Color colorDePrimerPlano, Point point) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     public void actualizar(Point puntoActual) {
@@ -63,6 +51,8 @@ public class Cruz extends Figura{
 
         g.setColor(getColorDePrimerPlano());
         g.drawPolygon(new int[]{punto1.x, punto2.x, punto3.x, punto4.x, punto5.x, punto6.x, punto7.x, punto8.x, punto9.x, punto10.x, punto11.x, punto12.x}, new int[]{punto1.y, punto2.y, punto3.y, punto4.y, punto5.y, punto6.y, punto7.y, punto8.y, punto9.y, punto10.y, punto11.y, punto12.y}, 12);
+
+
+
     }
 }
-

@@ -1,18 +1,9 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package figuras;
 
-import java.awt.Color;
-import java.awt.Graphics;
-import java.awt.Point;
+import java.awt.*;
 
-/**
- *
- * @author josearielpereyra
- */
-public class Rectangulo extends Figura{
+public class Rectangulo extends Figura {
+
     int x;
     int y;
     int anchura;
@@ -42,5 +33,6 @@ public class Rectangulo extends Figura{
         }
         g.setColor(getColorDePrimerPlano());
         g.drawRect(x, y, Math.abs(anchura), Math.abs(altura));
+
     }
 }
