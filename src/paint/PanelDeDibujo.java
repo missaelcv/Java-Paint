@@ -117,7 +117,6 @@ public class PanelDeDibujo extends javax.swing.JPanel {
                     figuraActual = new Pic(colorDePrimerPlano, colorDeSegundoPlano, R, evento.getPoint());
                 } else {
                     figuraActual = new DibujoLibre(colorDePrimerPlano, colorDeSegundoPlano, R, evento.getPoint());
-
                 }
 
                 figuras.add(figuraActual);
@@ -155,20 +154,6 @@ public class PanelDeDibujo extends javax.swing.JPanel {
 
         g.setColor(Color.blue);
 
-        /*int distancia = 20;
-        int total = 0;
-        for (int y = distancia * 2; y < getHeight() && total < 27; y += distancia) {
-            total++;
-            g.drawString("" + total, 0, y);
-            g.drawLine(10, y, getWidth() - 10, y);
-        }
-
-        g.setColor(Color.RED);
-        g.drawLine(distancia * 2, 0, distancia * 2, getHeight());
-
-        for (Figura figura : figuras) {
-            figura.dibujar(g);
-        }*/
         int distancia = 20;
         int total = 0;
         for (int y = distancia; y < getHeight(); y += distancia) {
@@ -186,9 +171,7 @@ public class PanelDeDibujo extends javax.swing.JPanel {
 
         for (Figura figura : figuras) {
             figura.dibujar(g);
-
         }
-
     }
 
     /**
