@@ -127,8 +127,7 @@ public class PanelDeDibujo extends javax.swing.JPanel {
             public void mouseEntered(MouseEvent e) {
                 try {
                     Image imagen = new ImageIcon(getClass().getResource("/imagenes/lapiz2.png")).getImage();
-//                    System.out.println("Anchura: " + imagen.getWidth(PanelDeDibujo.this));
-//                    System.out.println("Altura: " + imagen.getHeight(PanelDeDibujo.this));
+
                     setCursor(Toolkit.getDefaultToolkit().createCustomCursor(imagen, new Point(0, 31), "custom cursor"));
                 } catch (Exception excepcion) {
                     System.out.println("Ocurrio un error y no se pudo cargar la imagen");
