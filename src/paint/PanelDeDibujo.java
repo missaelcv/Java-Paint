@@ -1062,7 +1062,11 @@ public class PanelDeDibujo extends javax.swing.JPanel {
     }//GEN-LAST:event_btnPicActionPerformed
 
     private void btnBotePinturaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBotePinturaActionPerformed
-        // TODO add your handling code here:
+          Color color = JColorChooser.showDialog(this, "Seleccione El color de relleno", colorDePrimerPlano);
+        if (color != null) {
+            colorDePrimerPlano = color;
+            botonDePrimerPlano.setBackground(color);
+        }
     }//GEN-LAST:event_btnBotePinturaActionPerformed
 
     private void btnCirculoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCirculoActionPerformed
