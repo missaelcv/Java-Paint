@@ -1,19 +1,16 @@
 package figuras;
 
 import java.awt.*;
-import java.awt.image.BufferedImage;
-import java.io.*;
-import javax.imageio.ImageIO;
 
-public class Cruz extends Figura {
+public class Cruz extends FiguraRellenable {
 
     int x;
     int y;
     int anchura;
     int altura;
 
-    public Cruz(Color color, Color color2, Boolean R, Point puntoInicial) {
-        super(color, color2, R);
+    public Cruz(Color color, Color color2, Boolean relleno, Point puntoInicial) {
+        super(color, color2, relleno);
         this.x = puntoInicial.x;
         this.y = puntoInicial.y;
         this.anchura = 1;
@@ -44,15 +41,13 @@ public class Cruz extends Figura {
         Point punto11 = new Point((int) (x + anchura * 0.33), (int) (y + altura * 0.66));
         Point punto12 = new Point(x, (int) (y + altura * 0.66));
 
-        if (getR()) {
+        if (getRelleno()) {
             g.setColor(getColorDeSegundoPlano());
             g.fillPolygon(new int[]{punto1.x, punto2.x, punto3.x, punto4.x, punto5.x, punto6.x, punto7.x, punto8.x, punto9.x, punto10.x, punto11.x, punto12.x}, new int[]{punto1.y, punto2.y, punto3.y, punto4.y, punto5.y, punto6.y, punto7.y, punto8.y, punto9.y, punto10.y, punto11.y, punto12.y}, 12);
         }
 
         g.setColor(getColorDePrimerPlano());
         g.drawPolygon(new int[]{punto1.x, punto2.x, punto3.x, punto4.x, punto5.x, punto6.x, punto7.x, punto8.x, punto9.x, punto10.x, punto11.x, punto12.x}, new int[]{punto1.y, punto2.y, punto3.y, punto4.y, punto5.y, punto6.y, punto7.y, punto8.y, punto9.y, punto10.y, punto11.y, punto12.y}, 12);
-
-
 
     }
 }

@@ -2,15 +2,15 @@ package figuras;
 
 import java.awt.*;
 
-public class Ovalo extends Figura {
+public class Ovalo extends FiguraRellenable {
 
     int x;
     int y;
     int anchura;
     int altura;
 
-    public Ovalo(Color color, Color color2, Boolean R, Point puntoInicial) {
-        super(color, color2, R);
+    public Ovalo(Color color, Color color2, Boolean relleno, Point puntoInicial) {
+        super(color, color2, relleno);
         this.x = puntoInicial.x;
         this.y = puntoInicial.y;
         this.anchura = 1;
@@ -27,7 +27,7 @@ public class Ovalo extends Figura {
         int x = (this.anchura < 0) ? this.x + anchura : this.x;
         int y = (this.altura < 0) ? this.y + altura : this.y;
 
-        if (getR()) {
+        if (getRelleno()) {
             g.setColor(getColorDeSegundoPlano());
             g.fillOval(x, y, Math.abs(anchura), Math.abs(altura));
         }

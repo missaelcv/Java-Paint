@@ -2,15 +2,15 @@ package figuras;
 
 import java.awt.*;
 
-public class Ring extends Figura {
+public class Ring extends FiguraRellenable {
 
     int x;
     int y;
     int anchura;
     int altura;
 
-    public Ring(Color color, Color color2, Boolean R, Point puntoInicial) {
-        super(color, color2, R);
+    public Ring(Color color, Color color2, Boolean relleno, Point puntoInicial) {
+        super(color, color2, relleno);
         this.x = puntoInicial.x;
         this.y = puntoInicial.y;
         this.anchura = 1;

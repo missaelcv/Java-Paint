@@ -5,29 +5,9 @@ import java.awt.*;
 public abstract class Figura {
 
     private Color colorDePrimerPlano;
-    private Color colorDeSegundoPlano;
-    private Boolean R;
 
-    Figura(Color colorDePrimerPlano, Color colorDeSegundoPlano, Boolean R) {
+    Figura(Color colorDePrimerPlano) {
         this.colorDePrimerPlano = colorDePrimerPlano;
-        this.R = R;
-        this.colorDeSegundoPlano = colorDeSegundoPlano;
-    }
-
-    public Color getColorDeSegundoPlano() {
-        return colorDeSegundoPlano;
-    }
-
-    public void setColorDeSegundoPlano(Color colorDeSegundoPlano) {
-        this.colorDeSegundoPlano = colorDeSegundoPlano;
-    }
-
-    public Boolean getR() {
-        return R;
-    }
-
-    public void setR(Boolean R) {
-        this.R = R;
     }
 
     public abstract void actualizar(Point puntoFinal);

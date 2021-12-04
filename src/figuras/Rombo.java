@@ -2,15 +2,15 @@ package figuras;
 
 import java.awt.*;
 
-public class Rombo extends Figura {
+public class Rombo extends FiguraRellenable {
 
     int x;
     int y;
     int anchura;
     int altura;
 
-    public Rombo(Color color, Color color2, Boolean R, Point puntoInicial) {
-        super(color, color2, R);
+    public Rombo(Color color, Color color2, Boolean relleno, Point puntoInicial) {
+        super(color, color2, relleno);
         this.x = puntoInicial.x;
         this.y = puntoInicial.y;
         this.anchura = 1;
@@ -33,7 +33,7 @@ public class Rombo extends Figura {
         Point punto3 = new Point(x + anchura, y + altura / 2);
         Point punto4 = new Point(x + anchura / 2, y + altura);
 
-        if (getR()) {
+        if (getRelleno()) {
             g.setColor(getColorDeSegundoPlano());
             g.fillPolygon(new int[]{punto1.x, punto2.x, punto3.x, punto4.x}, new int[]{punto1.y, punto2.y, punto3.y, punto4.y}, 4);
         }

@@ -7,14 +7,14 @@ public class Linea extends Figura {
     Point puntoInicial;
     Point puntoFinal;
 
-    public Linea(Color color,Color color2, Boolean R, Point puntoInicial, Point puntoFinal) {
-        super(color,color2, R);
+    public Linea(Color color, Point puntoInicial, Point puntoFinal) {
+        super(color);
         this.puntoInicial = puntoInicial;
         this.puntoFinal = puntoFinal;
     }
 
-    public Linea(Color color,Color color2, Boolean R, Point puntoInicial) {
-        this(color,color2, R, puntoInicial, puntoInicial);
+    public Linea(Color color, Point puntoInicial) {
+        this(color, puntoInicial, puntoInicial);
     }
 
     public void actualizar(Point puntoFinal) {

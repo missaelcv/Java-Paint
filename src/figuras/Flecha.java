@@ -2,15 +2,15 @@ package figuras;
 
 import java.awt.*;
 
-public class Flecha extends Figura {
+public class Flecha extends FiguraRellenable {
 
     int x;
     int y;
     int anchura;
     int altura;
 
-    public Flecha(Color color, Color color2, Boolean R, Point puntoInicial) {
-        super(color, color2, R);
+    public Flecha(Color color, Color color2, Boolean relleno, Point puntoInicial) {
+        super(color, color2, relleno);
         this.x = puntoInicial.x;
         this.y = puntoInicial.y;
         this.anchura = 1;
@@ -28,15 +28,15 @@ public class Flecha extends Figura {
         int anchura = Math.abs(this.anchura);
         int altura = Math.abs(this.altura);
 
-        Point punto1 = new Point(x, y);
-        Point punto2 = new Point((int) (x + (anchura * 0.80)), y);
-        Point punto3 = new Point((int) (x + (anchura * 0.80)), (int) (y + altura * 0.40));
-        Point punto4 = new Point((int) (x + anchura), (int) (y - (altura * 0.30)));
-        Point punto5 = new Point((int) (x + (anchura * 0.80)), (int) (y - altura));
-        Point punto6 = new Point((int) (x + (anchura * 0.80)), (int) (y - altura * 0.50));
-        Point punto7 = new Point((int) (x), (int) (y - altura * 0.50));
+        Point punto1 = new Point((int) (x + anchura * 0.7), y);
+        Point punto2 = new Point((int) (x + anchura), y + altura / 2);
+        Point punto3 = new Point((int) (x + anchura * 0.7), y + altura);
+        Point punto4 = new Point((int) (x + anchura * 0.7), (int) (y + altura * 0.6));
+        Point punto5 = new Point((int) (x), (int) (y + altura * 0.6));
+        Point punto6 = new Point((int) (x), (int) (y + altura * 0.3));
+        Point punto7 = new Point((int) (x + anchura * 0.7), (int) (y + altura * 0.3));
 
-        if (getR()) {
+        if (getRelleno()) {
             g.setColor(getColorDeSegundoPlano());
             g.fillPolygon(new int[]{punto1.x, punto2.x, punto3.x, punto4.x, punto5.x, punto6.x, punto7.x}, new int[]{punto1.y, punto2.y, punto3.y, punto4.y, punto5.y, punto6.y, punto7.y}, 7);
         }

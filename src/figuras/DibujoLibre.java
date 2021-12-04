@@ -7,8 +7,8 @@ public class DibujoLibre extends Figura {
 
     ArrayList<Point> puntos;
 
-    public DibujoLibre(Color color,Color color2, Boolean R, Point puntoActual) {
-        super(color,color2, R);
+    public DibujoLibre(Color color, Point puntoActual) {
+        super(color);
         puntos = new ArrayList<>();
         puntos.add(puntoActual);
     }

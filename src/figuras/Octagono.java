@@ -2,15 +2,15 @@ package figuras;
 
 import java.awt.*;
 
-public class Octagono extends Figura {
+public class Octagono extends FiguraRellenable {
 
     int x;
     int y;
     int anchura;
     int altura;
 
-    public Octagono(Color color, Color color2, Boolean R, Point puntoInicial) {
-        super(color, color2, R);
+    public Octagono(Color color, Color color2, Boolean relleno, Point puntoInicial) {
+        super(color, color2, relleno);
         this.x = puntoInicial.x;
         this.y = puntoInicial.y;
         this.anchura = 1;
@@ -37,7 +37,7 @@ public class Octagono extends Figura {
         Point punto7 = new Point((int) (x + (anchura * 0.25)), y + altura);
         Point punto8 = new Point(x, (int) (y + (altura * 0.50)));
 
-        if (getR()) {
+        if (getRelleno()) {
             g.setColor(getColorDeSegundoPlano());
             g.fillPolygon(new int[]{punto1.x, punto2.x, punto3.x, punto4.x, punto5.x, punto6.x, punto7.x, punto8.x}, new int[]{punto1.y, punto2.y, punto3.y, punto4.y, punto5.y, punto6.y, punto7.y, punto8.y}, 8);
         }

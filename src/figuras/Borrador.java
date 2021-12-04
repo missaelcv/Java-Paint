@@ -4,8 +4,8 @@ import java.awt.*;
 
 public class Borrador extends DibujoLibre {
 
-    public Borrador(Color color,Color color2, Boolean R, Point puntoActual) {
-        super(color,color, R, puntoActual);
+    public Borrador(Color color, Point puntoActual) {
+        super(color, puntoActual);
     }
 
     @Override

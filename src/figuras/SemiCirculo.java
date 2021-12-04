@@ -2,7 +2,7 @@ package figuras;
 
 import java.awt.*;
 
-public class SemiCirculo extends Figura {
+public class SemiCirculo extends FiguraRellenable {
 
     Point puntoInicial;
     Point puntoFinal;
@@ -11,8 +11,8 @@ public class SemiCirculo extends Figura {
     int anchura;
     int altura;
 
-    public SemiCirculo(Color color, Color color2, Boolean R, Point puntoInicial, Point puntoFinal) {
-        super(color, color2, R);
+    public SemiCirculo(Color color, Color color2, Boolean relleno, Point puntoInicial, Point puntoFinal) {
+        super(color, color2, relleno);
         this.puntoInicial = puntoInicial;
         this.puntoFinal = puntoFinal;
         this.x = puntoInicial.x;
@@ -34,13 +34,13 @@ public class SemiCirculo extends Figura {
     public void dibujar(Graphics g) {
         if (puntoInicial != null && puntoFinal != null) {
 
-            if (getR()) {
+            if (getRelleno()) {
                 g.setColor(getColorDeSegundoPlano());
                 g.fillArc(x, y, anchura, puntoFinal.y, 0, 180);
             }
             g.setColor(getColorDePrimerPlano());
             g.drawLine(puntoInicial.x, ((int) (puntoFinal.y * 0.50) + y), puntoFinal.x, ((int) (puntoFinal.y * 0.50) + y));
-            g.drawArc(x, Math.abs(y), anchura, Math.abs(puntoFinal.y) , 0, 180);
+            g.drawArc(x, Math.abs(y), anchura, Math.abs(puntoFinal.y), 0, 180);
 
         }
     }

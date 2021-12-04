@@ -2,7 +2,7 @@ package figuras;
 
 import java.awt.*;
 
-public class Pic extends Figura {
+public class Pic extends FiguraRellenable {
 
     Point puntoInicial;
     Point puntoFinal;
@@ -11,8 +11,8 @@ public class Pic extends Figura {
     int anchura;
     int altura;
 
-    public Pic(Color color, Color color2, Boolean R, Point puntoInicial, Point puntoFinal) {
-        super(color, color2, R);
+    public Pic(Color color, Color color2, Boolean relleno, Point puntoInicial, Point puntoFinal) {
+        super(color, color2, relleno);
         this.puntoInicial = puntoInicial;
         this.puntoFinal = puntoFinal;
         this.x = puntoInicial.x;
@@ -21,8 +21,8 @@ public class Pic extends Figura {
         this.altura = 1;
     }
 
-    public Pic(Color color, Color color2, Boolean R, Point puntoInicial) {
-        this(color, color2, R, puntoInicial, puntoInicial);
+    public Pic(Color color, Color color2, Boolean relleno, Point puntoInicial) {
+        this(color, color2, relleno, puntoInicial, puntoInicial);
     }
 
     public void actualizar(Point puntoFinal) {
@@ -34,7 +34,7 @@ public class Pic extends Figura {
     public void dibujar(Graphics g) {
         if (puntoInicial != null && puntoFinal != null) {
 
-            if (getR()) {
+            if (getRelleno()) {
                 g.setColor(getColorDeSegundoPlano());
                 g.fillArc(x, y, anchura, puntoFinal.y, 90, 270);
             }

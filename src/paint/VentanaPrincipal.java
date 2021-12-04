@@ -1,4 +1,4 @@
-package paint;//GEN-LINE:variables
+package paint;
 
 import java.awt.*;
 import javax.swing.JOptionPane;
@@ -18,7 +18,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     }
 
     @SuppressWarnings("unchecked")
-    // <editor-fold defaultstate="collapsed" desc="Generated Code">                          
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
         jMenuItem4 = new javax.swing.JMenuItem();
@@ -68,7 +68,13 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         });
         menuArchivo.add(jMenuItem8);
 
+        jMenuItem9.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_S, java.awt.event.InputEvent.SHIFT_DOWN_MASK | java.awt.event.InputEvent.CTRL_DOWN_MASK));
         jMenuItem9.setText("Guardar Como");
+        jMenuItem9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem9ActionPerformed(evt);
+            }
+        });
         menuArchivo.add(jMenuItem9);
         menuArchivo.add(jSeparator1);
 
@@ -126,38 +132,48 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         setJMenuBar(barraDeMenu);
 
         pack();
-    }// </editor-fold>                        
+    }// </editor-fold>//GEN-END:initComponents
 
-    private void formWindowClosing(java.awt.event.WindowEvent evt) {                                   
+    private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
         confirmarCierre();
-    }                                  
+    }//GEN-LAST:event_formWindowClosing
 
-    private void menuItemSalirActionPerformed(java.awt.event.ActionEvent evt) {                                              
+    private void menuItemSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItemSalirActionPerformed
         confirmarCierre();
-    }                                             
+    }//GEN-LAST:event_menuItemSalirActionPerformed
 
-    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {                                           
+    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
         panelDeDibujo.deshacer();
-    }                                          
+    }//GEN-LAST:event_jMenuItem1ActionPerformed
 
-    private void jMenuItem12ActionPerformed(java.awt.event.ActionEvent evt) {                                            
+    private void jMenuItem12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem12ActionPerformed
         panelDeDibujo.rehacer();
-    }                                           
+    }//GEN-LAST:event_jMenuItem12ActionPerformed
 
-    private void jMenuItem8ActionPerformed(java.awt.event.ActionEvent evt) {                                           
-         panelDeDibujo.guardar();
-    }                                          
+    private void jMenuItem8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem8ActionPerformed
+        panelDeDibujo.guardar();
+    }//GEN-LAST:event_jMenuItem8ActionPerformed
+
+    private void jMenuItem9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem9ActionPerformed
+        panelDeDibujo.guardarComo();
+    }//GEN-LAST:event_jMenuItem9ActionPerformed
 
     private void confirmarCierre() throws HeadlessException {
-        int opcion = JOptionPane.showConfirmDialog(
-                VentanaPrincipal.this,
-                "Desea cerrar la aplicación?",
-                "Confirmación",
-                JOptionPane.YES_NO_OPTION,
-                JOptionPane.QUESTION_MESSAGE
-        );
 
-        if (opcion == JOptionPane.YES_OPTION) {
+        int opcion = JOptionPane.showOptionDialog(
+                VentanaPrincipal.this,
+                "¿Desea cerrar la aplicación?",
+                "Confirmación",
+                JOptionPane.YES_NO_CANCEL_OPTION,
+                JOptionPane.QUESTION_MESSAGE,
+                null,
+                new Object[]{"Guardar y salir", "Salir sin guardar", "No"},
+                "Guardar y salir");
+
+        if (opcion == 0) {
+            panelDeDibujo.guardarComo();
+            System.exit(0);
+        } else if (opcion == 1) {
             System.exit(0);
         }
     }
@@ -197,7 +213,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         });
     }
 
-    // Variables declaration - do not modify                     
+    // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuBar barraDeMenu;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.ButtonGroup buttonGroup2;
@@ -218,5 +234,5 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenu menuAyuda;
     private javax.swing.JMenu menuEdicion;
     private javax.swing.JMenuItem menuItemSalir;
-    // End of variables declaration                   
+    // End of variables declaration//GEN-END:variables
 }

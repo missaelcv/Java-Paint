@@ -2,15 +2,15 @@ package figuras;
 
 import java.awt.*;
 
-public class Hexagono extends Figura {
+public class Hexagono extends FiguraRellenable {
 
     int x;
     int y;
     int anchura;
     int altura;
 
-    public Hexagono(Color color, Color color2, Boolean R, Point puntoInicial) {
-        super(color, color2, R);
+    public Hexagono(Color color, Color color2, Boolean relleno, Point puntoInicial) {
+        super(color, color2, relleno);
         this.x = puntoInicial.x;
         this.y = puntoInicial.y;
         this.anchura = 1;
@@ -35,7 +35,7 @@ public class Hexagono extends Figura {
         Point punto5 = new Point((int) (x + (anchura / 2)), y + altura);
         Point punto6 = new Point(x, (int) (y + (altura * 0.50)));
 
-        if (getR()) {
+        if (getRelleno()) {
             g.setColor(getColorDeSegundoPlano());
             g.fillPolygon(new int[]{punto1.x, punto2.x, punto3.x, punto4.x, punto5.x, punto6.x}, new int[]{punto1.y, punto2.y, punto3.y, punto4.y, punto5.y, punto6.y}, 6);
         }
