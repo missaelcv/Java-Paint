@@ -34,6 +34,7 @@ public class Trebol extends FiguraRellenable {
     public void dibujar(Graphics g) {
         if (puntoInicial != null && puntoFinal != null) {
 
+         //Creando Relleno de Figura Trebol
             if (getRelleno()) {
                 g.setColor(getColorDeSegundoPlano());
                 g.fillArc(puntoInicial.x + anchura / 2, puntoFinal.y, anchura, altura, -5, 190);
@@ -42,6 +43,8 @@ public class Trebol extends FiguraRellenable {
 
             }
 
+
+    
             g.setColor(getColorDePrimerPlano());
             g.drawArc(puntoInicial.x + anchura / 2, puntoFinal.y, anchura, altura, -5, 190);
             g.drawArc((int) (puntoInicial.x + anchura * 0.030), (int) (puntoFinal.y + altura * 0.55), anchura, altura, 93, 247);

@@ -33,15 +33,15 @@ public class Creciente extends FiguraRellenable {
 
     public void dibujar(Graphics g) {
         if (puntoInicial != null && puntoFinal != null) {
-            /* En espera de algoritmo FloodFill
-            if (getRelleno()) {
+          
+//            //Relleno de la Figura Creciente en segundo plano
+             if (getRelleno()) {
                 g.setColor(getColorDeSegundoPlano());
-                g.fillArc(puntoInicial.x, puntoFinal.y, anchura, altura, -197, 210);
-            }
-             */
+                g.fillArc(puntoInicial.x, puntoFinal.y, anchura, altura, -190, 200);  
+             }
 
             g.setColor(getColorDePrimerPlano());
-            g.drawArc(puntoInicial.x, (int) (puntoFinal.y * 0.99), anchura, (int) (altura * 0.8), -170, 160);
+            g.drawArc(puntoInicial.x, (int) (puntoFinal.y * 1), anchura, (int) (altura * 0.8), -170, 160);
             g.drawArc(puntoInicial.x, puntoFinal.y, anchura, altura, -190, 200);
         }
     }
