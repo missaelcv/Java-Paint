@@ -40,7 +40,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jMenuItem12 = new javax.swing.JMenuItem();
         menuAyuda = new javax.swing.JMenu();
         jMenuItem10 = new javax.swing.JMenuItem();
-        jMenuItem11 = new javax.swing.JMenuItem();
+        btnAcercaDe = new javax.swing.JMenuItem();
 
         jMenuItem4.setText("jMenuItem4");
 
@@ -124,13 +124,13 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jMenuItem10.setText("Temas de Ayuda");
         menuAyuda.add(jMenuItem10);
 
-        jMenuItem11.setText("Acerca de");
-        jMenuItem11.addActionListener(new java.awt.event.ActionListener() {
+        btnAcercaDe.setText("Acerca de");
+        btnAcercaDe.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem11ActionPerformed(evt);
+                btnAcercaDeActionPerformed(evt);
             }
         });
-        menuAyuda.add(jMenuItem11);
+        menuAyuda.add(btnAcercaDe);
 
         barraDeMenu.add(menuAyuda);
 
@@ -163,30 +163,16 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         panelDeDibujo.guardarComo();
     }//GEN-LAST:event_jMenuItem9ActionPerformed
 
-    private void jMenuItem11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem11ActionPerformed
-   //Menu Acerca 
-   
-        setSize(600, 500);
-        setLocationRelativeTo(null);
-        panelDeDibujo = new PanelDeDibujo();
-        this.add(panelDeDibujo, BorderLayout.CENTER);
-        this.add(panelDeDibujo.getPanelDeHerramientas(), BorderLayout.NORTH);
-       
-               int opcion = JOptionPane.showOptionDialog(
-                VentanaPrincipal.this,
-     "Es un programa simple para la edición de figuras, este programa se puede rellenar las figuras"
-     + "tanto por dentro como las linea de afuera, tambien podemos tomer nota como opcion de hojas cuadriculada",
-     
-                "Confirmación",
-                JOptionPane.INFORMATION_MESSAGE,
-                JOptionPane.QUESTION_MESSAGE,
-                null,
-                new Object[]{"Cerrar Ventana ", ".", "Seguir Leyendo"},
-                "Guardar y salir");
-       
-       
-
-    }//GEN-LAST:event_jMenuItem11ActionPerformed
+    private void btnAcercaDeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAcercaDeActionPerformed
+//      int opcion = JOptionPane.showOptionDialog(
+//                VentanaPrincipal.this,
+//                "¿Desea cerrar la aplicación?",
+//               
+//                JOptionPane.INFORMATION_MESSAGE,
+//               
+//                null,
+//              new Object[]{"Guardar y salir", "Salir sin guardar",});
+    }//GEN-LAST:event_btnAcercaDeActionPerformed
 
     private void confirmarCierre() throws HeadlessException {
 
@@ -245,11 +231,11 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuBar barraDeMenu;
+    private javax.swing.JMenuItem btnAcercaDe;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.ButtonGroup buttonGroup2;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem10;
-    private javax.swing.JMenuItem jMenuItem11;
     private javax.swing.JMenuItem jMenuItem12;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
