@@ -1153,4 +1153,6 @@ public class PanelDeDibujo extends javax.swing.JPanel {
     private javax.swing.JPanel panelColor;
     private javax.swing.JPanel panelDeHerramientas;
     // End of variables declaration//GEN-END:variables
+
+    
 }

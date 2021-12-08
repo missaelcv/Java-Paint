@@ -5,7 +5,7 @@ import javax.swing.JOptionPane;
 
 public class VentanaPrincipal extends javax.swing.JFrame {
 
-    private final PanelDeDibujo panelDeDibujo;
+    private PanelDeDibujo panelDeDibujo;
 
     public VentanaPrincipal() {
         initComponents();
@@ -125,6 +125,11 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         menuAyuda.add(jMenuItem10);
 
         jMenuItem11.setText("Acerca de");
+        jMenuItem11.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem11ActionPerformed(evt);
+            }
+        });
         menuAyuda.add(jMenuItem11);
 
         barraDeMenu.add(menuAyuda);
@@ -157,6 +162,31 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private void jMenuItem9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem9ActionPerformed
         panelDeDibujo.guardarComo();
     }//GEN-LAST:event_jMenuItem9ActionPerformed
+
+    private void jMenuItem11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem11ActionPerformed
+   //Menu Acerca 
+   
+        setSize(600, 500);
+        setLocationRelativeTo(null);
+        panelDeDibujo = new PanelDeDibujo();
+        this.add(panelDeDibujo, BorderLayout.CENTER);
+        this.add(panelDeDibujo.getPanelDeHerramientas(), BorderLayout.NORTH);
+       
+               int opcion = JOptionPane.showOptionDialog(
+                VentanaPrincipal.this,
+     "Es un programa simple para la edición de figuras, este programa se puede rellenar las figuras"
+     + "tanto por dentro como las linea de afuera, tambien podemos tomer nota como opcion de hojas cuadriculada",
+     
+                "Confirmación",
+                JOptionPane.INFORMATION_MESSAGE,
+                JOptionPane.QUESTION_MESSAGE,
+                null,
+                new Object[]{"Cerrar Ventana ", ".", "Seguir Leyendo"},
+                "Guardar y salir");
+       
+       
+
+    }//GEN-LAST:event_jMenuItem11ActionPerformed
 
     private void confirmarCierre() throws HeadlessException {
 
