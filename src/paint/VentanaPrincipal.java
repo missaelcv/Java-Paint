@@ -164,14 +164,14 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem9ActionPerformed
 
     private void btnAcercaDeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAcercaDeActionPerformed
-//      int opcion = JOptionPane.showOptionDialog(
-//                VentanaPrincipal.this,
-//                "¿Desea cerrar la aplicación?",
-//               
-//                JOptionPane.INFORMATION_MESSAGE,
-//               
-//                null,
-//              new Object[]{"Guardar y salir", "Salir sin guardar",});
+     int opcion = JOptionPane.showOptionDialog(
+             VentanaPrincipal.this,
+                "¿Desea cerrar la aplicación?",
+               
+                JOptionPane.INFORMATION_MESSAGE,
+               
+                null,
+             new Object[]{"Guardar y salir", "Salir sin guardar",});
     }//GEN-LAST:event_btnAcercaDeActionPerformed
 
     private void confirmarCierre() throws HeadlessException {
