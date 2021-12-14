@@ -5,7 +5,7 @@ import javax.swing.JOptionPane;
 
 public class VentanaPrincipal extends javax.swing.JFrame {
 
-    private PanelDeDibujo panelDeDibujo;
+    private final PanelDeDibujo panelDeDibujo;
 
     public VentanaPrincipal() {
         initComponents();
@@ -13,8 +13,10 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         this.add(panelDeDibujo, BorderLayout.CENTER);
         this.add(panelDeDibujo.getPanelDeHerramientas(), BorderLayout.NORTH);
 
-        setSize(600, 500);
+        setSize(900, 500);
         setLocationRelativeTo(null);
+        this.setTitle(panelDeDibujo.consultarTituloVentana());
+
     }
 
     @SuppressWarnings("unchecked")
@@ -33,6 +35,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jSeparator1 = new javax.swing.JPopupMenu.Separator();
         menuItemSalir = new javax.swing.JMenuItem();
         menuEdicion = new javax.swing.JMenu();
+        jMenuItem13 = new javax.swing.JMenuItem();
         jMenuItem2 = new javax.swing.JMenuItem();
         jMenuItem3 = new javax.swing.JMenuItem();
         jMenuItem5 = new javax.swing.JMenuItem();
@@ -40,11 +43,12 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jMenuItem12 = new javax.swing.JMenuItem();
         menuAyuda = new javax.swing.JMenu();
         jMenuItem10 = new javax.swing.JMenuItem();
-        btnAcercaDe = new javax.swing.JMenuItem();
+        jMenuItem11 = new javax.swing.JMenuItem();
 
         jMenuItem4.setText("jMenuItem4");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
+        setMinimumSize(new java.awt.Dimension(900, 500));
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowClosing(java.awt.event.WindowEvent evt) {
                 formWindowClosing(evt);
@@ -90,7 +94,21 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
         menuEdicion.setText("Edición");
 
+        jMenuItem13.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_L, java.awt.event.InputEvent.CTRL_DOWN_MASK));
+        jMenuItem13.setText("Cuadricula");
+        jMenuItem13.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem13ActionPerformed(evt);
+            }
+        });
+        menuEdicion.add(jMenuItem13);
+
         jMenuItem2.setText("Copiar");
+        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem2ActionPerformed(evt);
+            }
+        });
         menuEdicion.add(jMenuItem2);
 
         jMenuItem3.setText("Cortar");
@@ -124,13 +142,8 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jMenuItem10.setText("Temas de Ayuda");
         menuAyuda.add(jMenuItem10);
 
-        btnAcercaDe.setText("Acerca de");
-        btnAcercaDe.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnAcercaDeActionPerformed(evt);
-            }
-        });
-        menuAyuda.add(btnAcercaDe);
+        jMenuItem11.setText("Acerca de");
+        menuAyuda.add(jMenuItem11);
 
         barraDeMenu.add(menuAyuda);
 
@@ -157,22 +170,21 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
     private void jMenuItem8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem8ActionPerformed
         panelDeDibujo.guardar();
+        this.setTitle(panelDeDibujo.consultarTituloVentana());
     }//GEN-LAST:event_jMenuItem8ActionPerformed
 
     private void jMenuItem9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem9ActionPerformed
         panelDeDibujo.guardarComo();
+        this.setTitle(panelDeDibujo.consultarTituloVentana());
     }//GEN-LAST:event_jMenuItem9ActionPerformed
 
-    private void btnAcercaDeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAcercaDeActionPerformed
-     int opcion = JOptionPane.showOptionDialog(
-             VentanaPrincipal.this,
-                "¿Desea cerrar la aplicación?",
-               
-                JOptionPane.INFORMATION_MESSAGE,
-               
-                null,
-             new Object[]{"Guardar y salir", "Salir sin guardar",});
-    }//GEN-LAST:event_btnAcercaDeActionPerformed
+    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jMenuItem2ActionPerformed
+
+    private void jMenuItem13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem13ActionPerformed
+        panelDeDibujo.cambiaCuadricula();
+    }//GEN-LAST:event_jMenuItem13ActionPerformed
 
     private void confirmarCierre() throws HeadlessException {
 
@@ -231,12 +243,13 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuBar barraDeMenu;
-    private javax.swing.JMenuItem btnAcercaDe;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.ButtonGroup buttonGroup2;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem10;
+    private javax.swing.JMenuItem jMenuItem11;
     private javax.swing.JMenuItem jMenuItem12;
+    private javax.swing.JMenuItem jMenuItem13;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;

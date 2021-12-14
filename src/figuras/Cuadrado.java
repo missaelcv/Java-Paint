@@ -1,16 +1,18 @@
 package figuras;
 
-import java.awt.*;
+import java.awt.Color;
+import java.awt.Graphics;
+import java.awt.Point;
 
-public class TrianguloEscaleno extends FiguraBordeable {
+public class Cuadrado extends FiguraRellenable {
 
     int x;
     int y;
     int anchura;
     int altura;
 
-    public TrianguloEscaleno (Color color, Color color2, Boolean relleno, Point puntoInicial,Boolean agregarRectangulo) {
-        super(color, color2, relleno, agregarRectangulo);
+    public Cuadrado(Color color, Color color2, Boolean relleno, Point puntoInicial) {
+        super(color, color2, relleno);
         this.x = puntoInicial.x;
         this.y = puntoInicial.y;
         this.anchura = 1;
@@ -28,20 +30,18 @@ public class TrianguloEscaleno extends FiguraBordeable {
         int anchura = Math.abs(this.anchura);
         int altura = Math.abs(this.altura);
 
-        Point punto1 = new Point(x, y + altura);
-        Point punto2 = new Point((int) (x - (anchura * 0.30)), y);
+        Point punto1 = new Point(x, y);
+        Point punto2 = new Point(x + anchura, y);
         Point punto3 = new Point(x + anchura, y + altura);
+        Point punto4 = new Point(x, y + altura);
 
         if (getRelleno()) {
             g.setColor(getColorDeSegundoPlano());
-            g.fillPolygon(new int[]{punto1.x, punto2.x, punto3.x}, new int[]{punto1.y, punto2.y, punto3.y}, 3);
+            g.fillPolygon(new int[]{punto1.x, punto2.x, punto3.x, punto4.x}, new int[]{punto1.y, punto2.y, punto3.y, punto4.y}, 4);
         }
 
         g.setColor(getColorDePrimerPlano());
-        g.drawPolygon(new int[]{punto1.x, punto2.x, punto3.x}, new int[]{punto1.y, punto2.y, punto3.y}, 3);
-        
-        if (getAgregarRectangulo()) {
-            g.drawRect(x, y, Math.abs(anchura), Math.abs(altura));
-        }
+        g.drawPolygon(new int[]{punto1.x, punto2.x, punto3.x, punto4.x}, new int[]{punto1.y, punto2.y, punto3.y, punto4.y}, 4);
+
     }
 }

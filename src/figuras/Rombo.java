@@ -2,15 +2,15 @@ package figuras;
 
 import java.awt.*;
 
-public class Rombo extends FiguraRellenable {
+public class Rombo extends FiguraBordeable {
 
     int x;
     int y;
     int anchura;
     int altura;
 
-    public Rombo(Color color, Color color2, Boolean relleno, Point puntoInicial) {
-        super(color, color2, relleno);
+    public Rombo(Color color, Color color2, Boolean relleno, Point puntoInicial, Boolean agregarRectangulo) {
+        super(color, color2, relleno, agregarRectangulo);
         this.x = puntoInicial.x;
         this.y = puntoInicial.y;
         this.anchura = 1;
@@ -40,6 +40,10 @@ public class Rombo extends FiguraRellenable {
 
         g.setColor(getColorDePrimerPlano());
         g.drawPolygon(new int[]{punto1.x, punto2.x, punto3.x, punto4.x}, new int[]{punto1.y, punto2.y, punto3.y, punto4.y}, 4);
+
+        if (getAgregarRectangulo()) {
+            g.drawRect(x, y, Math.abs(anchura), Math.abs(altura));
+        }
 
     }
 }

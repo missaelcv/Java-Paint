@@ -2,14 +2,14 @@ package figuras;
 
 import java.awt.*;
 
-public class TrianguloEscaleno extends FiguraBordeable {
+public class Diamante extends FiguraBordeable {
 
     int x;
     int y;
     int anchura;
     int altura;
 
-    public TrianguloEscaleno (Color color, Color color2, Boolean relleno, Point puntoInicial,Boolean agregarRectangulo) {
+    public Diamante(Color color, Color color2, Boolean relleno, Point puntoInicial, Boolean agregarRectangulo) {
         super(color, color2, relleno, agregarRectangulo);
         this.x = puntoInicial.x;
         this.y = puntoInicial.y;
@@ -28,18 +28,20 @@ public class TrianguloEscaleno extends FiguraBordeable {
         int anchura = Math.abs(this.anchura);
         int altura = Math.abs(this.altura);
 
-        Point punto1 = new Point(x, y + altura);
-        Point punto2 = new Point((int) (x - (anchura * 0.30)), y);
-        Point punto3 = new Point(x + anchura, y + altura);
+        Point punto1 = new Point(x, (int) (y + altura * 0.3));
+        Point punto2 = new Point((int) (x + (anchura * 0.2)), y);
+        Point punto3 = new Point((int) (x + (anchura * 0.80)), y);
+        Point punto4 = new Point(x + anchura, (int) (y + altura * 0.3));
+        Point punto5 = new Point(x + anchura / 2, y + altura);
 
         if (getRelleno()) {
             g.setColor(getColorDeSegundoPlano());
-            g.fillPolygon(new int[]{punto1.x, punto2.x, punto3.x}, new int[]{punto1.y, punto2.y, punto3.y}, 3);
+            g.fillPolygon(new int[]{punto1.x, punto2.x, punto3.x, punto4.x, punto5.x}, new int[]{punto1.y, punto2.y, punto3.y, punto4.y, punto5.y,}, 5);
         }
 
         g.setColor(getColorDePrimerPlano());
-        g.drawPolygon(new int[]{punto1.x, punto2.x, punto3.x}, new int[]{punto1.y, punto2.y, punto3.y}, 3);
-        
+        g.drawPolygon(new int[]{punto1.x, punto2.x, punto3.x, punto4.x, punto5.x}, new int[]{punto1.y, punto2.y, punto3.y, punto4.y, punto5.y}, 5);
+
         if (getAgregarRectangulo()) {
             g.drawRect(x, y, Math.abs(anchura), Math.abs(altura));
         }

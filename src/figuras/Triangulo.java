@@ -2,15 +2,15 @@ package figuras;
 
 import java.awt.*;
 
-public class Triangulo extends FiguraRellenable {
+public class Triangulo extends FiguraBordeable {
 
     int x;
     int y;
     int anchura;
     int altura;
 
-    public Triangulo(Color color, Color color2, Boolean relleno, Point puntoInicial) {
-        super(color, color2, relleno);
+    public Triangulo(Color color, Color color2, Boolean relleno, Point puntoInicial, Boolean agregarRectangulo) {
+        super(color, color2, relleno, agregarRectangulo);
         this.x = puntoInicial.x;
         this.y = puntoInicial.y;
         this.anchura = 1;
@@ -39,6 +39,9 @@ public class Triangulo extends FiguraRellenable {
 
         g.setColor(getColorDePrimerPlano());
         g.drawPolygon(new int[]{punto1.x, punto2.x, punto3.x}, new int[]{punto1.y, punto2.y, punto3.y}, 3);
-
+        
+        if (getAgregarRectangulo()) {
+            g.drawRect(x, y, Math.abs(anchura), Math.abs(altura));
+        }
     }
 }

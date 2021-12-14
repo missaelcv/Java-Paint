@@ -2,15 +2,15 @@ package figuras;
 
 import java.awt.*;
 
-public class Cruz extends FiguraRellenable {
+public class Cruz extends FiguraBordeable {
 
     int x;
     int y;
     int anchura;
     int altura;
 
-    public Cruz(Color color, Color color2, Boolean relleno, Point puntoInicial) {
-        super(color, color2, relleno);
+    public Cruz(Color color, Color color2, Boolean relleno, Point puntoInicial, Boolean agregarRectangulo) {
+        super(color, color2, relleno, agregarRectangulo);
         this.x = puntoInicial.x;
         this.y = puntoInicial.y;
         this.anchura = 1;
@@ -49,5 +49,8 @@ public class Cruz extends FiguraRellenable {
         g.setColor(getColorDePrimerPlano());
         g.drawPolygon(new int[]{punto1.x, punto2.x, punto3.x, punto4.x, punto5.x, punto6.x, punto7.x, punto8.x, punto9.x, punto10.x, punto11.x, punto12.x}, new int[]{punto1.y, punto2.y, punto3.y, punto4.y, punto5.y, punto6.y, punto7.y, punto8.y, punto9.y, punto10.y, punto11.y, punto12.y}, 12);
 
+        if (getAgregarRectangulo()) {
+            g.drawRect(x, y, Math.abs(anchura), Math.abs(altura));
+        }
     }
 }

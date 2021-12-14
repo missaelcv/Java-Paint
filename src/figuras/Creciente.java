@@ -2,7 +2,7 @@ package figuras;
 
 import java.awt.*;
 
-public class Creciente extends FiguraRellenable {
+public class Creciente extends FiguraBordeable {
 
     Point puntoInicial;
     Point puntoFinal;
@@ -11,38 +11,35 @@ public class Creciente extends FiguraRellenable {
     int anchura;
     int altura;
 
-    public Creciente(Color color, Color color2, Boolean relleno, Point puntoInicial, Point puntoFinal) {
-        super(color, color2, relleno);
-        this.puntoInicial = puntoInicial;
-        this.puntoFinal = puntoFinal;
+    public Creciente(Color color, Color color2, Boolean relleno, Point puntoInicial, Boolean agregarRectangulo) {
+        super(color, color2, relleno, agregarRectangulo);
         this.x = puntoInicial.x;
         this.y = puntoInicial.y;
         this.anchura = 1;
         this.altura = 1;
     }
 
-    public Creciente(Color color, Color color2, Boolean relleno, Point puntoInicial) {
-        this(color, color2, relleno, puntoInicial, puntoInicial);
-    }
+    public void actualizar(Point puntoInicial) {
 
-    public void actualizar(Point puntoFinal) {
         this.puntoFinal = puntoFinal;
-        this.anchura = puntoFinal.x - x;
-        this.altura = puntoFinal.y - y;
+        this.anchura = puntoInicial.x - x;
+        this.altura = puntoInicial.y - y;
+
     }
 
     public void dibujar(Graphics g) {
-        if (puntoInicial != null && puntoFinal != null) {
-          
-//            //Relleno de la Figura Creciente en segundo plano
-             if (getRelleno()) {
-                g.setColor(getColorDeSegundoPlano());
-                g.fillArc(puntoInicial.x, puntoFinal.y, anchura, altura, -190, 200);  
-             }
 
-            g.setColor(getColorDePrimerPlano());
-            g.drawArc(puntoInicial.x, (int) (puntoFinal.y * 1), anchura, (int) (altura * 0.8), -170, 160);
-            g.drawArc(puntoInicial.x, puntoFinal.y, anchura, altura, -190, 200);
+        if (getRelleno()) {
+            g.setColor(getColorDeSegundoPlano());
+            g.fillArc(x, y, anchura, altura, -190, 200);
+        }
+
+        g.setColor(getColorDePrimerPlano());
+        g.drawArc(x, (int) (y * 0.99), anchura, (int) (altura * 0.8), -170, 160);
+        g.drawArc(x, y, anchura, altura, -193, 203);
+
+        if (getAgregarRectangulo()) {
+            g.drawRect(x, y, Math.abs(anchura), Math.abs(altura));
         }
     }
 }
