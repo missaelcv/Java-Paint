@@ -30,13 +30,13 @@ public class Poligono extends FiguraBordeable {
         int anchura = Math.abs(this.anchura);
         int altura = Math.abs(this.altura);
 
-        Point punto1 = new Point(x, (int) (y - altura * 0.65));
-        Point punto2 = new Point((int) (x + (anchura / 1.5)), y - altura);
-        Point punto3 = new Point(x + anchura, (int) (y - altura * 0.50));
-        Point punto4 = new Point((int) (x + (anchura / 1.35)), (int) (y + (altura / 10)));
+        Point punto1 = new Point((int) (x + anchura * 0.20), (int) (y + altura * 0.20));
+        Point punto2 = new Point((int) (x + anchura * 0.80), y);
+        Point punto3 = new Point(x + anchura, (int) (y + altura * 0.20));
+        Point punto4 = new Point((int) (x + (anchura / 1.35)), (int) (y + altura * 0.50));
         Point punto5 = new Point(x + anchura, (int) (y + (altura * 0.80)));
         Point punto6 = new Point((int) (x + (anchura / 3)), y + altura);
-        Point punto7 = new Point((int) (x - (anchura / 7)), (int) (y + (altura * 0.60)));
+        Point punto7 = new Point(x, (int) (y + (altura * 0.60)));
 
         if (getRelleno()) {
             g.setColor(getColorDeSegundoPlano());

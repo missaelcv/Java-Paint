@@ -48,5 +48,6 @@ public class Octagono extends FiguraBordeable {
         if (getAgregarRectangulo()) {
             g.drawRect(x, y, Math.abs(anchura), Math.abs(altura));
         }
+
     }
 }

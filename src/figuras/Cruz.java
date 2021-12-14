@@ -28,18 +28,18 @@ public class Cruz extends FiguraBordeable {
         int anchura = Math.abs(this.anchura);
         int altura = Math.abs(this.altura);
 
-        Point punto1 = new Point(x, y);
-        Point punto2 = new Point((int) (x + (anchura * 0.33)), y);
-        Point punto3 = new Point((int) (x + (anchura * 0.33)), (int) (y - altura));
-        Point punto4 = new Point((int) (x + anchura * 0.66), (int) (y - altura));
-        Point punto5 = new Point((int) (x + anchura * 0.66), y);
-        Point punto6 = new Point((int) (x + anchura), y);
-        Point punto7 = new Point((int) (x + anchura), (int) (y + altura * 0.66));
-        Point punto8 = new Point((int) (x + anchura * 0.66), (int) (y + altura * 0.66));
-        Point punto9 = new Point((int) (x + anchura * 0.66), (int) (y + altura * 1.70));
-        Point punto10 = new Point((int) (x + anchura * 0.33), (int) (y + altura * 1.70));
-        Point punto11 = new Point((int) (x + anchura * 0.33), (int) (y + altura * 0.66));
-        Point punto12 = new Point(x, (int) (y + altura * 0.66));
+        Point punto1 = new Point((int) (x + anchura * 0.4), y);
+        Point punto2 = new Point((int) (x + anchura * 0.6), y);
+        Point punto3 = new Point((int) (x + anchura * 0.6), (int) (y + altura * 0.4));
+        Point punto4 = new Point((int) (x + anchura), (int) (y + altura * 0.4));
+        Point punto5 = new Point((int) (x + anchura), (int) (y + altura * 0.6));
+        Point punto6 = new Point((int) (x + anchura * 0.6), (int) (y + altura * 0.6));
+        Point punto7 = new Point((int) (x + anchura * 0.6), (int) (y + altura));
+        Point punto8 = new Point((int) (x + anchura * 0.4), (int) (y + altura));
+        Point punto9 = new Point((int) (x + anchura * 0.4), (int) (y + altura * 0.6));
+        Point punto10 = new Point((int) (x), (int) (y + altura * 0.6));
+        Point punto11 = new Point((int) (x), (int) (y + altura * 0.4));
+        Point punto12 = new Point((int) (x + anchura * 0.4), (int) (y + altura * 0.4));
 
         if (getRelleno()) {
             g.setColor(getColorDeSegundoPlano());
