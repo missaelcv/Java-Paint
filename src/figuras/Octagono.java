@@ -37,6 +37,14 @@ public class Octagono extends FiguraBordeable {
         Point punto7 = new Point((int) (x + (anchura * 0.25)), y + altura);
         Point punto8 = new Point(x, (int) (y + (altura * 0.50)));
 
+        g.setColor(getColorDeSegundoPlano());
+            g.drawLine(x + anchura / 2, y + altura / 2, x + anchura / 2, y + altura / 2);
+            g.fillArc(x + anchura / 4, y, anchura / 2, altura / 2, 0, 360);
+            g.fillArc(x, y + altura / 4, anchura / 2, altura / 2, 0, 360);
+            g.fillArc(x + anchura / 4, y + altura / 2, anchura / 2, altura / 2, 0, 360);
+            g.fillArc(x + anchura / 2, y + altura / 4, anchura / 2, altura / 2, 0, 360);
+        
+        
         if (getRelleno()) {
             g.setColor(getColorDeSegundoPlano());
             g.fillPolygon(new int[]{punto1.x, punto2.x, punto3.x, punto4.x, punto5.x, punto6.x, punto7.x, punto8.x}, new int[]{punto1.y, punto2.y, punto3.y, punto4.y, punto5.y, punto6.y, punto7.y, punto8.y}, 8);

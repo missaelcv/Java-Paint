@@ -28,25 +28,29 @@ public class Trebol extends FiguraBordeable {
     }
 
     public void dibujar(Graphics g) {
-        if (puntoInicial != null && puntoFinal != null) {
 
-            //Agregando el Relleno de Figura Trebol Final 
-            if (getRelleno()) {
-                g.setColor(getColorDeSegundoPlano());
+        int x = this.anchura < 0 ? this.x + this.anchura : this.x;
+        int y = this.altura < 0 ? this.y + this.altura : this.y;
+        int anchura = Math.abs(this.anchura);
+        int altura = Math.abs(this.altura);
 
-                g.fillArc(puntoInicial.x + anchura / 2, puntoFinal.y, anchura, altura, -5, 360);
-                g.fillArc((int) (puntoInicial.x + anchura * 0.030), (int) (puntoFinal.y + altura * 0.55), anchura, altura, 93, 360);
-                g.fillArc((int) (puntoInicial.x + anchura * 0.970), (int) (puntoFinal.y + altura * 0.55), anchura, altura, 88, -360);
-            }
+        //Agregando el Relleno de Figura Trebol Final 
+        if (getRelleno()) {
+            g.setColor(getColorDeSegundoPlano());
 
-            g.setColor(getColorDePrimerPlano());
-            g.drawArc(puntoInicial.x + anchura / 2, puntoFinal.y, anchura, altura, -5, 190);
-            g.drawArc((int) (puntoInicial.x + anchura * 0.030), (int) (puntoFinal.y + altura * 0.55), anchura, altura, 93, 247);
-            g.drawArc((int) (puntoInicial.x + anchura * 0.970), (int) (puntoFinal.y + altura * 0.55), anchura, altura, 88, -250);
-
-            if (getAgregarRectangulo()) {
-                g.drawRect(x, y, Math.abs(anchura), Math.abs(altura));
-            }
+            g.fillArc(x + anchura / 4, y, anchura / 2, (int) (altura / 1.20), 0, 360);
+            g.fillArc(x, (int) (y + altura / 2.6), (int) (anchura / 1.8), (int) (altura / 1.6), 0, 360);
+            g.fillArc((int) (x + anchura / 2.2), (int) (y + altura / 2.6), (int) (anchura / 1.8), (int) (altura / 1.6), 0, 360);
         }
+
+        g.setColor(getColorDePrimerPlano());
+        g.drawArc(x + anchura / 4, y, anchura / 2, (int) (altura / 1.20), 5, 174);
+        g.drawArc(x, (int) (y + altura / 2.6), (int) (anchura / 1.8), (int) (altura / 1.6), 93, 237);
+        g.drawArc((int) (x + anchura / 2.2), (int) (y + altura / 2.6), (int) (anchura / 1.8), (int) (altura / 1.6), 89, -241);
+
+        if (getAgregarRectangulo()) {
+            g.drawRect(x, y, Math.abs(anchura), Math.abs(altura));
+        }
+
     }
 }

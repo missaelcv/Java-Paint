@@ -197,19 +197,19 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem13ActionPerformed
 
     private void menuAyudaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuAyudaActionPerformed
-          
+
     }//GEN-LAST:event_menuAyudaActionPerformed
 
     private void jMenuItem11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem11ActionPerformed
-       // Menu acerca de 
-      int opcion = JOptionPane.showOptionDialog(
+        // Menu acerca de 
+        int opcion = JOptionPane.showOptionDialog(
                 VentanaPrincipal.this,
-               "\t Descripción del programa. \n\n"
-              + "Este software es un breve copia de programa paint donde se puede agregar figuras donde se puede\n"
-              + " rellenar con colores tanto por dentro como por fuera en el color de la linea y multiples \n "
-              + "figuras junta y guardar los cambios como un archivo en el formato que quiera guardarlo",   
+                "\t Descripción del programa. \n\n"
+                + "Este software es un breve copia de programa paint donde se puede agregar figuras donde se puede\n"
+                + "rellenar con colores tanto por dentro como por fuera en el color de la linea y multiples\n"
+                + "figuras junta y guardar los cambios como un archivo en el formato que quiera guardarlo",
                 "Confirmación",
-                JOptionPane.QUESTION_MESSAGE,
+                JOptionPane.YES_NO_CANCEL_OPTION,
                 JOptionPane.QUESTION_MESSAGE,
                 null,
                 new Object[]{"Cerrar Ventana",},

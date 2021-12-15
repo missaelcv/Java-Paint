@@ -37,19 +37,19 @@ public class Quatrebol extends FiguraBordeable {
         if (getRelleno()) {
 
             g.setColor(getColorDeSegundoPlano());
-            g.fillRect((int) (x + anchura * 0.50), (int) (y + altura * 0.50), anchura + 5, altura + 5);
-            g.fillArc(x + anchura / 2, y, anchura, altura, 0, 180);
-            g.fillArc(x, y + altura / 2, anchura, altura, 90, 180);
-            g.fillArc(x + anchura / 2, y + altura, anchura, altura, 180, 180);
-            g.fillArc(x + anchura, y + altura / 2, anchura, altura, 90, -180);
+            g.drawLine(x + anchura / 2, y + altura / 2, x + anchura / 2, y + altura / 2);
+            g.fillArc(x + anchura / 4, y, anchura / 2, altura / 2, 0, 360);
+            g.fillArc(x, y + altura / 4, anchura / 2, altura / 2, 0, 360);
+            g.fillArc(x + anchura / 4, y + altura / 2, anchura / 2, altura / 2, 0, 360);
+            g.fillArc(x + anchura / 2, y + altura / 4, anchura / 2, altura / 2, 0, 360);
 
         }
 
         g.setColor(getColorDePrimerPlano());
-        g.drawArc(x + anchura / 2, y, anchura, altura, 0, 180);
-        g.drawArc(x, y + altura / 2, anchura, altura, 90, 180);
-        g.drawArc(x + anchura / 2, y + altura, anchura, altura, 180, 180);
-        g.drawArc(x + anchura, y + altura / 2, anchura, altura, 90, -180);
+        g.drawArc(x + anchura / 4, y, anchura / 2, altura / 2, 0, 180);
+        g.drawArc(x, y + altura / 4, anchura / 2, altura / 2, 90, 180);
+        g.drawArc(x + anchura / 4, y + altura / 2, anchura / 2, altura / 2, 180, 180);
+        g.drawArc(x + anchura / 2, y + altura / 4, anchura / 2, altura / 2, 90, -180);
 
         if (getAgregarRectangulo()) {
             g.drawRect(x, y, Math.abs(anchura), Math.abs(altura));

@@ -29,6 +29,11 @@ public class Creciente extends FiguraBordeable {
 
     public void dibujar(Graphics g) {
 
+        int x = this.anchura < 0 ? this.x + this.anchura : this.x;
+        int y = this.altura < 0 ? this.y + this.altura : this.y;
+        int anchura = Math.abs(this.anchura);
+        int altura = Math.abs(this.altura);
+
         if (getRelleno()) {
             g.setColor(getColorDeSegundoPlano());
             g.fillArc(x, y, anchura, altura, -190, 200);
