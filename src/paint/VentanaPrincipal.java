@@ -144,7 +144,13 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             }
         });
 
+        jMenuItem10.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_H, java.awt.event.InputEvent.CTRL_DOWN_MASK));
         jMenuItem10.setText("Temas de Ayuda");
+        jMenuItem10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem10ActionPerformed(evt);
+            }
+        });
         menuAyuda.add(jMenuItem10);
 
         jMenuItem11.setText("Acerca de");
@@ -215,6 +221,22 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                 new Object[]{"Cerrar Ventana",},
                 "");
     }//GEN-LAST:event_jMenuItem11ActionPerformed
+
+    private void jMenuItem10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem10ActionPerformed
+        // TODO add your handling code here:
+         
+          JOptionPane.showMessageDialog(null,"\t                                     Bienvenido al Menú de Ayuda \n\n" 
+                + "Ctrl+S:               Si el archivo esta creado, lo guarda a la última versión realizada. \n"
+                + "Ctrl+Shift+S:    Crea un archivo nuevo. \n"
+                + "Ctrl+L:               Coloca la cuadricula en la ventana principal o Removerla. \n"
+                + "Ctrl+Z:               Deshace cambios realizados. \n"
+                + "Ctrl+Y:               Rehace cambios borrados. \n"
+                + "Ctrl+H:               Despliega el menú de ayuda. \n");
+          
+          
+          
+          
+    }//GEN-LAST:event_jMenuItem10ActionPerformed
 
     private void confirmarCierre() throws HeadlessException {
 
