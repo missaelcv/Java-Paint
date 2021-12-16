@@ -9,7 +9,7 @@ public class TrianguloEscaleno extends FiguraBordeable {
     int anchura;
     int altura;
 
-    public TrianguloEscaleno (Color color, Color color2, Boolean relleno, Point puntoInicial,Boolean agregarRectangulo) {
+    public TrianguloEscaleno(Color color, Color color2, Boolean relleno, Point puntoInicial, Boolean agregarRectangulo) {
         super(color, color2, relleno, agregarRectangulo);
         this.x = puntoInicial.x;
         this.y = puntoInicial.y;
@@ -39,7 +39,7 @@ public class TrianguloEscaleno extends FiguraBordeable {
 
         g.setColor(getColorDePrimerPlano());
         g.drawPolygon(new int[]{punto1.x, punto2.x, punto3.x}, new int[]{punto1.y, punto2.y, punto3.y}, 3);
-        
+
         if (getAgregarRectangulo()) {
             g.drawRect(x, y, Math.abs(anchura), Math.abs(altura));
         }

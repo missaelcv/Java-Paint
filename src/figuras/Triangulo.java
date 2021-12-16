@@ -39,7 +39,7 @@ public class Triangulo extends FiguraBordeable {
 
         g.setColor(getColorDePrimerPlano());
         g.drawPolygon(new int[]{punto1.x, punto2.x, punto3.x}, new int[]{punto1.y, punto2.y, punto3.y}, 3);
-        
+
         if (getAgregarRectangulo()) {
             g.drawRect(x, y, Math.abs(anchura), Math.abs(altura));
         }

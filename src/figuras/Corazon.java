@@ -49,8 +49,8 @@ public class Corazon extends FiguraBordeable {
         g.drawLine(punto1.x, punto1.y, punto2.x, punto2.y);
         g.drawLine(punto3.x, punto3.y, punto4.x, punto4.y);
 
-        if (getAgregarRectangulo()) {
-            g.drawRect(x, y, Math.abs(anchura), Math.abs(altura));
-        }
+        this.setRectangulo(new Rectangle(x, y, anchura, altura));
+        super.dibujar(g);
+
     }
 }

@@ -34,7 +34,7 @@ public class Ovalo extends FiguraBordeable {
 
         g.setColor(getColorDePrimerPlano());
         g.drawOval(x, y, Math.abs(anchura), Math.abs(altura));
-        
+
         if (getAgregarRectangulo()) {
             g.drawRect(x, y, Math.abs(anchura), Math.abs(altura));
         }

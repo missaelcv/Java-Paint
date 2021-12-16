@@ -23,10 +23,10 @@ public class Estrella extends FiguraBordeable {
     }
 
     public void dibujar(Graphics g) {
-        int x = this.anchura < 0 ? this.x + this.anchura : this.x;
+        /*int x = this.anchura < 0 ? this.x + this.anchura : this.x;
         int y = this.altura < 0 ? this.y + this.altura : this.y;
         int anchura = Math.abs(this.anchura);
-        int altura = Math.abs(this.altura);
+        int altura = Math.abs(this.altura);*/
 
         Point punto1 = new Point(x, (int) (y + altura * 0.4));
         Point punto2 = new Point((int) (x + anchura * 0.4), (int) (y + altura * 0.4));
@@ -47,8 +47,7 @@ public class Estrella extends FiguraBordeable {
         g.setColor(getColorDePrimerPlano());
         g.drawPolygon(new int[]{punto1.x, punto2.x, punto3.x, punto4.x, punto5.x, punto6.x, punto7.x, punto8.x, punto9.x, punto10.x}, new int[]{punto1.y, punto2.y, punto3.y, punto4.y, punto5.y, punto6.y, punto7.y, punto8.y, punto9.y, punto10.y}, 10);
 
-        if (getAgregarRectangulo()) {
-            g.drawRect(x, y, Math.abs(anchura), Math.abs(altura));
-        }
+        this.setRectangulo(new Rectangle(x, y, anchura, altura));
+        super.dibujar(g);
     }
 }
