@@ -17,8 +17,9 @@ public class PanelDeDibujo extends javax.swing.JPanel {
     Boolean relleno;
     Boolean agregaRectangulo;
     File archivoActual;
+    private ImageIcon icono;
 
-    int contadorClick = 3;//Inicia en 3 para panel de dibujo sin cuadricula.
+    int contadorClick = 3; //Inicia en 3 para panel de dibujo sin cuadricula.
     String tituloVentana = "Sin Título";
 
     public JPanel getPanelDeHerramientas() {
@@ -59,7 +60,6 @@ public class PanelDeDibujo extends javax.swing.JPanel {
         selector.addChoosableFileFilter(new FileNameExtensionFilter("jpg", "jpg"));
         selector.addChoosableFileFilter(new FileNameExtensionFilter("png", "png"));
 
-        // System.out.println( selector.getChoosableFileFilters().length );
         int opcion = selector.showSaveDialog(this);
 
         if (opcion == JFileChooser.APPROVE_OPTION) {
@@ -76,7 +76,6 @@ public class PanelDeDibujo extends javax.swing.JPanel {
 
                 tituloVentana = ruta.substring(ruta.lastIndexOf(File.separator) + 1);
                 archivoActual = new File(ruta + extension);
-                // System.out.println( "desde Guardar Como -> ruta: " + ruta );
                 ImageIO.write(imagen, extension.replace(".", ""), archivoActual);
             } catch (IOException e) {
                 e.printStackTrace();
@@ -128,175 +127,132 @@ public class PanelDeDibujo extends javax.swing.JPanel {
         class Manejador extends MouseAdapter {
 
             @Override
-            public void mouseReleased(MouseEvent evento) {
-                try {
-                    Image imagen = new ImageIcon(getClass().getResource("/imagenes/lapiz3.png")).getImage();
-//                    System.out.println("Anchura: " + imagen.getWidth(PanelDeDibujo.this));
-//                    System.out.println("Altura: " + imagen.getHeight(PanelDeDibujo.this));
-                    setCursor(Toolkit.getDefaultToolkit().createCustomCursor(imagen, new Point(0, 31), "custom cursor"));
-                } catch (Exception excepcion) {
-                    System.out.println("Ocurrio un error y no se pudo cargar la imagen");
-                    excepcion.printStackTrace();
-                }
-            }
-
-            @Override
             public void mousePressed(MouseEvent evento) {
 
                 relleno = btnFill.isSelected();
                 agregaRectangulo = btnAgregaRectangulo.isSelected();
+
+                String rutaImagen = " ";
                 try {
                     if (btnLinea.isSelected()) {
                         figuraActual = new Linea(colorDePrimerPlano, evento.getPoint());
-                        Image imagen = new ImageIcon(getClass().getResource("/imagenes/linea.png")).getImage();
-                        setCursor(Toolkit.getDefaultToolkit().createCustomCursor(imagen, new Point(0, 31), "custom cursor"));
+                        rutaImagen = "/imagenes/linea.png";
 
                     } else if (btnRectangulo.isSelected()) {
                         figuraActual = new Rectangulo(colorDePrimerPlano, colorDeSegundoPlano, relleno, evento.getPoint());
-                        Image imagen = new ImageIcon(getClass().getResource("/imagenes/rectangulo.png")).getImage();
-                        setCursor(Toolkit.getDefaultToolkit().createCustomCursor(imagen, new Point(0, 31), "custom cursor"));
+                        rutaImagen = "/imagenes/rectangulo.png";
 
                     } else if (btnOvalo.isSelected()) {
                         figuraActual = new Ovalo(colorDePrimerPlano, colorDeSegundoPlano, relleno, evento.getPoint(), agregaRectangulo);
-                        Image imagen = new ImageIcon(getClass().getResource("/imagenes/ovalo.png")).getImage();
-                        setCursor(Toolkit.getDefaultToolkit().createCustomCursor(imagen, new Point(0, 31), "custom cursor"));
+                        rutaImagen = "/imagenes/ovalo.png";
 
                     } else if (btnTriangulo.isSelected()) {
                         figuraActual = new Triangulo(colorDePrimerPlano, colorDeSegundoPlano, relleno, evento.getPoint(), agregaRectangulo);
-                        Image imagen = new ImageIcon(getClass().getResource("/imagenes/triangulo.png")).getImage();
-                        setCursor(Toolkit.getDefaultToolkit().createCustomCursor(imagen, new Point(0, 31), "custom cursor"));
+                        rutaImagen = "/imagenes/triangulo.png";
 
                     } else if (btnTrianguloRectangulo.isSelected()) {
                         figuraActual = new TrianguloRectangulo(colorDePrimerPlano, colorDeSegundoPlano, relleno, evento.getPoint(), agregaRectangulo);
-                        Image imagen = new ImageIcon(getClass().getResource("/imagenes/trianguloEquilatero.png")).getImage();
-                        setCursor(Toolkit.getDefaultToolkit().createCustomCursor(imagen, new Point(0, 31), "custom cursor"));
+                        rutaImagen = "/imagenes/trianguloEquilatero.png";
 
                     } else if (btnTrapecio.isSelected()) {
                         figuraActual = new Trapecio(colorDePrimerPlano, colorDeSegundoPlano, relleno, evento.getPoint(), agregaRectangulo);
-                        Image imagen = new ImageIcon(getClass().getResource("/imagenes/trapecio.png")).getImage();
-                        setCursor(Toolkit.getDefaultToolkit().createCustomCursor(imagen, new Point(0, 31), "custom cursor"));
+                        rutaImagen = "/imagenes/trapecio.png";
 
                     } else if (btnParalelogramo.isSelected()) {
                         figuraActual = new Paralelogramo(colorDePrimerPlano, colorDeSegundoPlano, relleno, evento.getPoint(), agregaRectangulo);
-                        Image imagen = new ImageIcon(getClass().getResource("/imagenes/paralelogramo.png")).getImage();
-                        setCursor(Toolkit.getDefaultToolkit().createCustomCursor(imagen, new Point(0, 31), "custom cursor"));
+                        rutaImagen = "/imagenes/paralelogramo.png";
 
                     } else if (btnTrianguloEscaleno.isSelected()) {
                         figuraActual = new TrianguloEscaleno(colorDePrimerPlano, colorDeSegundoPlano, relleno, evento.getPoint(), agregaRectangulo);
-                        Image imagen = new ImageIcon(getClass().getResource("/imagenes/trianguloEscaleno.png")).getImage();
-                        setCursor(Toolkit.getDefaultToolkit().createCustomCursor(imagen, new Point(0, 31), "custom cursor"));
+                        rutaImagen = "/imagenes/trianguloEscaleno.png";
 
                     } else if (btnEstrella.isSelected()) {
                         figuraActual = new Estrella(colorDePrimerPlano, colorDeSegundoPlano, relleno, evento.getPoint(), agregaRectangulo);
-                        Image imagen = new ImageIcon(getClass().getResource("/imagenes/estrella.png")).getImage();
-                        setCursor(Toolkit.getDefaultToolkit().createCustomCursor(imagen, new Point(0, 31), "custom cursor"));
+                        rutaImagen = "/imagenes/estrella.png";
 
                     } else if (btnPentagono.isSelected()) {
                         figuraActual = new Pentagono(colorDePrimerPlano, colorDeSegundoPlano, relleno, evento.getPoint(), agregaRectangulo);
-                        Image imagen = new ImageIcon(getClass().getResource("/imagenes/pentagono.png")).getImage();
-                        setCursor(Toolkit.getDefaultToolkit().createCustomCursor(imagen, new Point(0, 30), "custom cursor"));
+                        rutaImagen = "/imagenes/pentagono.png";
 
                     } else if (btnRombo.isSelected()) {
                         figuraActual = new Rombo(colorDePrimerPlano, colorDeSegundoPlano, relleno, evento.getPoint(), agregaRectangulo);
-                        Image imagen = new ImageIcon(getClass().getResource("/imagenes/rombo.png")).getImage();
-                        setCursor(Toolkit.getDefaultToolkit().createCustomCursor(imagen, new Point(0, 31), "custom cursor"));
+                        rutaImagen = "/imagenes/rombo.png";
 
                     } else if (btnBorrador.isSelected()) {
                         figuraActual = new Borrador(colorDePrimerPlano, evento.getPoint());
-                        Image imagen = new ImageIcon(getClass().getResource("/imagenes/BorradorLapiz.png")).getImage();
-                        setCursor(Toolkit.getDefaultToolkit().createCustomCursor(imagen, new Point(0, 31), "custom cursor"));
+                        rutaImagen = "/imagenes/BorradorLapiz.png";
 
                     } //else if (btnBotePintura.isSelected()) {
                     // figuraActual = new BotePintura(colorDePrimerPlano, evento.getPoint());
-                    //Image imagen = new ImageIcon(getClass().getResource("/imagenes/botePintura.png")).getImage();
-                    //setCursor(Toolkit.getDefaultToolkit().createCustomCursor(imagen, new Point(0, 31), "custom cursor"));
+                    //rutaImagen = "/imagenes/botePintura.png";
+                    //
                     //     } 
                     else if (btnCruz.isSelected()) {
                         figuraActual = new Cruz(colorDePrimerPlano, colorDeSegundoPlano, relleno, evento.getPoint(), agregaRectangulo);
-                        Image imagen = new ImageIcon(getClass().getResource("/imagenes/cruz.png")).getImage();
-                        setCursor(Toolkit.getDefaultToolkit().createCustomCursor(imagen, new Point(0, 31), "custom cursor"));
+                        rutaImagen = "/imagenes/cruz.png";
 
                     } else if (btnSemiCirculo.isSelected()) {
                         figuraActual = new SemiCirculo(colorDePrimerPlano, colorDeSegundoPlano, relleno, evento.getPoint(), agregaRectangulo);
-                        Image imagen = new ImageIcon(getClass().getResource("/imagenes/semiCirculo.png")).getImage();
-                        setCursor(Toolkit.getDefaultToolkit().createCustomCursor(imagen, new Point(0, 31), "custom cursor"));
+                        rutaImagen = "/imagenes/semiCirculo.png";
 
                     } else if (btnRing.isSelected()) {
                         figuraActual = new Ring(colorDePrimerPlano, colorDeSegundoPlano, relleno, evento.getPoint(), agregaRectangulo);
-                        Image imagen = new ImageIcon(getClass().getResource("/imagenes/ring.png")).getImage();
-                        setCursor(Toolkit.getDefaultToolkit().createCustomCursor(imagen, new Point(0, 31), "custom cursor"));
+                        rutaImagen = "/imagenes/ring.png";
 
                     } else if (btnFlecha.isSelected()) {
                         figuraActual = new Flecha(colorDePrimerPlano, colorDeSegundoPlano, relleno, evento.getPoint(), agregaRectangulo);
-                        Image imagen = new ImageIcon(getClass().getResource("/imagenes/flecha.png")).getImage();
-                        setCursor(Toolkit.getDefaultToolkit().createCustomCursor(imagen, new Point(0, 31), "custom cursor"));
+                        rutaImagen = "/imagenes/flecha.png";
 
                     } else if (btnCometa.isSelected()) {
-                        figuraActual = new Cometa(colorDePrimerPlano, colorDeSegundoPlano, relleno, evento.getPoint(), agregaRectangulo);
-                        Image imagen = new ImageIcon(getClass().getResource("/imagenes/cometa.png")).getImage();
-                        setCursor(Toolkit.getDefaultToolkit().createCustomCursor(imagen, new Point(0, 31), "custom cursor"));
+                        figuraActual = new Cometa(colorDePrimerPlano, colorDeSegundoPlano, relleno, evento.getPoint());
+                        rutaImagen = "/imagenes/cometa.png";
 
                     } else if (btnHexagono.isSelected()) {
                         figuraActual = new Hexagono(colorDePrimerPlano, colorDeSegundoPlano, relleno, evento.getPoint(), agregaRectangulo);
-                        Image imagen = new ImageIcon(getClass().getResource("/imagenes/hexagono.png")).getImage();
-                        setCursor(Toolkit.getDefaultToolkit().createCustomCursor(imagen, new Point(0, 31), "custom cursor"));
+                        rutaImagen = "/imagenes/hexagono.png";
 
                     } else if (btnOctagono.isSelected()) {
                         figuraActual = new Octagono(colorDePrimerPlano, colorDeSegundoPlano, relleno, evento.getPoint(), agregaRectangulo);
-                        Image imagen = new ImageIcon(getClass().getResource("/imagenes/octagono.png")).getImage();
-                        setCursor(Toolkit.getDefaultToolkit().createCustomCursor(imagen, new Point(0, 31), "custom cursor"));
+                        rutaImagen = "/imagenes/octagono.png";
 
                     } else if (btnPic.isSelected()) {
                         figuraActual = new Pic(colorDePrimerPlano, colorDeSegundoPlano, relleno, evento.getPoint(), agregaRectangulo);
-                        Image imagen = new ImageIcon(getClass().getResource("/imagenes/pic.png")).getImage();
-                        setCursor(Toolkit.getDefaultToolkit().createCustomCursor(imagen, new Point(0, 30), "custom cursor"));
-
-                    } else if (btnCirculo.isSelected()) {
-                        figuraActual = new Circulo(colorDePrimerPlano, colorDeSegundoPlano, relleno, evento.getPoint(), agregaRectangulo);
-                        Image imagen = new ImageIcon(getClass().getResource("/imagenes/circulo.png")).getImage();
-                        setCursor(Toolkit.getDefaultToolkit().createCustomCursor(imagen, new Point(0, 31), "custom cursor"));
+                        rutaImagen = "/imagenes/pic.png";
 
                     } else if (btnCuadrado.isSelected()) {
                         figuraActual = new Cuadrado(colorDePrimerPlano, colorDeSegundoPlano, relleno, evento.getPoint());
-                        Image imagen = new ImageIcon(getClass().getResource("/imagenes/cuadrado.png")).getImage();
-                        setCursor(Toolkit.getDefaultToolkit().createCustomCursor(imagen, new Point(0, 31), "custom cursor"));
+                        rutaImagen = "/imagenes/cuadrado.png";
 
                     } else if (btnCorazon.isSelected()) {
                         figuraActual = new Corazon(colorDePrimerPlano, colorDeSegundoPlano, relleno, evento.getPoint(), agregaRectangulo);
-                        Image imagen = new ImageIcon(getClass().getResource("/imagenes/corazon.png")).getImage();
-                        setCursor(Toolkit.getDefaultToolkit().createCustomCursor(imagen, new Point(0, 31), "custom cursor"));
+                        rutaImagen = "/imagenes/corazon.png";
 
                     } else if (btnCreciente.isSelected()) {
-                        figuraActual = new Creciente(colorDePrimerPlano, colorDeSegundoPlano, relleno, evento.getPoint(), agregaRectangulo);
-                        Image imagen = new ImageIcon(getClass().getResource("/imagenes/creciente.png")).getImage();
-                        setCursor(Toolkit.getDefaultToolkit().createCustomCursor(imagen, new Point(0, 31), "custom cursor"));
-                        
+                        figuraActual = new Creciente(colorDePrimerPlano, colorDeSegundoPlano, relleno, evento.getPoint());
+                        rutaImagen = "/imagenes/creciente.png";
+
                     } else if (btnDiamante.isSelected()) {
                         figuraActual = new Diamante(colorDePrimerPlano, colorDeSegundoPlano, relleno, evento.getPoint(), agregaRectangulo);
-                        Image imagen = new ImageIcon(getClass().getResource("/imagenes/diamante.png")).getImage();
-                        setCursor(Toolkit.getDefaultToolkit().createCustomCursor(imagen, new Point(0, 31), "custom cursor"));
+                        rutaImagen = "/imagenes/diamante.png";
 
                     } else if (btnPoligono.isSelected()) {
                         figuraActual = new Poligono(colorDePrimerPlano, colorDeSegundoPlano, relleno, evento.getPoint(), agregaRectangulo);
-                        Image imagen = new ImageIcon(getClass().getResource("/imagenes/poligono.png")).getImage();
-                        setCursor(Toolkit.getDefaultToolkit().createCustomCursor(imagen, new Point(0, 31), "custom cursor"));
 
                     } else if (btnQuatrebol.isSelected()) {
                         figuraActual = new Quatrebol(colorDePrimerPlano, colorDeSegundoPlano, relleno, evento.getPoint(), agregaRectangulo);
-                        Image imagen = new ImageIcon(getClass().getResource("/imagenes/quatrebol.png")).getImage();
-                        setCursor(Toolkit.getDefaultToolkit().createCustomCursor(imagen, new Point(0, 31), "custom cursor"));
+                        rutaImagen = "/imagenes/quatrebol.png";
 
                     } else if (btnTrebol.isSelected()) {
                         figuraActual = new Trebol(colorDePrimerPlano, colorDeSegundoPlano, relleno, evento.getPoint(), agregaRectangulo);
-                        Image imagen = new ImageIcon(getClass().getResource("/imagenes/trebol.png")).getImage();
-                        setCursor(Toolkit.getDefaultToolkit().createCustomCursor(imagen, new Point(0, 31), "custom cursor"));
+                        rutaImagen = "/imagenes/trebol.png";
 
                     } else {
                         figuraActual = new DibujoLibre(colorDePrimerPlano, evento.getPoint());
-                        Image imagen = new ImageIcon(getClass().getResource("/imagenes/lapiz3.png")).getImage();
-                        setCursor(Toolkit.getDefaultToolkit().createCustomCursor(imagen, new Point(0, 31), "custom cursor"));
-
+                        rutaImagen = "/imagenes/lapiz3.png";
                     }
+
+                    Image imagen = new ImageIcon(getClass().getResource(rutaImagen)).getImage();
+                    setCursor(Toolkit.getDefaultToolkit().createCustomCursor(imagen, new Point(0, 31), "custom cursor"));
                 } catch (Exception e) {
                     System.out.println("No se pudo cargar la imagen");
                     e.printStackTrace();
@@ -308,14 +264,14 @@ public class PanelDeDibujo extends javax.swing.JPanel {
 
             @Override
             public void mouseEntered(MouseEvent e) {
-                try {
-                    Image imagen = new ImageIcon(getClass().getResource("/imagenes/lapiz3.png")).getImage();
-//                    System.out.println("Anchura: " + imagen.getWidth(PanelDeDibujo.this));
-//                    System.out.println("Altura: " + imagen.getHeight(PanelDeDibujo.this));
-                    setCursor(Toolkit.getDefaultToolkit().createCustomCursor(imagen, new Point(0, 31), "custom cursor"));
-                } catch (Exception excepcion) {
-                    System.out.println("Ocurrio un error y no se pudo cargar la imagen");
-                    excepcion.printStackTrace();
+                if (icono != null) {
+                    try {
+
+                        setCursor(Toolkit.getDefaultToolkit().createCustomCursor(icono.getImage(), new Point(0, 31), "custom cursor"));
+                    } catch (Exception excepcion) {
+                        System.out.println("Ocurrio un error y no se pudo cargar la imagen");
+                        excepcion.printStackTrace();
+                    }
                 }
             }
 
@@ -329,6 +285,19 @@ public class PanelDeDibujo extends javax.swing.JPanel {
         Manejador manejador = new Manejador();
         this.addMouseListener(manejador);
         this.addMouseMotionListener(manejador);
+
+        Component[] botones = panelDeFiguras.getComponents();
+
+        for (Component boton : botones) {
+            boton.addMouseListener(new MouseAdapter() {
+                @Override
+                public void mousePressed(MouseEvent e) {
+                    icono = (ImageIcon) ((JToggleButton) boton).getIcon();
+                }
+
+            });
+
+        }
     }
 
     private void Cuadricula(Graphics g) {
@@ -369,6 +338,11 @@ public class PanelDeDibujo extends javax.swing.JPanel {
         super.paintComponent(g);
 
         for (Figura figura : figuras) {
+
+            if (figura instanceof FiguraRellenable) {
+                ((FiguraRellenable) figura).establecerComoFiguraActual(figura == figuraActual);
+            }
+
             figura.dibujar(g);
         }
 
@@ -387,14 +361,13 @@ public class PanelDeDibujo extends javax.swing.JPanel {
 
         buttonGroup1 = new javax.swing.ButtonGroup();
         panelDeHerramientas = new javax.swing.JPanel();
-        jPanel1 = new javax.swing.JPanel();
+        panelDeFiguras = new javax.swing.JPanel();
         btnBotePintura = new javax.swing.JToggleButton();
         btnGotero = new javax.swing.JToggleButton();
         btnBorrador = new javax.swing.JToggleButton();
         btnLapiz = new javax.swing.JToggleButton();
         btnLinea = new javax.swing.JToggleButton();
         btnCuadrado = new javax.swing.JToggleButton();
-        btnCirculo = new javax.swing.JToggleButton();
         btnTriangulo = new javax.swing.JToggleButton();
         btnRectangulo = new javax.swing.JToggleButton();
         btnTrianguloEscaleno = new javax.swing.JToggleButton();
@@ -442,11 +415,11 @@ public class PanelDeDibujo extends javax.swing.JPanel {
         });
         panelDeHerramientas.setLayout(new java.awt.BorderLayout());
 
-        jPanel1.setMinimumSize(new java.awt.Dimension(550, 105));
-        jPanel1.setOpaque(false);
-        jPanel1.setPreferredSize(new java.awt.Dimension(2310, 105));
-        jPanel1.setRequestFocusEnabled(false);
-        jPanel1.setLayout(new java.awt.GridLayout(2, 0));
+        panelDeFiguras.setMinimumSize(new java.awt.Dimension(550, 105));
+        panelDeFiguras.setOpaque(false);
+        panelDeFiguras.setPreferredSize(new java.awt.Dimension(2310, 105));
+        panelDeFiguras.setRequestFocusEnabled(false);
+        panelDeFiguras.setLayout(new java.awt.GridLayout(2, 0));
 
         buttonGroup1.add(btnBotePintura);
         btnBotePintura.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/botePintura.png"))); // NOI18N
@@ -462,7 +435,7 @@ public class PanelDeDibujo extends javax.swing.JPanel {
                 btnBotePinturaActionPerformed(evt);
             }
         });
-        jPanel1.add(btnBotePintura);
+        panelDeFiguras.add(btnBotePintura);
 
         buttonGroup1.add(btnGotero);
         btnGotero.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/gotero.png"))); // NOI18N
@@ -478,7 +451,7 @@ public class PanelDeDibujo extends javax.swing.JPanel {
                 btnGoteroActionPerformed(evt);
             }
         });
-        jPanel1.add(btnGotero);
+        panelDeFiguras.add(btnGotero);
 
         buttonGroup1.add(btnBorrador);
         btnBorrador.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/borrador.png"))); // NOI18N
@@ -497,7 +470,7 @@ public class PanelDeDibujo extends javax.swing.JPanel {
                 btnBorradorActionPerformed(evt);
             }
         });
-        jPanel1.add(btnBorrador);
+        panelDeFiguras.add(btnBorrador);
 
         buttonGroup1.add(btnLapiz);
         btnLapiz.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/lapiz3.png"))); // NOI18N
@@ -511,7 +484,7 @@ public class PanelDeDibujo extends javax.swing.JPanel {
         btnLapiz.setMinimumSize(new java.awt.Dimension(35, 40));
         btnLapiz.setPreferredSize(new java.awt.Dimension(35, 35));
         btnLapiz.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jPanel1.add(btnLapiz);
+        panelDeFiguras.add(btnLapiz);
 
         buttonGroup1.add(btnLinea);
         btnLinea.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/linea.png"))); // NOI18N
@@ -525,7 +498,7 @@ public class PanelDeDibujo extends javax.swing.JPanel {
         btnLinea.setMinimumSize(new java.awt.Dimension(35, 40));
         btnLinea.setPreferredSize(new java.awt.Dimension(35, 35));
         btnLinea.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jPanel1.add(btnLinea);
+        panelDeFiguras.add(btnLinea);
 
         buttonGroup1.add(btnCuadrado);
         btnCuadrado.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/cuadrado.png"))); // NOI18N
@@ -541,23 +514,7 @@ public class PanelDeDibujo extends javax.swing.JPanel {
                 btnCuadradoActionPerformed(evt);
             }
         });
-        jPanel1.add(btnCuadrado);
-
-        buttonGroup1.add(btnCirculo);
-        btnCirculo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/circulo.png"))); // NOI18N
-        btnCirculo.setToolTipText("Circulo");
-        btnCirculo.setAlignmentX(0.75F);
-        btnCirculo.setAlignmentY(0.75F);
-        btnCirculo.setMargin(new java.awt.Insets(4, 16, 4, 16));
-        btnCirculo.setMaximumSize(new java.awt.Dimension(35, 55));
-        btnCirculo.setMinimumSize(new java.awt.Dimension(35, 40));
-        btnCirculo.setPreferredSize(new java.awt.Dimension(35, 35));
-        btnCirculo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCirculoActionPerformed(evt);
-            }
-        });
-        jPanel1.add(btnCirculo);
+        panelDeFiguras.add(btnCuadrado);
 
         buttonGroup1.add(btnTriangulo);
         btnTriangulo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/triangulo.png"))); // NOI18N
@@ -576,7 +533,7 @@ public class PanelDeDibujo extends javax.swing.JPanel {
                 btnTrianguloActionPerformed(evt);
             }
         });
-        jPanel1.add(btnTriangulo);
+        panelDeFiguras.add(btnTriangulo);
 
         buttonGroup1.add(btnRectangulo);
         btnRectangulo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/rectangulo.png"))); // NOI18N
@@ -590,7 +547,7 @@ public class PanelDeDibujo extends javax.swing.JPanel {
         btnRectangulo.setMinimumSize(new java.awt.Dimension(35, 40));
         btnRectangulo.setPreferredSize(new java.awt.Dimension(35, 35));
         btnRectangulo.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jPanel1.add(btnRectangulo);
+        panelDeFiguras.add(btnRectangulo);
 
         buttonGroup1.add(btnTrianguloEscaleno);
         btnTrianguloEscaleno.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/trianguloEscaleno.png"))); // NOI18N
@@ -609,7 +566,7 @@ public class PanelDeDibujo extends javax.swing.JPanel {
                 btnTrianguloEscalenoActionPerformed(evt);
             }
         });
-        jPanel1.add(btnTrianguloEscaleno);
+        panelDeFiguras.add(btnTrianguloEscaleno);
 
         buttonGroup1.add(btnPentagono);
         btnPentagono.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/pentagono.png"))); // NOI18N
@@ -628,7 +585,7 @@ public class PanelDeDibujo extends javax.swing.JPanel {
                 btnPentagonoActionPerformed(evt);
             }
         });
-        jPanel1.add(btnPentagono);
+        panelDeFiguras.add(btnPentagono);
 
         buttonGroup1.add(btnTrianguloRectangulo);
         btnTrianguloRectangulo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/trianguloEquilatero.png"))); // NOI18N
@@ -647,7 +604,7 @@ public class PanelDeDibujo extends javax.swing.JPanel {
                 btnTrianguloRectanguloActionPerformed(evt);
             }
         });
-        jPanel1.add(btnTrianguloRectangulo);
+        panelDeFiguras.add(btnTrianguloRectangulo);
 
         buttonGroup1.add(btnTrapecio);
         btnTrapecio.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/trapecio.png"))); // NOI18N
@@ -661,7 +618,7 @@ public class PanelDeDibujo extends javax.swing.JPanel {
         btnTrapecio.setMinimumSize(new java.awt.Dimension(35, 40));
         btnTrapecio.setPreferredSize(new java.awt.Dimension(35, 35));
         btnTrapecio.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jPanel1.add(btnTrapecio);
+        panelDeFiguras.add(btnTrapecio);
 
         buttonGroup1.add(btnCometa);
         btnCometa.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/cometa.png"))); // NOI18N
@@ -675,7 +632,7 @@ public class PanelDeDibujo extends javax.swing.JPanel {
         btnCometa.setMinimumSize(new java.awt.Dimension(35, 40));
         btnCometa.setPreferredSize(new java.awt.Dimension(35, 35));
         btnCometa.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jPanel1.add(btnCometa);
+        panelDeFiguras.add(btnCometa);
 
         buttonGroup1.add(btnPoligono);
         btnPoligono.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/poligono.png"))); // NOI18N
@@ -686,7 +643,7 @@ public class PanelDeDibujo extends javax.swing.JPanel {
         btnPoligono.setMaximumSize(new java.awt.Dimension(35, 55));
         btnPoligono.setMinimumSize(new java.awt.Dimension(35, 40));
         btnPoligono.setPreferredSize(new java.awt.Dimension(35, 35));
-        jPanel1.add(btnPoligono);
+        panelDeFiguras.add(btnPoligono);
 
         buttonGroup1.add(btnParalelogramo);
         btnParalelogramo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/paralelogramo.png"))); // NOI18N
@@ -700,7 +657,7 @@ public class PanelDeDibujo extends javax.swing.JPanel {
         btnParalelogramo.setMinimumSize(new java.awt.Dimension(35, 40));
         btnParalelogramo.setPreferredSize(new java.awt.Dimension(35, 35));
         btnParalelogramo.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jPanel1.add(btnParalelogramo);
+        panelDeFiguras.add(btnParalelogramo);
 
         buttonGroup1.add(btnOvalo);
         btnOvalo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/ovalo.png"))); // NOI18N
@@ -714,7 +671,7 @@ public class PanelDeDibujo extends javax.swing.JPanel {
         btnOvalo.setMinimumSize(new java.awt.Dimension(35, 40));
         btnOvalo.setPreferredSize(new java.awt.Dimension(35, 35));
         btnOvalo.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jPanel1.add(btnOvalo);
+        panelDeFiguras.add(btnOvalo);
 
         buttonGroup1.add(btnQuatrebol);
         btnQuatrebol.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/quatrebol.png"))); // NOI18N
@@ -730,7 +687,7 @@ public class PanelDeDibujo extends javax.swing.JPanel {
                 btnQuatrebolActionPerformed(evt);
             }
         });
-        jPanel1.add(btnQuatrebol);
+        panelDeFiguras.add(btnQuatrebol);
 
         buttonGroup1.add(btnEstrella);
         btnEstrella.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/estrella.png"))); // NOI18N
@@ -749,7 +706,7 @@ public class PanelDeDibujo extends javax.swing.JPanel {
                 btnEstrellaActionPerformed(evt);
             }
         });
-        jPanel1.add(btnEstrella);
+        panelDeFiguras.add(btnEstrella);
 
         buttonGroup1.add(btnSemiCirculo);
         btnSemiCirculo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/semiCirculo.png"))); // NOI18N
@@ -763,7 +720,7 @@ public class PanelDeDibujo extends javax.swing.JPanel {
         btnSemiCirculo.setMinimumSize(new java.awt.Dimension(35, 40));
         btnSemiCirculo.setPreferredSize(new java.awt.Dimension(35, 35));
         btnSemiCirculo.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jPanel1.add(btnSemiCirculo);
+        panelDeFiguras.add(btnSemiCirculo);
 
         buttonGroup1.add(btnHexagono);
         btnHexagono.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/hexagono.png"))); // NOI18N
@@ -782,7 +739,7 @@ public class PanelDeDibujo extends javax.swing.JPanel {
                 btnHexagonoActionPerformed(evt);
             }
         });
-        jPanel1.add(btnHexagono);
+        panelDeFiguras.add(btnHexagono);
 
         buttonGroup1.add(btnCreciente);
         btnCreciente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/creciente.png"))); // NOI18N
@@ -798,7 +755,7 @@ public class PanelDeDibujo extends javax.swing.JPanel {
                 btnCrecienteActionPerformed(evt);
             }
         });
-        jPanel1.add(btnCreciente);
+        panelDeFiguras.add(btnCreciente);
 
         buttonGroup1.add(btnOctagono);
         btnOctagono.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/octagono.png"))); // NOI18N
@@ -817,7 +774,7 @@ public class PanelDeDibujo extends javax.swing.JPanel {
                 btnOctagonoActionPerformed(evt);
             }
         });
-        jPanel1.add(btnOctagono);
+        panelDeFiguras.add(btnOctagono);
 
         buttonGroup1.add(btnCruz);
         btnCruz.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/cruz.png"))); // NOI18N
@@ -831,7 +788,7 @@ public class PanelDeDibujo extends javax.swing.JPanel {
         btnCruz.setMinimumSize(new java.awt.Dimension(35, 40));
         btnCruz.setPreferredSize(new java.awt.Dimension(35, 35));
         btnCruz.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jPanel1.add(btnCruz);
+        panelDeFiguras.add(btnCruz);
 
         buttonGroup1.add(btnRing);
         btnRing.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/ring.png"))); // NOI18N
@@ -845,7 +802,7 @@ public class PanelDeDibujo extends javax.swing.JPanel {
         btnRing.setMinimumSize(new java.awt.Dimension(35, 40));
         btnRing.setPreferredSize(new java.awt.Dimension(35, 35));
         btnRing.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jPanel1.add(btnRing);
+        panelDeFiguras.add(btnRing);
 
         buttonGroup1.add(btnPic);
         btnPic.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/pic.png"))); // NOI18N
@@ -861,7 +818,7 @@ public class PanelDeDibujo extends javax.swing.JPanel {
                 btnPicActionPerformed(evt);
             }
         });
-        jPanel1.add(btnPic);
+        panelDeFiguras.add(btnPic);
 
         buttonGroup1.add(btnCorazon);
         btnCorazon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/corazon.png"))); // NOI18N
@@ -877,7 +834,7 @@ public class PanelDeDibujo extends javax.swing.JPanel {
                 btnCorazonActionPerformed(evt);
             }
         });
-        jPanel1.add(btnCorazon);
+        panelDeFiguras.add(btnCorazon);
 
         buttonGroup1.add(btnFlecha);
         btnFlecha.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/flecha.png"))); // NOI18N
@@ -896,7 +853,7 @@ public class PanelDeDibujo extends javax.swing.JPanel {
                 btnFlechaActionPerformed(evt);
             }
         });
-        jPanel1.add(btnFlecha);
+        panelDeFiguras.add(btnFlecha);
 
         buttonGroup1.add(btnTrebol);
         btnTrebol.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/trebol.png"))); // NOI18N
@@ -912,7 +869,7 @@ public class PanelDeDibujo extends javax.swing.JPanel {
                 btnTrebolActionPerformed(evt);
             }
         });
-        jPanel1.add(btnTrebol);
+        panelDeFiguras.add(btnTrebol);
 
         buttonGroup1.add(btnRombo);
         btnRombo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/rombo.png"))); // NOI18N
@@ -931,7 +888,7 @@ public class PanelDeDibujo extends javax.swing.JPanel {
                 btnRomboActionPerformed(evt);
             }
         });
-        jPanel1.add(btnRombo);
+        panelDeFiguras.add(btnRombo);
 
         buttonGroup1.add(btnDiamante);
         btnDiamante.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/diamante.png"))); // NOI18N
@@ -942,9 +899,9 @@ public class PanelDeDibujo extends javax.swing.JPanel {
                 btnDiamanteActionPerformed(evt);
             }
         });
-        jPanel1.add(btnDiamante);
+        panelDeFiguras.add(btnDiamante);
 
-        panelDeHerramientas.add(jPanel1, java.awt.BorderLayout.CENTER);
+        panelDeHerramientas.add(panelDeFiguras, java.awt.BorderLayout.CENTER);
 
         panelColor.setMinimumSize(new java.awt.Dimension(93, 118));
         panelColor.setPreferredSize(new java.awt.Dimension(93, 120));
@@ -1088,10 +1045,6 @@ public class PanelDeDibujo extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnBotePinturaActionPerformed
 
-    private void btnCirculoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCirculoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnCirculoActionPerformed
-
     private void btnCuadradoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCuadradoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnCuadradoActionPerformed
@@ -1132,7 +1085,6 @@ public class PanelDeDibujo extends javax.swing.JPanel {
     private javax.swing.JToggleButton btnAgregaRectangulo;
     private javax.swing.JToggleButton btnBorrador;
     private javax.swing.JToggleButton btnBotePintura;
-    private javax.swing.JToggleButton btnCirculo;
     private javax.swing.JToggleButton btnCometa;
     private javax.swing.JToggleButton btnCorazon;
     private javax.swing.JToggleButton btnCreciente;
@@ -1163,8 +1115,8 @@ public class PanelDeDibujo extends javax.swing.JPanel {
     private javax.swing.JToggleButton btnTrianguloEscaleno;
     private javax.swing.JToggleButton btnTrianguloRectangulo;
     private javax.swing.ButtonGroup buttonGroup1;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel panelColor;
+    private javax.swing.JPanel panelDeFiguras;
     private javax.swing.JPanel panelDeHerramientas;
     // End of variables declaration//GEN-END:variables
 }
