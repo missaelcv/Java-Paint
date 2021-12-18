@@ -27,7 +27,6 @@ public class Corazon extends FiguraBordeable {
         //Puntos de las lineas
         Point punto1 = new Point((int) (x + anchura / 6.71), y + (int) (altura / 1.90));
         Point punto2 = new Point(x + anchura / 2, y + altura);
-
         Point punto3 = new Point((int) (x + anchura - anchura / 6.71), y + (int) (altura / 1.90));
         Point punto4 = new Point(x + anchura / 2, y + altura);
 
