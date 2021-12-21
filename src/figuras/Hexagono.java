@@ -37,11 +37,13 @@ public class Hexagono extends FiguraRellenable {
 
         if (getRelleno()) {
             g.setColor(getColorDeSegundoPlano());
-            g.fillPolygon(new int[]{punto1.x, punto2.x, punto3.x, punto4.x, punto5.x, punto6.x}, new int[]{punto1.y, punto2.y, punto3.y, punto4.y, punto5.y, punto6.y}, 6);
+            g.fillPolygon(new int[]{punto1.x, punto2.x, punto3.x, punto4.x, punto5.x, punto6.x},
+            new int[]{punto1.y, punto2.y, punto3.y, punto4.y, punto5.y, punto6.y}, 6);
         }
 
         g.setColor(getColorDePrimerPlano());
-        g.drawPolygon(new int[]{punto1.x, punto2.x, punto3.x, punto4.x, punto5.x, punto6.x}, new int[]{punto1.y, punto2.y, punto3.y, punto4.y, punto5.y, punto6.y}, 6);
+        g.drawPolygon(new int[]{punto1.x, punto2.x, punto3.x, punto4.x, punto5.x, punto6.x},
+            new int[]{punto1.y, punto2.y, punto3.y, punto4.y, punto5.y, punto6.y}, 6);
 
         this.setRectangulo(new Rectangle(x, y, anchura, altura));
         super.dibujar(g);

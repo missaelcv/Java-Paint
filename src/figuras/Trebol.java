@@ -37,16 +37,17 @@ public class Trebol extends FiguraRellenable {
         //Agregando el Relleno de Figura Trebol Final 
         if (getRelleno()) {
             g.setColor(getColorDeSegundoPlano());
-
             g.fillArc(x + anchura / 4, y, anchura / 2, (int) (altura / 1.20), 0, 360);
             g.fillArc(x, (int) (y + altura / 2.6), (int) (anchura / 1.8), (int) (altura / 1.6), 0, 360);
-            g.fillArc((int) (x + anchura / 2.2), (int) (y + altura / 2.6), (int) (anchura / 1.8), (int) (altura / 1.6), 0, 360);
+            g.fillArc((int) (x + anchura / 2.2), (int) (y + altura / 2.6),
+                    (int) (anchura / 1.8), (int) (altura / 1.6), 0, 360);
         }
 
         g.setColor(getColorDePrimerPlano());
         g.drawArc(x + anchura / 4, y, anchura / 2, (int) (altura / 1.20), 5, 174);
         g.drawArc(x, (int) (y + altura / 2.6), (int) (anchura / 1.8), (int) (altura / 1.6), 93, 237);
-        g.drawArc((int) (x + anchura / 2.2), (int) (y + altura / 2.6), (int) (anchura / 1.8), (int) (altura / 1.6), 89, -241);
+        g.drawArc((int) (x + anchura / 2.2), (int) (y + altura / 2.6), (int) (anchura / 1.8),
+                    (int) (altura / 1.6), 89, -241);
 
         this.setRectangulo(new Rectangle(x, y, anchura, altura));
         super.dibujar(g);
