@@ -2,15 +2,15 @@ package figuras;
 
 import java.awt.*;
 
-public class Trapecio extends FiguraBordeable {
+public class Trapecio extends FiguraRellenable {
 
     int x;
     int y;
     int anchura;
     int altura;
 
-    public Trapecio(Color color, Color color2, Boolean relleno, Point puntoInicial, Boolean agregarRectangulo) {
-        super(color, color2, relleno, agregarRectangulo);
+    public Trapecio(Color color, Color color2, Boolean relleno, Point puntoInicial) {
+        super(color, color2, relleno);
         this.x = puntoInicial.x;
         this.y = puntoInicial.y;
         this.anchura = 1;
@@ -28,10 +28,10 @@ public class Trapecio extends FiguraBordeable {
         int anchura = Math.abs(this.anchura);
         int altura = Math.abs(this.altura);
 
-        Point punto1 = new Point(x, y);
-        Point punto2 = new Point((int) (x - (anchura * 0.40)), y + altura);
-        Point punto3 = new Point(x + anchura, y + altura);
-        Point punto4 = new Point((int) (x + anchura - (anchura * 0.40)), y);
+        Point punto1 = new Point(x + 1, y + altura);
+        Point punto2 = new Point((int) (x + anchura * 0.3), y);
+        Point punto3 = new Point((int) (x + anchura * 0.7), y);
+        Point punto4 = new Point(x + anchura, y + altura);
 
         if (getRelleno()) {
             g.setColor(getColorDeSegundoPlano());
@@ -41,8 +41,7 @@ public class Trapecio extends FiguraBordeable {
         g.setColor(getColorDePrimerPlano());
         g.drawPolygon(new int[]{punto1.x, punto2.x, punto3.x, punto4.x}, new int[]{punto1.y, punto2.y, punto3.y, punto4.y}, 4);
 
-        if (getAgregarRectangulo()) {
-            g.drawRect(x, y, Math.abs(anchura), Math.abs(altura));
-        }
+        this.setRectangulo(new Rectangle(x, y, anchura, altura));
+        super.dibujar(g);
     }
 }
