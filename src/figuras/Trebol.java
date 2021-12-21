@@ -2,7 +2,7 @@ package figuras;
 
 import java.awt.*;
 
-public class Trebol extends FiguraBordeable {
+public class Trebol extends FiguraRellenable {
 
     Point puntoInicial;
     Point puntoFinal;
@@ -11,8 +11,8 @@ public class Trebol extends FiguraBordeable {
     int anchura;
     int altura;
 
-    public Trebol(Color color, Color color2, Boolean relleno, Point puntoInicial, Boolean agregarRectangulo) {
-        super(color, color2, relleno, agregarRectangulo);
+    public Trebol(Color color, Color color2, Boolean relleno, Point puntoInicial) {
+        super(color, color2, relleno);
         this.puntoInicial = puntoInicial;
         this.puntoFinal = puntoFinal;
         this.x = puntoInicial.x;
@@ -48,9 +48,8 @@ public class Trebol extends FiguraBordeable {
         g.drawArc(x, (int) (y + altura / 2.6), (int) (anchura / 1.8), (int) (altura / 1.6), 93, 237);
         g.drawArc((int) (x + anchura / 2.2), (int) (y + altura / 2.6), (int) (anchura / 1.8), (int) (altura / 1.6), 89, -241);
 
-        if (getAgregarRectangulo()) {
-            g.drawRect(x, y, Math.abs(anchura), Math.abs(altura));
-        }
+        this.setRectangulo(new Rectangle(x, y, anchura, altura));
+        super.dibujar(g);
 
     }
 }
