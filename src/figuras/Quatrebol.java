@@ -2,7 +2,7 @@ package figuras;
 
 import java.awt.*;
 
-public class Quatrebol extends FiguraBordeable {
+public class Quatrebol extends FiguraRellenable {
 
     Point puntoInicial;
     Point puntoFinal;
@@ -11,8 +11,8 @@ public class Quatrebol extends FiguraBordeable {
     int anchura;
     int altura;
 
-    public Quatrebol(Color color, Color color2, Boolean relleno, Point puntoInicial, Boolean agregarRectangulo) {
-        super(color, color2, relleno, agregarRectangulo);
+    public Quatrebol(Color color, Color color2, Boolean relleno, Point puntoInicial) {
+        super(color, color2, relleno);
         this.x = puntoInicial.x;
         this.y = puntoInicial.y;
         this.anchura = 1;
@@ -51,8 +51,7 @@ public class Quatrebol extends FiguraBordeable {
         g.drawArc(x + anchura / 4, y + altura / 2, anchura / 2, altura / 2, 180, 180);
         g.drawArc(x + anchura / 2, y + altura / 4, anchura / 2, altura / 2, 90, -180);
 
-        if (getAgregarRectangulo()) {
-            g.drawRect(x, y, Math.abs(anchura), Math.abs(altura));
-        }
+        this.setRectangulo(new Rectangle(x, y, anchura, altura));
+        super.dibujar(g);
     }
 }
