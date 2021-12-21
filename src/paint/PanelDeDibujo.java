@@ -15,7 +15,6 @@ public class PanelDeDibujo extends javax.swing.JPanel {
 
     Color colorDePrimerPlano;
     Boolean relleno;
-    Boolean agregaRectangulo;
     File archivoActual;
     private ImageIcon icono;
 
@@ -130,8 +129,6 @@ public class PanelDeDibujo extends javax.swing.JPanel {
             public void mousePressed(MouseEvent evento) {
 
                 relleno = btnFill.isSelected();
-                agregaRectangulo = btnAgregaRectangulo.isSelected();
-
                 String rutaImagen = " ";
                 try {
                     if (btnLinea.isSelected()) {
@@ -143,39 +140,39 @@ public class PanelDeDibujo extends javax.swing.JPanel {
                         rutaImagen = "/imagenes/rectangulo.png";
 
                     } else if (btnOvalo.isSelected()) {
-                        figuraActual = new Ovalo(colorDePrimerPlano, colorDeSegundoPlano, relleno, evento.getPoint(), agregaRectangulo);
+                        figuraActual = new Ovalo(colorDePrimerPlano, colorDeSegundoPlano, relleno, evento.getPoint());
                         rutaImagen = "/imagenes/ovalo.png";
 
                     } else if (btnTriangulo.isSelected()) {
-                        figuraActual = new Triangulo(colorDePrimerPlano, colorDeSegundoPlano, relleno, evento.getPoint(), agregaRectangulo);
+                        figuraActual = new Triangulo(colorDePrimerPlano, colorDeSegundoPlano, relleno, evento.getPoint());
                         rutaImagen = "/imagenes/triangulo.png";
 
                     } else if (btnTrianguloRectangulo.isSelected()) {
-                        figuraActual = new TrianguloRectangulo(colorDePrimerPlano, colorDeSegundoPlano, relleno, evento.getPoint(), agregaRectangulo);
+                        figuraActual = new TrianguloRectangulo(colorDePrimerPlano, colorDeSegundoPlano, relleno, evento.getPoint());
                         rutaImagen = "/imagenes/trianguloEquilatero.png";
 
                     } else if (btnTrapecio.isSelected()) {
-                        figuraActual = new Trapecio(colorDePrimerPlano, colorDeSegundoPlano, relleno, evento.getPoint(), agregaRectangulo);
+                        figuraActual = new Trapecio(colorDePrimerPlano, colorDeSegundoPlano, relleno, evento.getPoint());
                         rutaImagen = "/imagenes/trapecio.png";
 
                     } else if (btnParalelogramo.isSelected()) {
-                        figuraActual = new Paralelogramo(colorDePrimerPlano, colorDeSegundoPlano, relleno, evento.getPoint(), agregaRectangulo);
+                        figuraActual = new Paralelogramo(colorDePrimerPlano, colorDeSegundoPlano, relleno, evento.getPoint());
                         rutaImagen = "/imagenes/paralelogramo.png";
 
                     } else if (btnTrianguloEscaleno.isSelected()) {
-                        figuraActual = new TrianguloEscaleno(colorDePrimerPlano, colorDeSegundoPlano, relleno, evento.getPoint(), agregaRectangulo);
+                        figuraActual = new TrianguloEscaleno(colorDePrimerPlano, colorDeSegundoPlano, relleno, evento.getPoint());
                         rutaImagen = "/imagenes/trianguloEscaleno.png";
 
                     } else if (btnEstrella.isSelected()) {
-                        figuraActual = new Estrella(colorDePrimerPlano, colorDeSegundoPlano, relleno, evento.getPoint(), agregaRectangulo);
+                        figuraActual = new Estrella(colorDePrimerPlano, colorDeSegundoPlano, relleno, evento.getPoint());
                         rutaImagen = "/imagenes/estrella.png";
 
                     } else if (btnPentagono.isSelected()) {
-                        figuraActual = new Pentagono(colorDePrimerPlano, colorDeSegundoPlano, relleno, evento.getPoint(), agregaRectangulo);
+                        figuraActual = new Pentagono(colorDePrimerPlano, colorDeSegundoPlano, relleno, evento.getPoint());
                         rutaImagen = "/imagenes/pentagono.png";
 
                     } else if (btnRombo.isSelected()) {
-                        figuraActual = new Rombo(colorDePrimerPlano, colorDeSegundoPlano, relleno, evento.getPoint(), agregaRectangulo);
+                        figuraActual = new Rombo(colorDePrimerPlano, colorDeSegundoPlano, relleno, evento.getPoint());
                         rutaImagen = "/imagenes/rombo.png";
 
                     } else if (btnBorrador.isSelected()) {
@@ -188,19 +185,19 @@ public class PanelDeDibujo extends javax.swing.JPanel {
                     //
                     //     } 
                     else if (btnCruz.isSelected()) {
-                        figuraActual = new Cruz(colorDePrimerPlano, colorDeSegundoPlano, relleno, evento.getPoint(), agregaRectangulo);
+                        figuraActual = new Cruz(colorDePrimerPlano, colorDeSegundoPlano, relleno, evento.getPoint());
                         rutaImagen = "/imagenes/cruz.png";
 
                     } else if (btnSemiCirculo.isSelected()) {
-                        figuraActual = new SemiCirculo(colorDePrimerPlano, colorDeSegundoPlano, relleno, evento.getPoint(), agregaRectangulo);
+                        figuraActual = new SemiCirculo(colorDePrimerPlano, colorDeSegundoPlano, relleno, evento.getPoint());
                         rutaImagen = "/imagenes/semiCirculo.png";
 
                     } else if (btnRing.isSelected()) {
-                        figuraActual = new Ring(colorDePrimerPlano, colorDeSegundoPlano, relleno, evento.getPoint(), agregaRectangulo);
+                        figuraActual = new Ring(colorDePrimerPlano, colorDeSegundoPlano, relleno, evento.getPoint());
                         rutaImagen = "/imagenes/ring.png";
 
                     } else if (btnFlecha.isSelected()) {
-                        figuraActual = new Flecha(colorDePrimerPlano, colorDeSegundoPlano, relleno, evento.getPoint(), agregaRectangulo);
+                        figuraActual = new Flecha(colorDePrimerPlano, colorDeSegundoPlano, relleno, evento.getPoint());
                         rutaImagen = "/imagenes/flecha.png";
 
                     } else if (btnCometa.isSelected()) {
@@ -208,15 +205,15 @@ public class PanelDeDibujo extends javax.swing.JPanel {
                         rutaImagen = "/imagenes/cometa.png";
 
                     } else if (btnHexagono.isSelected()) {
-                        figuraActual = new Hexagono(colorDePrimerPlano, colorDeSegundoPlano, relleno, evento.getPoint(), agregaRectangulo);
+                        figuraActual = new Hexagono(colorDePrimerPlano, colorDeSegundoPlano, relleno, evento.getPoint());
                         rutaImagen = "/imagenes/hexagono.png";
 
                     } else if (btnOctagono.isSelected()) {
-                        figuraActual = new Octagono(colorDePrimerPlano, colorDeSegundoPlano, relleno, evento.getPoint(), agregaRectangulo);
+                        figuraActual = new Octagono(colorDePrimerPlano, colorDeSegundoPlano, relleno, evento.getPoint());
                         rutaImagen = "/imagenes/octagono.png";
 
                     } else if (btnPic.isSelected()) {
-                        figuraActual = new Pic(colorDePrimerPlano, colorDeSegundoPlano, relleno, evento.getPoint(), agregaRectangulo);
+                        figuraActual = new Pic(colorDePrimerPlano, colorDeSegundoPlano, relleno, evento.getPoint());
                         rutaImagen = "/imagenes/pic.png";
 
                     } else if (btnCuadrado.isSelected()) {
@@ -224,7 +221,7 @@ public class PanelDeDibujo extends javax.swing.JPanel {
                         rutaImagen = "/imagenes/cuadrado.png";
 
                     } else if (btnCorazon.isSelected()) {
-                        figuraActual = new Corazon(colorDePrimerPlano, colorDeSegundoPlano, relleno, evento.getPoint(), agregaRectangulo);
+                        figuraActual = new Corazon(colorDePrimerPlano, colorDeSegundoPlano, relleno, evento.getPoint());
                         rutaImagen = "/imagenes/corazon.png";
 
                     } else if (btnCreciente.isSelected()) {
@@ -232,18 +229,18 @@ public class PanelDeDibujo extends javax.swing.JPanel {
                         rutaImagen = "/imagenes/creciente.png";
 
                     } else if (btnDiamante.isSelected()) {
-                        figuraActual = new Diamante(colorDePrimerPlano, colorDeSegundoPlano, relleno, evento.getPoint(), agregaRectangulo);
+                        figuraActual = new Diamante(colorDePrimerPlano, colorDeSegundoPlano, relleno, evento.getPoint());
                         rutaImagen = "/imagenes/diamante.png";
 
                     } else if (btnPoligono.isSelected()) {
-                        figuraActual = new Poligono(colorDePrimerPlano, colorDeSegundoPlano, relleno, evento.getPoint(), agregaRectangulo);
+                        figuraActual = new Poligono(colorDePrimerPlano, colorDeSegundoPlano, relleno, evento.getPoint());
 
                     } else if (btnQuatrebol.isSelected()) {
-                        figuraActual = new Quatrebol(colorDePrimerPlano, colorDeSegundoPlano, relleno, evento.getPoint(), agregaRectangulo);
+                        figuraActual = new Quatrebol(colorDePrimerPlano, colorDeSegundoPlano, relleno, evento.getPoint());
                         rutaImagen = "/imagenes/quatrebol.png";
 
                     } else if (btnTrebol.isSelected()) {
-                        figuraActual = new Trebol(colorDePrimerPlano, colorDeSegundoPlano, relleno, evento.getPoint(), agregaRectangulo);
+                        figuraActual = new Trebol(colorDePrimerPlano, colorDeSegundoPlano, relleno, evento.getPoint());
                         rutaImagen = "/imagenes/trebol.png";
 
                     } else {
@@ -396,7 +393,6 @@ public class PanelDeDibujo extends javax.swing.JPanel {
         botonDePrimerPlano = new javax.swing.JToggleButton();
         botonDeSegundoPlano = new javax.swing.JToggleButton();
         Colores = new javax.swing.JLabel();
-        btnAgregaRectangulo = new javax.swing.JToggleButton();
         btnFill = new javax.swing.JToggleButton();
 
         setMinimumSize(new java.awt.Dimension(650, 125));
@@ -930,26 +926,6 @@ public class PanelDeDibujo extends javax.swing.JPanel {
         Colores.setText("Colores:");
         panelColor.add(Colores, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 0, 50, -1));
 
-        btnAgregaRectangulo.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
-        btnAgregaRectangulo.setText("Rectangulo");
-        btnAgregaRectangulo.setAlignmentY(0.0F);
-        btnAgregaRectangulo.setFocusable(false);
-        btnAgregaRectangulo.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        btnAgregaRectangulo.setIconTextGap(2);
-        btnAgregaRectangulo.setMargin(new java.awt.Insets(2, 2, 2, 2));
-        btnAgregaRectangulo.setMaximumSize(new java.awt.Dimension(35, 35));
-        btnAgregaRectangulo.setMinimumSize(new java.awt.Dimension(35, 35));
-        btnAgregaRectangulo.setPreferredSize(new java.awt.Dimension(120, 40));
-        btnAgregaRectangulo.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        btnAgregaRectangulo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnAgregaRectanguloActionPerformed(evt);
-            }
-        });
-        panelColor.add(btnAgregaRectangulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, 90, 30));
-        btnAgregaRectangulo.getAccessibleContext().setAccessibleName("Agregar un rectángulo alrededor de la figura.");
-        btnAgregaRectangulo.getAccessibleContext().setAccessibleDescription("Agregar un rectángulo alrededor de la figura.");
-
         btnFill.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         btnFill.setText("Rellenar");
         btnFill.setAlignmentY(0.0F);
@@ -966,7 +942,7 @@ public class PanelDeDibujo extends javax.swing.JPanel {
                 btnFillActionPerformed(evt);
             }
         });
-        panelColor.add(btnFill, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 80, 90, 30));
+        panelColor.add(btnFill, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 90, 30));
 
         panelDeHerramientas.add(panelColor, java.awt.BorderLayout.EAST);
 
@@ -1021,10 +997,6 @@ public class PanelDeDibujo extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnFlechaActionPerformed
 
-    private void btnAgregaRectanguloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregaRectanguloActionPerformed
-
-    }//GEN-LAST:event_btnAgregaRectanguloActionPerformed
-
     private void btnHexagonoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHexagonoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnHexagonoActionPerformed
@@ -1077,12 +1049,10 @@ public class PanelDeDibujo extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnFillActionPerformed
 
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Colores;
     private javax.swing.JToggleButton botonDePrimerPlano;
     private javax.swing.JToggleButton botonDeSegundoPlano;
-    private javax.swing.JToggleButton btnAgregaRectangulo;
     private javax.swing.JToggleButton btnBorrador;
     private javax.swing.JToggleButton btnBotePintura;
     private javax.swing.JToggleButton btnCometa;

@@ -2,7 +2,7 @@ package figuras;
 
 import java.awt.*;
 
-public class Pic extends FiguraBordeable {
+public class Pic extends FiguraRellenable {
 
     Point puntoInicial;
     Point puntoFinal;
@@ -11,8 +11,8 @@ public class Pic extends FiguraBordeable {
     int anchura;
     int altura;
 
-    public Pic(Color color, Color color2, Boolean relleno, Point puntoInicial, Boolean agregarRectangulo) {
-        super(color, color2, relleno, agregarRectangulo);
+    public Pic(Color color, Color color2, Boolean relleno, Point puntoInicial) {
+        super(color, color2, relleno);
         this.puntoInicial = puntoInicial;
         this.puntoFinal = puntoFinal;
         this.x = puntoInicial.x;
@@ -39,8 +39,7 @@ public class Pic extends FiguraBordeable {
         g.drawLine(puntoInicial.x + anchura / 2, puntoInicial.y, puntoInicial.x + anchura / 2, ((int) (puntoFinal.y * 0.50) + y));
         g.drawArc(x, y, anchura, puntoFinal.y, 90, 270);
 
-        if (getAgregarRectangulo()) {
-            g.drawRect(x, y, Math.abs(anchura), Math.abs(altura));
-        }
+        this.setRectangulo(new Rectangle(x, y, anchura, altura));
+        super.dibujar(g);
     }
 }

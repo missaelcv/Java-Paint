@@ -3,8 +3,39 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/winst/OneDrive%20-%20Universidad%20Autonoma%20de%20Santo%20Domingo/Desktop/PaintJava/src/paint/PanelDeDibujo.java</file>
-            <file>file:/C:/Users/winst/OneDrive%20-%20Universidad%20Autonoma%20de%20Santo%20Domingo/Desktop/PaintJava/src/paint/VentanaPrincipal.java</file>
+            <file>file:/C:/Users/johan/Desktop/PaintJava/src/figuras/Hexagono.java</file>
+            <file>file:/C:/Users/johan/Desktop/PaintJava/src/figuras/Creciente.java</file>
+            <file>file:/C:/Users/johan/Desktop/PaintJava/src/figuras/Cometa.java</file>
+            <file>file:/C:/Users/johan/Desktop/PaintJava/src/figuras/Diamante.java</file>
+            <file>file:/C:/Users/johan/Desktop/PaintJava/src/figuras/Cuadrado.java</file>
+            <file>file:/C:/Users/johan/Desktop/PaintJava/src/figuras/Poligono.java</file>
+            <file>file:/C:/Users/johan/Desktop/PaintJava/src/figuras/DibujoLibre.java</file>
+            <file>file:/C:/Users/johan/Desktop/PaintJava/src/paint/PanelDeDibujo.java</file>
+            <file>file:/C:/Users/johan/Desktop/PaintJava/src/figuras/Figura.java</file>
+            <file>file:/C:/Users/johan/Desktop/PaintJava/src/figuras/Rectangulo.java</file>
+            <file>file:/C:/Users/johan/Desktop/PaintJava/src/figuras/TrianguloEscaleno.java</file>
+            <file>file:/C:/Users/johan/Desktop/PaintJava/src/figuras/Estrella.java</file>
+            <file>file:/C:/Users/johan/Desktop/PaintJava/src/paint/VentanaPrincipal.java</file>
+            <file>file:/C:/Users/johan/Desktop/PaintJava/src/figuras/Linea.java</file>
+            <file>file:/C:/Users/johan/Desktop/PaintJava/src/figuras/Paralelogramo.java</file>
+            <file>file:/C:/Users/johan/Desktop/PaintJava/src/paint/Paint.java</file>
+            <file>file:/C:/Users/johan/Desktop/PaintJava/src/figuras/Ovalo.java</file>
+            <file>file:/C:/Users/johan/Desktop/PaintJava/src/figuras/SemiCirculo.java</file>
+            <file>file:/C:/Users/johan/Desktop/PaintJava/src/figuras/FiguraRellenable.java</file>
+            <file>file:/C:/Users/johan/Desktop/PaintJava/src/figuras/Pic.java</file>
+            <file>file:/C:/Users/johan/Desktop/PaintJava/src/figuras/Borrador.java</file>
+            <file>file:/C:/Users/johan/Desktop/PaintJava/src/figuras/Trebol.java</file>
+            <file>file:/C:/Users/johan/Desktop/PaintJava/src/figuras/Triangulo.java</file>
+            <file>file:/C:/Users/johan/Desktop/PaintJava/src/figuras/Quatrebol.java</file>
+            <file>file:/C:/Users/johan/Desktop/PaintJava/src/figuras/Rombo.java</file>
+            <file>file:/C:/Users/johan/Desktop/PaintJava/src/figuras/Trapecio.java</file>
+            <file>file:/C:/Users/johan/Desktop/PaintJava/src/figuras/Ring.java</file>
+            <file>file:/C:/Users/johan/Desktop/PaintJava/src/figuras/TrianguloRectangulo.java</file>
+            <file>file:/C:/Users/johan/Desktop/PaintJava/src/figuras/Octagono.java</file>
+            <file>file:/C:/Users/johan/Desktop/PaintJava/src/figuras/Cruz.java</file>
+            <file>file:/C:/Users/johan/Desktop/PaintJava/src/figuras/Pentagono.java</file>
+            <file>file:/C:/Users/johan/Desktop/PaintJava/src/figuras/Corazon.java</file>
+            <file>file:/C:/Users/johan/Desktop/PaintJava/src/figuras/Flecha.java</file>
         </group>
     </open-files>
 </project-private>

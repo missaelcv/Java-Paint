@@ -82,6 +82,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         menuArchivo.add(jMenuItem9);
         menuArchivo.add(jSeparator1);
 
+        menuItemSalir.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_W, java.awt.event.InputEvent.CTRL_DOWN_MASK));
         menuItemSalir.setText("Salir");
         menuItemSalir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -224,18 +225,15 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
     private void jMenuItem10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem10ActionPerformed
         // TODO add your handling code here:
-         
-          JOptionPane.showMessageDialog(null,"\t                                     Bienvenido al Menú de Ayuda \n\n" 
+
+        JOptionPane.showMessageDialog(null, "\t                                     Bienvenido al Menú de Ayuda \n\n"
                 + "Ctrl+S:               Si el archivo esta creado, lo guarda a la última versión realizada. \n"
                 + "Ctrl+Shift+S:    Crea un archivo nuevo. \n"
                 + "Ctrl+L:               Coloca la cuadricula en la ventana principal o Removerla. \n"
                 + "Ctrl+Z:               Deshace cambios realizados. \n"
                 + "Ctrl+Y:               Rehace cambios borrados. \n"
                 + "Ctrl+H:               Despliega el menú de ayuda. \n");
-          
-          
-          
-          
+
     }//GEN-LAST:event_jMenuItem10ActionPerformed
 
     private void confirmarCierre() throws HeadlessException {

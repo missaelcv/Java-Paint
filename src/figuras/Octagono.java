@@ -2,15 +2,15 @@ package figuras;
 
 import java.awt.*;
 
-public class Octagono extends FiguraBordeable {
+public class Octagono extends FiguraRellenable {
 
     int x;
     int y;
     int anchura;
     int altura;
 
-    public Octagono(Color color, Color color2, Boolean relleno, Point puntoInicial, Boolean agregarRectangulo) {
-        super(color, color2, relleno, agregarRectangulo);
+    public Octagono(Color color, Color color2, Boolean relleno, Point puntoInicial) {
+        super(color, color2, relleno);
         this.x = puntoInicial.x;
         this.y = puntoInicial.y;
         this.anchura = 1;
@@ -27,8 +27,7 @@ public class Octagono extends FiguraBordeable {
         int y = this.altura < 0 ? this.y + this.altura : this.y;
         int anchura = Math.abs(this.anchura);
         int altura = Math.abs(this.altura);
-        
-         //Puntos de las lineas
+
         Point punto1 = new Point(x, (int) (y - altura * 0.50));
         Point punto2 = new Point((int) (x + (anchura * 0.25)), y - altura);
         Point punto3 = new Point((int) (x + (anchura * 0.75)), y - altura);
@@ -46,13 +45,8 @@ public class Octagono extends FiguraBordeable {
         g.setColor(getColorDePrimerPlano());
         g.drawPolygon(new int[]{punto1.x, punto2.x, punto3.x, punto4.x, punto5.x, punto6.x, punto7.x, punto8.x}, new int[]{punto1.y, punto2.y, punto3.y, punto4.y, punto5.y, punto6.y, punto7.y, punto8.y}, 8);
 
-        //Lineas
-        g.drawLine(punto1.x, punto1.y, punto2.x, punto2.y);
-        g.drawLine(punto3.x, punto3.y, punto4.x, punto4.y);
-
         this.setRectangulo(new Rectangle(x, y, anchura, altura));
         super.dibujar(g);
-        
 
     }
 }

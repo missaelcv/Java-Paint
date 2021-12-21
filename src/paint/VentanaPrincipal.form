@@ -54,6 +54,9 @@
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="menuItemSalir">
               <Properties>
+                <Property name="accelerator" type="javax.swing.KeyStroke" editor="org.netbeans.modules.form.editors.KeyStrokeEditor">
+                  <KeyStroke key="Ctrl+W"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Salir"/>
               </Properties>
               <Events>

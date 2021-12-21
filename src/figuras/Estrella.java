@@ -2,15 +2,15 @@ package figuras;
 
 import java.awt.*;
 
-public class Estrella extends FiguraBordeable {
+public class Estrella extends FiguraRellenable {
 
     int x;
     int y;
     int anchura;
     int altura;
 
-    public Estrella(Color color, Color color2, Boolean relleno, Point puntoInicial, Boolean agregarRectangulo) {
-        super(color, color2, relleno, agregarRectangulo);
+    public Estrella(Color color, Color color2, Boolean relleno, Point puntoInicial) {
+        super(color, color2, relleno);
         this.x = puntoInicial.x;
         this.y = puntoInicial.y;
         this.anchura = 1;
@@ -49,5 +49,6 @@ public class Estrella extends FiguraBordeable {
 
         this.setRectangulo(new Rectangle(x, y, anchura, altura));
         super.dibujar(g);
+
     }
 }
